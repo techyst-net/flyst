@@ -1,4 +1,4 @@
-# Helm Chart: Plane Community
+# Helm Chart: Zeshan Community
 
 Click on the below link to access the helm chart instructions.
 

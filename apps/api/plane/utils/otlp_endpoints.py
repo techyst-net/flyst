@@ -5,8 +5,10 @@
 """
 Shared OTLP endpoint helpers so metrics and traces use the same collector
 when both are enabled. One URL (OTLP_ENDPOINT) is enough: same as traces
-(e.g. https://telemetry.plane.so or https://telemetry.plane.town behind
-nginx ingress with gRPC backend).
+(e.g. https://otel.example.com behind nginx ingress with a gRPC backend).
+
+No collector is configured by default; nothing is exported unless
+OTLP_ENDPOINT is set to a collector you operate.
 """
 
 import os
@@ -16,16 +18,17 @@ from urllib.parse import urlparse
 OTLP_GRPC_DEFAULT_PORT = "4317"
 HTTPS_DEFAULT_PORT = "443"
 
-_DEFAULT_OTLP_ENDPOINT = "https://telemetry.plane.so"
+# No default collector. Set OTLP_ENDPOINT to your own collector to enable
+# metrics/traces export; empty means nothing is sent to a third party.
+_DEFAULT_OTLP_ENDPOINT = ""
 
 
 def grpc_endpoint_from_url(url: str) -> str:
     """
     Derive gRPC host:port from OTLP_ENDPOINT URL.
-    - https://telemetry.plane.so -> telemetry.plane.so:443 (nginx ingress)
-    - https://telemetry.plane.town -> telemetry.plane.town:443 (dev)
-    - telemetry.plane.so:4317 -> telemetry.plane.so:4317 (scheme-less with port)
-    - telemetry.plane.so -> telemetry.plane.so:4317 (scheme-less, default gRPC port)
+    - https://otel.example.com -> otel.example.com:443 (nginx ingress)
+    - otel.example.com:4317 -> otel.example.com:4317 (scheme-less with port)
+    - otel.example.com -> otel.example.com:4317 (scheme-less, default gRPC port)
     - Explicit port in URL is always preserved.
     """
     # urlparse needs a scheme to correctly populate hostname/netloc.
@@ -33,7 +36,9 @@ def grpc_endpoint_from_url(url: str) -> str:
     if "://" not in url:
         url = "//" + url
     parsed = urlparse(url)
-    host = parsed.hostname or "telemetry.plane.so"
+    # Never fall back to a third-party collector: an unconfigured endpoint
+    # stays on-box so a misconfiguration cannot leak instance metrics.
+    host = parsed.hostname or "localhost"
     if parsed.port is not None:
         port = str(parsed.port)
     elif parsed.scheme == "https":
