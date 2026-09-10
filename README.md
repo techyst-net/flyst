@@ -1,165 +1,111 @@
-<br /><br />
+# Zeshan Projects
 
-<p align="center">
-<a href="https://plane.so">
-  <img src="https://media.docs.plane.so/logo/plane_github_readme.png" alt="Plane Logo" width="400">
-</a>
-</p>
-<p align="center"><b>Modern project management for all teams</b></p>
+Project and work management: projects, work items, cycles, modules, views,
+pages, analytics, workflows, and public roadmap publishing.
 
-<p align="center">
-    <a href="https://plane.so/"><b>Website</b></a> •
-    <a href="https://forum.plane.so"><b>Forum</b></a> •
-    <a href="https://x.com/planepowers"><b>X</b></a> •
-    <a href="https://docs.plane.so/"><b>Documentation</b></a>
-</p>
+## Architecture
 
-<p>
-    <a href="https://app.plane.so/#gh-light-mode-only" target="_blank">
-      <img
-        src="https://media.docs.plane.so/GitHub-readme/github-top.webp"
-        alt="Plane Screens"
-        width="100%"
-      />
-    </a>
-</p>
+Four frontends and a Django API, all behind one reverse proxy.
 
-Meet [Plane](https://plane.so/), an open-source project management tool to track issues, run ~sprints~ cycles, and manage product roadmaps without the chaos of managing the tool itself. 🧘‍♀️
+| Service | Package | Role |
+|---|---|---|
+| `web` | `apps/web` | Main application |
+| `admin` | `apps/admin` | Instance administration |
+| `space` | `apps/space` | Publicly published boards and roadmaps |
+| `live` | `apps/live` | Realtime collaborative editing, PDF export |
+| `api` | `apps/api` | Django REST API |
+| `worker` / `beat-worker` | `apps/api` | Celery task and schedule workers |
+| `proxy` | `apps/proxy` | Caddy reverse proxy and TLS |
 
-> Plane is evolving every day. Your suggestions, ideas, and reported bugs help us immensely. Do not hesitate to join in the conversation on [Forum](https://forum.plane.so) or raise a GitHub issue. We read everything and respond to most.
+Backing services: PostgreSQL, Redis, RabbitMQ, and S3-compatible object storage
+(MinIO in the bundled compose file).
 
-## 🚀 Installation
+Shared code lives in `packages/` — `constants`, `types`, `ui`, `propel`
+(component library), `editor`, `services`, `i18n`.
 
-Getting started with Plane is simple. Choose the setup that works best for you:
+## Local setup
 
-- **Plane Cloud**
-  Sign up for a free account on [Plane Cloud](https://app.plane.so)—it's the fastest way to get up and running without worrying about infrastructure.
+```sh
+cp .env.example .env
+docker compose -f docker-compose-local.yml up -d
+```
 
-- **Self-host Plane**
-  Prefer full control over your data and infrastructure? Install and run Plane on your own servers. Follow our detailed [deployment guides](https://developers.plane.so/self-hosting/overview) to get started.
+Or run from source:
 
-| Installation methods | Docs link                                                                                                                                                                               |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Docker               | [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://developers.plane.so/self-hosting/methods/docker-compose)         |
-| Kubernetes           | [![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)](https://developers.plane.so/self-hosting/methods/kubernetes) |
+```sh
+pnpm install
+pnpm dev
+```
 
-`Instance admins` can configure instance settings with [God mode](https://developers.plane.so/self-hosting/govern/instance-admin).
+See [OPERATIONS.md](./OPERATIONS.md) for environment variables, ports and
+deployment requirements.
 
-## 🌟 Features
+## Branding
 
-- **Work Items**
-  Efficiently create and manage tasks with a robust rich text editor that supports file uploads. Enhance organization and tracking by adding sub-properties and referencing related issues.
+| Surface | Where |
+|---|---|
+| Titles, descriptions, social meta | `packages/constants/src/metadata.ts` |
+| Accent palette | `--*-accent-*` override block in each of `apps/{web,admin,space}/styles/globals.css` |
+| Logo, wordmark and lockup components | `packages/propel/src/icons/brand/` |
+| Favicons, apple-touch and PWA icons | `apps/{web,admin,space}/app/assets/favicon/` and `public/favicon/` |
+| PWA manifests | `apps/{web,space}/.../site.webmanifest` — upstream shipped these with empty `name` fields |
+| Animated brand loaders | `apps/{web,admin,space}/app/assets/images/logo-spinner-{light,dark}.gif` — regenerated as 65-frame GIFs at the original canvas sizes |
+| Wordmark served by the API (emails, exports) | `apps/api/plane/static/logos/Logo.png` |
+| Website, support address, marketing links | `packages/constants/src/endpoints.ts` |
 
-- **Cycles**
-  Maintain your team’s momentum with Cycles. Track progress effortlessly using burn-down charts and other insightful tools.
+The upstream accent ramp (`#3F76FF` and its ten tints and shades) was mapped
+rung-for-rung onto the brand indigo ramp — 166 occurrences across 36 files —
+so the product is not identifiable by colour.
 
-- **Modules**
-  Simplify complex projects by dividing them into smaller, manageable modules.
+### The palette lives in an external package
 
-- **Views**
-  Customize your workflow by creating filters to display only the most relevant issues. Save and share these views with ease.
+Design tokens are published in **`@makeplane/propel`**, an npm dependency, not
+in this repository. The accent hue therefore cannot be changed by editing these
+sources. Each app's `globals.css` now declares the accent tokens *after* the
+token imports, so they win by cascade order — the supported way to retint
+without patching `node_modules`.
 
-- **Pages**
-  Capture and organize ideas using Plane Pages, complete with AI capabilities and a rich text editor. Format text, insert images, add hyperlinks, or convert your notes into actionable items.
+Because the published package uses two naming conventions, the override sets
+both (`--background-color-accent-primary` and `--bg-accent-primary`, etc.).
+Declaring a custom property a build does not consume is inert, so this is safe;
+but **verify the rendered accent once dependencies are installed** — the exact
+token set can only be confirmed against the installed package.
 
-- **Analytics**
-  Access real-time insights across all your Plane data. Visualize trends, remove blockers, and keep your projects moving forward.
+### Three upstream defaults were changed
 
-## 🛠️ Local development
+- **`is_telemetry_enabled` now defaults to `False`** (model, initial migration
+  and the instance-registration endpoint). Upstream defaults it to `True` and
+  pushes user, workspace, project, issue, cycle and module counts to
+  `telemetry.plane.so` on a timer.
+- **No default OTLP collector.** `OTLP_ENDPOINT` is empty by default, and the
+  hostname fallback inside `otlp_endpoints.py` was changed from the vendor's
+  collector to `localhost` — an unconfigured endpoint can no longer leak
+  instance metrics off-box.
+- **Commercial upgrade links** in `packages/constants/src/payment.ts` pointed at
+  the upstream vendor's checkout. They now point at a placeholder you own.
 
-See [CONTRIBUTING](./CONTRIBUTING.md)
+### Deliberately left unchanged
 
-## ⚙️ Built with
+- **AGPL copyright headers.** `Copyright (c) 2023-present Plane Software, Inc.`
+  plus `SPDX-License-Identifier: AGPL-3.0-only` appear on 3,757 files, along
+  with `LICENSE.txt` and `COPYRIGHT.txt`. The licence requires them.
+- **`Plane*` CamelCase identifiers** (`PlaneLogo`, `PlaneLockup`,
+  `PlaneWordmark`, …) — real exported symbols. Their *artwork* was replaced;
+  their names were not.
+- **`@plane/*` workspace package names**, the `plane` Python package, and the
+  `plane-db` / `plane-redis` / `plane-mq` / `plane-minio` compose service
+  hostnames. The hostnames appear in `.env.example`, `docker-compose*.yml` and
+  `deployments/`; they are internal DNS names, never shown to users, and
+  renaming them means keeping four files in sync for no visible gain.
 
-[![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&style=for-the-badge&logoColor=white)](https://reactrouter.com/)
-[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)](https://www.djangoproject.com/)
-[![Node JS](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white)](https://nodejs.org/en)
+### Not covered
 
-## 📸 Screenshots
+Test fixtures still use upstream domains. Decorative empty-state illustrations
+(`apps/*/app/assets/empty-state/`) contain incidental blues such as `#006399`
+that are not part of the accent ramp; they read as generic line art rather than
+brand identity.
 
-  <p>
-    <a href="https://plane.so" target="_blank">
-      <img
-        src="https://media.docs.plane.so/GitHub-readme/github-work-items.webp"
-        alt="Plane Views"
-        width="100%"
-      />
-    </a>
-  </p>
-  <p>
-    <a href="https://plane.so" target="_blank">
-      <img
-        src="https://media.docs.plane.so/GitHub-readme/github-cycles.webp"
-        width="100%"
-      />
-    </a>
-  </p>
-  <p>
-    <a href="https://plane.so" target="_blank">
-      <img
-        src="https://media.docs.plane.so/GitHub-readme/github-modules.webp"
-        alt="Plane Cycles and Modules"
-        width="100%"
-      />
-    </a>
-  </p>
-  <p>
-    <a href="https://plane.so" target="_blank">
-      <img
-        src="https://media.docs.plane.so/GitHub-readme/github-views.webp"
-        alt="Plane Analytics"
-        width="100%"
-      />
-    </a>
-  </p>
-   <p>
-    <a href="https://plane.so" target="_blank">
-      <img
-        src="https://media.docs.plane.so/GitHub-readme/github-analytics.webp"
-        alt="Plane Pages"
-        width="100%"
-      />
-    </a>
-  </p>
-</p>
+## Provenance and licence
 
-## 📝 Documentation
-
-Explore Plane's [product documentation](https://docs.plane.so/) and [developer documentation](https://developers.plane.so/) to learn about features, setup, and usage.
-
-## ❤️ Community
-
-Join the Plane community on [GitHub Discussions](https://github.com/orgs/makeplane/discussions) and our [Forum](https://forum.plane.so). We follow a [Code of conduct](https://github.com/makeplane/plane/blob/master/CODE_OF_CONDUCT.md) in all our community channels.
-
-Feel free to ask questions, report bugs, participate in discussions, share ideas, request features, or showcase your projects. We’d love to hear from you!
-
-## 🛡️ Security
-
-If you discover a security vulnerability in Plane, please report it responsibly instead of opening a public issue. We take all legitimate reports seriously and will investigate them promptly. See [Security policy](https://github.com/makeplane/plane/blob/master/SECURITY.md) for more info.
-
-To disclose any security issues, please email us at security@plane.so.
-
-## 🤝 Contributing
-
-There are many ways you can contribute to Plane:
-
-- Report [bugs](https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&labels=%F0%9F%90%9Bbug&projects=&template=--bug-report.yaml&title=%5Bbug%5D%3A+) or submit [feature requests](https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&labels=%E2%9C%A8feature&projects=&template=--feature-request.yaml&title=%5Bfeature%5D%3A+).
-- Review the [documentation](https://docs.plane.so/) and submit [pull requests](https://github.com/makeplane/docs) to improve it—whether it's fixing typos or adding new content.
-- Talk or write about Plane or any other ecosystem integration and [let us know](https://forum.plane.so)!
-- Show your support by upvoting [popular feature requests](https://github.com/makeplane/plane/issues).
-
-Please read [CONTRIBUTING.md](https://github.com/makeplane/plane/blob/master/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
-
-### Repo activity
-
-![Plane Repo Activity](https://repobeats.axiom.co/api/embed/2523c6ed2f77c082b7908c33e2ab208981d76c39.svg "Repobeats analytics image")
-
-### We couldn't have done this without you.
-
-<a href="https://github.com/makeplane/plane/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=makeplane/plane" />
-</a>
-
-## License
-
-This project is licensed under the [GNU Affero General Public License v3.0](https://github.com/makeplane/plane/blob/master/LICENSE.txt).
+AGPL-3.0-only. **Read the network-use obligation in
+[UPSTREAM.md](./UPSTREAM.md) before deploying this as a service.**

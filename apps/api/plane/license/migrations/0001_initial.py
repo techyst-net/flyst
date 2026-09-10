@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                     "namespace",
                     models.CharField(blank=True, max_length=50, null=True),
                 ),
-                ("is_telemetry_enabled", models.BooleanField(default=True)),
+                ("is_telemetry_enabled", models.BooleanField(default=False)),
                 ("is_support_required", models.BooleanField(default=True)),
                 ("is_setup_done", models.BooleanField(default=False)),
                 (

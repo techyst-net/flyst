@@ -29,7 +29,7 @@ export const STATE_GROUPS: {
     key: "unstarted",
     label: "Unstarted",
     defaultStateName: "Todo",
-    color: "#3f76ff",
+    color: "#6366F1",
   },
   started: {
     key: "started",
