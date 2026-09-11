@@ -9,28 +9,32 @@ import { useSearchParams } from "next/navigation";
 import { API_BASE_URL } from "@plane/constants";
 import { LogoSpinner } from "@/components/common/logo-spinner";
 import { AuthBase } from "@/components/auth-screens/auth-base";
+import { LandingPage } from "@/components/landing/landing-page";
 import { EAuthModes } from "@/helpers/authentication.helper";
 import { useInstance } from "@/hooks/store/use-instance";
 
 /**
- * Sends an unauthenticated visitor straight to central sign-in instead of
- * showing a sign-in screen here. Identity belongs to the Techyst account, so a
- * second login surface would only be a second place for it to drift.
+ * What an unauthenticated visitor sees at the app root.
  *
- * Two cases deliberately still render the local screen:
+ * One domain serves both states: signed out gets the public landing page,
+ * signed in goes straight to the workspace. There is no local sign-in form —
+ * identity belongs to the Techyst account, and a second login surface would
+ * only be a second place for it to drift.
  *
- *  - central sign-in is disabled, which would otherwise leave an instance with
- *    no way in at all;
- *  - the provider sent the visitor back with an error, where redirecting would
- *    bounce them into the provider that just rejected them and hide the reason.
+ * `redirectToSignIn` is for routes that are an explicit request to sign in
+ * (/sign-up), where showing marketing copy instead would be obtuse.
+ *
+ * The local auth screen still renders in two cases, both to avoid a lockout:
+ * central sign-in being disabled, and a provider error, where redirecting would
+ * bounce the visitor into the provider that just rejected them.
  */
-export function CentralSignIn() {
+export function CentralSignIn({ redirectToSignIn = false }: { redirectToSignIn?: boolean }) {
   const { config } = useInstance();
   const searchParams = useSearchParams();
 
   const enabled = config?.is_techyst_oidc_enabled === true;
   const hasAuthError = Boolean(searchParams.get("error_code"));
-  const shouldRedirect = enabled && !hasAuthError;
+  const shouldRedirect = enabled && !hasAuthError && redirectToSignIn;
 
   useEffect(() => {
     if (!shouldRedirect) return;
@@ -42,8 +46,8 @@ export function CentralSignIn() {
     );
   }, [shouldRedirect, searchParams]);
 
-  // `config` is undefined until the instance call resolves; showing the spinner
-  // until then avoids flashing a sign-in screen we are about to navigate away from.
+  // `config` is undefined until the instance call resolves. Waiting avoids
+  // flashing one screen and replacing it with another a moment later.
   if (config === undefined || shouldRedirect) {
     return (
       <div className="flex h-screen w-screen items-center justify-center">
@@ -51,5 +55,6 @@ export function CentralSignIn() {
       </div>
     );
   }
-  return <AuthBase authType={EAuthModes.SIGN_IN} />;
+  if (!enabled || hasAuthError) return <AuthBase authType={EAuthModes.SIGN_IN} />;
+  return <LandingPage />;
 }

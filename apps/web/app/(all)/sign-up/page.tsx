@@ -16,7 +16,7 @@ function SignUpPage() {
   return (
     <DefaultLayout>
       <AuthenticationWrapper pageType={EPageTypes.NON_AUTHENTICATED}>
-        <CentralSignIn />
+        <CentralSignIn redirectToSignIn />
       </AuthenticationWrapper>
     </DefaultLayout>
   );
