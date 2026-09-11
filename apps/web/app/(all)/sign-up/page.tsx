@@ -5,9 +5,9 @@
  */
 
 // components
-import { CentralSignIn } from "@/components/auth-screens/central-sign-in";
+import { AuthBase } from "@/components/auth-screens/auth-base";
 // helpers
-import { EPageTypes } from "@/helpers/authentication.helper";
+import { EAuthModes, EPageTypes } from "@/helpers/authentication.helper";
 // assets
 import DefaultLayout from "@/layouts/default-layout";
 import { AuthenticationWrapper } from "@/lib/wrappers/authentication-wrapper";
@@ -16,7 +16,7 @@ function SignUpPage() {
   return (
     <DefaultLayout>
       <AuthenticationWrapper pageType={EPageTypes.NON_AUTHENTICATED}>
-        <CentralSignIn redirectToSignIn />
+        <AuthBase authType={EAuthModes.SIGN_UP} />
       </AuthenticationWrapper>
     </DefaultLayout>
   );

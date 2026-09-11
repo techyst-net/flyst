@@ -6,9 +6,9 @@
 
 import React from "react";
 // components
-import { CentralSignIn } from "@/components/auth-screens/central-sign-in";
+import { AuthBase } from "@/components/auth-screens/auth-base";
 // helpers
-import { EPageTypes } from "@/helpers/authentication.helper";
+import { EAuthModes, EPageTypes } from "@/helpers/authentication.helper";
 // layouts
 import DefaultLayout from "@/layouts/default-layout";
 // wrappers
@@ -18,7 +18,7 @@ function HomePage() {
   return (
     <DefaultLayout>
       <AuthenticationWrapper pageType={EPageTypes.NON_AUTHENTICATED}>
-        <CentralSignIn />
+        <AuthBase authType={EAuthModes.SIGN_IN} />
       </AuthenticationWrapper>
     </DefaultLayout>
   );
