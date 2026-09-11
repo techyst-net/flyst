@@ -19,7 +19,21 @@ export const useExtendedOAuthConfig = (oauthActionText: string): TOAuthConfigs =
     oAuthOptions: [{
       id: "techyst",
       text: `${oauthActionText} with Flyst`,
-      icon: <span aria-hidden="true" style={{ color: "#40a8d9", fontWeight: 700 }}>Z</span>,
+      icon: (
+        // The Flyst mark. Geometry matches .brand/marks.py; the dot is the
+        // family signature and keeps its colour in every theme.
+        <svg viewBox="0 0 64 64" width={18} height={18} fill="none" aria-hidden="true">
+          <path
+            d="M8,52 L8,12 L38,12"
+            stroke="#40A8D9"
+            strokeWidth="11"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path d="M8,32 L32,32" stroke="#40A8D9" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="52" cy="18" r="7" fill="#E77129" />
+        </svg>
+      ),
       enabled,
       onClick: () => {
         const next = searchParams.get("next_path");
