@@ -6,16 +6,10 @@
 
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router";
-import {
-  ArchiveOutline,
-  LinkOutline,
-  LogOutOutline,
-  MoreHorizontalOutline,
-  SettingsOutline,
-  ShareAltOutline,
-} from "@makeplane/propel/icons";
+import { LogOut, MoreHorizontal, Settings, Share2, ArchiveIcon } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
+import { LinkIcon } from "@plane/propel/icons";
 import { CustomMenu } from "@plane/ui";
 
 type Props = {
@@ -56,7 +50,7 @@ export function ProjectActionsMenu({
           className="grid place-items-center rounded-sm p-0.5 text-placeholder hover:bg-layer-1"
           onClick={() => setIsMenuActive(!isMenuActive)}
         >
-          <MoreHorizontalOutline className="size-4" />
+          <MoreHorizontal className="size-4" />
         </span>
       }
       className="flex-shrink-0"
@@ -72,7 +66,7 @@ export function ProjectActionsMenu({
         <CustomMenu.MenuItem onClick={onPublishModal}>
           <div className="relative flex flex-shrink-0 items-center justify-start gap-2">
             <div className="flex h-4 w-4 cursor-pointer items-center justify-center rounded-sm text-secondary transition-all duration-300 hover:bg-layer-1">
-              <ShareAltOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+              <Share2 className="h-3.5 w-3.5 stroke-[1.5]" />
             </div>
             <div>{t("publish_project")}</div>
           </div>
@@ -80,7 +74,7 @@ export function ProjectActionsMenu({
       )}
       <CustomMenu.MenuItem onClick={onCopyText}>
         <span className="flex items-center justify-start gap-2">
-          <LinkOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+          <LinkIcon className="h-3.5 w-3.5 stroke-[1.5]" />
           <span>{t("copy_link")}</span>
         </span>
       </CustomMenu.MenuItem>
@@ -91,7 +85,7 @@ export function ProjectActionsMenu({
           }}
         >
           <div className="flex cursor-pointer items-center justify-start gap-2">
-            <ArchiveOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+            <ArchiveIcon className="h-3.5 w-3.5 stroke-[1.5]" />
             <span>{t("archives")}</span>
           </div>
         </CustomMenu.MenuItem>
@@ -102,7 +96,7 @@ export function ProjectActionsMenu({
         }}
       >
         <div className="flex cursor-pointer items-center justify-start gap-2">
-          <SettingsOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+          <Settings className="h-3.5 w-3.5 stroke-[1.5]" />
           <span>{t("settings")}</span>
         </div>
       </CustomMenu.MenuItem>
@@ -110,7 +104,7 @@ export function ProjectActionsMenu({
       {!isAuthorized && (
         <CustomMenu.MenuItem onClick={onLeaveProject}>
           <div className="flex items-center justify-start gap-2">
-            <LogOutOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+            <LogOut className="h-3.5 w-3.5 stroke-[1.5]" />
             <span>{t("leave_project")}</span>
           </div>
         </CustomMenu.MenuItem>

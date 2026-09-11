@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { StarOutline } from "@makeplane/propel/icons";
+import { Star } from "lucide-react";
 // ui
 import { IconButton } from "@plane/propel/icon-button";
 // hooks
@@ -31,7 +31,7 @@ export const PageFavoriteControl = observer(function PageFavoriteControl({ page 
     <IconButton
       variant="ghost"
       size="lg"
-      icon={StarOutline}
+      icon={Star}
       onClick={() => {
         pageOperations.toggleFavorite();
       }}

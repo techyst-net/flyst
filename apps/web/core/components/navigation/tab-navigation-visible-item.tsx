@@ -5,10 +5,11 @@
  */
 
 import { Link } from "react-router";
-import { DefaultTabOutline, UnpinOutline } from "@makeplane/propel/icons";
+import { PinOff } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { ContextMenu } from "@plane/propel/context-menu";
+import { SetAsDefaultIcon } from "@plane/propel/icons";
 import { TabNavigationItem } from "@plane/propel/tab-navigation";
 // local imports
 import type { TNavigationItem } from "./tab-navigation-root";
@@ -61,7 +62,7 @@ export function TabNavigationVisibleItem({
                 }}
                 className="flex cursor-pointer items-center gap-2 text-secondary transition-colors"
               >
-                <DefaultTabOutline className="size-3 shrink-0" />
+                <SetAsDefaultIcon className="size-3 shrink-0" />
                 <span className="text-11">{isDefault ? "Clear default" : "Set as default"}</span>
               </ContextMenu.Item>
               <ContextMenu.Item
@@ -71,7 +72,7 @@ export function TabNavigationVisibleItem({
                 }}
                 className="flex cursor-pointer items-center gap-2 text-secondary transition-colors"
               >
-                <UnpinOutline className="size-3 shrink-0" />
+                <PinOff className="size-3 shrink-0" />
                 <span className="text-11">Hide in more menu</span>
               </ContextMenu.Item>
             </ContextMenu.Content>

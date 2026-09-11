@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 // icons
-import { TickCircleOutline } from "@makeplane/propel/icons";
+import { CircleCheck } from "lucide-react";
 // plane imports
 import { Field } from "@makeplane/propel/components/field";
 import { Input, InputGroup } from "@makeplane/propel/components/input";
@@ -116,7 +116,7 @@ export const ForgotPasswordForm = observer(function ForgotPasswordForm() {
           />
           {resendTimerCode > 0 && (
             <p className="flex w-full items-start gap-1 px-1 text-11 font-medium text-success-primary">
-              <TickCircleOutline height={12} width={12} className="mt-0.5" />
+              <CircleCheck height={12} width={12} className="mt-0.5" />
               {t("auth.forgot_password.email_sent")}
             </p>
           )}

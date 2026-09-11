@@ -9,18 +9,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import { observer } from "mobx-react";
 import { useParams, usePathname, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
-import {
-  CalendarOutline,
-  MembersOutline,
-  ShowOutline,
-  TransferWorkItemOutline,
-  WorkItemsOutline,
-} from "@makeplane/propel/icons";
+import { Eye, CalendarDays } from "lucide-react";
 // plane imports
 import { EUserPermissions, EUserPermissionsLevel, IS_FAVORITE_MENU_OPEN } from "@plane/constants";
 import { useLocalStorage } from "@plane/hooks";
 import { useTranslation } from "@plane/i18n";
 import { Avatar } from "@makeplane/propel/components/avatar";
+import { TransferIcon, WorkItemsIcon, MembersPropertyIcon } from "@plane/propel/icons";
 import { setPromiseToast } from "@plane/propel/toast";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import type { ICycle, TCycleGroups } from "@plane/types";
@@ -189,12 +184,12 @@ export const CycleListItemAction = observer(function CycleListItemAction(props: 
         onClick={openCycleOverview}
         className={`z-[1] flex flex-shrink-0 gap-1 text-11 text-accent-secondary ${isMobile || (isActive && !searchParams.has("peekCycle")) ? "flex" : "hidden group-hover:flex"}`}
       >
-        <ShowOutline className="my-auto h-4 w-4 text-accent-secondary" />
+        <Eye className="my-auto h-4 w-4 text-accent-secondary" />
         <span>{t("project_cycles.more_details")}</span>
       </button>
       {showIssueCount && (
         <div className="flex items-center gap-1">
-          <WorkItemsOutline className="h-4 w-4 text-tertiary" />
+          <WorkItemsIcon className="h-4 w-4 text-tertiary" />
           <span className="text-11 text-tertiary">{cycleDetails.total_issues}</span>
         </div>
       )}
@@ -206,7 +201,7 @@ export const CycleListItemAction = observer(function CycleListItemAction(props: 
             setTransferIssuesModal(true);
           }}
         >
-          <TransferWorkItemOutline className="w-4 fill-accent-primary" />
+          <TransferIcon className="w-4 fill-accent-primary" />
           <span>{t("project_cycles.transfer_work_items", { count: transferableIssuesCount })}</span>
         </div>
       )}
@@ -222,7 +217,7 @@ export const CycleListItemAction = observer(function CycleListItemAction(props: 
               disabled={!isProjectTimeZoneDifferent()}
             >
               <div className="flex items-center gap-1 text-11 font-medium text-tertiary">
-                <CalendarOutline className="my-auto h-3 w-3 flex-shrink-0" />
+                <CalendarDays className="my-auto h-3 w-3 flex-shrink-0" />
                 <MergedDateDisplay startDate={cycleDetails.start_date} endDate={cycleDetails.end_date} />
               </div>
             </Tooltip>
@@ -287,7 +282,7 @@ export const CycleListItemAction = observer(function CycleListItemAction(props: 
                 })}
               </AvatarGroupOverflow>
             ) : (
-              <MembersOutline className="h-4 w-4 text-tertiary" />
+              <MembersPropertyIcon className="h-4 w-4 text-tertiary" />
             )}
           </div>
         </Tooltip>

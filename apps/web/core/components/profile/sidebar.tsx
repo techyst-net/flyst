@@ -13,7 +13,7 @@ import { useOutsideClickDetector } from "@plane/hooks";
 import { useTranslation } from "@plane/i18n";
 import { Logo } from "@plane/propel/emoji-icon-picker";
 import { IconButton } from "@plane/propel/icon-button";
-import { ChevronDownOutline, EditOutline } from "@makeplane/propel/icons";
+import { EditIcon, ChevronDownIcon } from "@plane/propel/icons";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import type { IUserProfileProjectSegregation } from "@plane/types";
 import { Loader } from "@plane/ui";
@@ -99,7 +99,7 @@ export const ProfileSidebar = observer(function ProfileSidebar(props: TProfileSi
               <div className="absolute top-3.5 right-3.5">
                 <IconButton
                   variant="secondary"
-                  icon={EditOutline}
+                  icon={EditIcon}
                   onClick={() =>
                     toggleProfileSettingsModal({
                       activeTab: "general",
@@ -185,7 +185,7 @@ export const ProfileSidebar = observer(function ProfileSidebar(props: TProfileSi
                                 </div>
                               </Tooltip>
                             )}
-                            <ChevronDownOutline className="h-4 w-4" />
+                            <ChevronDownIcon className="h-4 w-4" />
                           </div>
                         </Disclosure.Button>
                         <Transition

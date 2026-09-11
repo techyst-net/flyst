@@ -14,21 +14,14 @@ import { observer } from "mobx-react";
 import { useParams, useRouter } from "next/navigation";
 import { createRoot } from "react-dom/client";
 import scrollIntoView from "smooth-scroll-into-view-if-needed";
-import {
-  ArchiveOutline,
-  ChevronRightOutline,
-  LinkOutline,
-  LogOutOutline,
-  MoreHorizontalOutline,
-  SettingsOutline,
-  ShareAltOutline,
-} from "@makeplane/propel/icons";
+import { Settings, Share2, LogOut, MoreHorizontal } from "lucide-react";
 import { Disclosure, Transition } from "@headlessui/react";
 // plane imports
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useOutsideClickDetector } from "@plane/hooks";
 import { useTranslation } from "@plane/i18n";
 import { Logo } from "@plane/propel/emoji-icon-picker";
+import { LinkIcon, ArchiveIcon, ChevronRightIcon } from "@plane/propel/icons";
 import { IconButton } from "@plane/propel/icon-button";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import { CustomMenu, DropIndicator, DragHandle, ControlLink } from "@plane/ui";
@@ -363,7 +356,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                       ref={actionSectionRef}
                       variant="ghost"
                       size="sm"
-                      icon={MoreHorizontalOutline}
+                      icon={MoreHorizontal}
                       onClick={() => setIsMenuActive(!isMenuActive)}
                       className="text-placeholder"
                     />
@@ -402,7 +395,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                     <CustomMenu.MenuItem onClick={() => setPublishModal(true)}>
                       <div className="relative flex flex-shrink-0 items-center justify-start gap-2">
                         <div className="flex h-4 w-4 cursor-pointer items-center justify-center rounded-sm text-secondary transition-all duration-300 hover:bg-layer-1">
-                          <ShareAltOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+                          <Share2 className="h-3.5 w-3.5 stroke-[1.5]" />
                         </div>
                         <div>{t("publish_project")}</div>
                       </div>
@@ -410,7 +403,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                   )}
                   <CustomMenu.MenuItem onClick={handleCopyText}>
                     <span className="flex items-center justify-start gap-2">
-                      <LinkOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+                      <LinkIcon className="h-3.5 w-3.5 stroke-[1.5]" />
                       <span>{t("copy_link")}</span>
                     </span>
                   </CustomMenu.MenuItem>
@@ -421,7 +414,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                       }}
                     >
                       <div className="flex cursor-pointer items-center justify-start gap-2">
-                        <ArchiveOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+                        <ArchiveIcon className="h-3.5 w-3.5 stroke-[1.5]" />
                         <span>{t("archives")}</span>
                       </div>
                     </CustomMenu.MenuItem>
@@ -432,7 +425,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                     }}
                   >
                     <div className="flex cursor-pointer items-center justify-start gap-2">
-                      <SettingsOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+                      <Settings className="h-3.5 w-3.5 stroke-[1.5]" />
                       <span>{t("settings")}</span>
                     </div>
                   </CustomMenu.MenuItem>
@@ -440,7 +433,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                   {!isAuthorized && (
                     <CustomMenu.MenuItem onClick={handleLeaveProject}>
                       <div className="flex items-center justify-start gap-2">
-                        <LogOutOutline className="h-3.5 w-3.5 stroke-[1.5]" />
+                        <LogOut className="h-3.5 w-3.5 stroke-[1.5]" />
                         <span>{t("leave_project")}</span>
                       </div>
                     </CustomMenu.MenuItem>
@@ -450,7 +443,7 @@ export const SidebarProjectsListItem = observer(function SidebarProjectsListItem
                   <IconButton
                     variant="ghost"
                     size="sm"
-                    icon={ChevronRightOutline}
+                    icon={ChevronRightIcon}
                     onClick={() => setIsProjectListOpen(!isProjectListOpen)}
                     className={cn("hidden text-placeholder group-hover/project-item:inline-flex", {
                       "inline-flex": isMenuActive,

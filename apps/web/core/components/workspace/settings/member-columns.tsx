@@ -11,7 +11,7 @@ import { Controller, useForm } from "react-hook-form";
 import { Disclosure } from "@headlessui/react";
 // plane imports
 import { ROLE, EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
-import { DeactivatedUserOutline, DeleteOutline } from "@makeplane/propel/icons";
+import { TrashIcon, SuspendedUserIcon } from "@plane/propel/icons";
 import { Pill, EPillVariant, EPillSize } from "@plane/propel/pill";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { IUser, IWorkspaceMember } from "@plane/types";
@@ -56,7 +56,7 @@ export function NameColumn(props: NameProps) {
             <div className="flex flex-1 items-center gap-x-2 gap-y-2">
               {isSuspended ? (
                 <div className="rounded-full bg-layer-1">
-                  <DeactivatedUserOutline className="size-6 text-placeholder" />
+                  <SuspendedUserIcon className="size-6 text-placeholder" />
                 </div>
               ) : avatar_url && avatar_url.trim() !== "" ? (
                 <Link href={`/${workspaceSlug}/profile/${id}`}>
@@ -99,7 +99,7 @@ export function NameColumn(props: NameProps) {
                       }
                     }}
                   >
-                    <DeleteOutline className="size-3.5 align-middle" /> {id === currentUser?.id ? "Leave " : "Remove "}
+                    <TrashIcon className="size-3.5 align-middle" /> {id === currentUser?.id ? "Leave " : "Remove "}
                   </div>
                 )}
               />

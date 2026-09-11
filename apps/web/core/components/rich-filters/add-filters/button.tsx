@@ -6,7 +6,7 @@
 
 import React from "react";
 import { observer } from "mobx-react";
-import { FilterOutline } from "@makeplane/propel/icons";
+import { ListFilter } from "lucide-react";
 // plane imports
 import type { TButtonSize, TButtonVariant } from "@plane/propel/button";
 import { getButtonStyling } from "@plane/propel/button";
@@ -47,7 +47,7 @@ export const AddFilterButton = observer(function AddFilterButton<P extends TFilt
     isDisabled = false,
   } = buttonConfig || {};
   // derived values
-  const FilterIcon = iconConfig.iconComponent || FilterOutline;
+  const FilterIcon = iconConfig.iconComponent || ListFilter;
 
   const handleFilterSelect = (property: P, operator: TSupportedOperators, isNegation: boolean) => {
     filter.addCondition(

@@ -6,9 +6,10 @@
 
 import React from "react";
 import { Command } from "cmdk";
-import { CloseOutline, SearchOutline } from "@makeplane/propel/icons";
+import { X } from "lucide-react";
 import { useTranslation } from "@plane/i18n";
 // plane imports
+import { SearchIcon } from "@plane/propel/icons";
 // local imports
 import type { TPowerKContext, TPowerKPageType } from "../../core/types";
 import { POWER_K_MODAL_PAGE_DETAILS } from "./constants";
@@ -42,7 +43,7 @@ export function PowerKModalHeader(props: Props) {
 
       {/* Search Input */}
       <div className="flex items-center gap-2 px-4 py-3">
-        <SearchOutline className="size-4 shrink-0 text-placeholder" />
+        <SearchIcon className="size-4 shrink-0 text-placeholder" />
         <Command.Input
           value={searchTerm}
           onValueChange={onSearchChange}
@@ -55,7 +56,7 @@ export function PowerKModalHeader(props: Props) {
             onClick={() => onSearchChange("")}
             className="flex-shrink-0 rounded-sm p-1 text-placeholder hover:bg-layer-1 hover:text-secondary"
           >
-            <CloseOutline className="h-3 w-3" />
+            <X className="h-3 w-3" />
           </button>
         )}
       </div>

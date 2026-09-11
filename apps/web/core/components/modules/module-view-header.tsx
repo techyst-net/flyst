@@ -7,12 +7,13 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react";
 import { useParams } from "next/navigation";
-import { CloseOutline, FilterOutline, SearchOutline } from "@makeplane/propel/icons";
+import { ListFilter } from "lucide-react";
 // plane helpers
 import { MODULE_VIEW_LAYOUTS } from "@plane/constants";
 import { useOutsideClickDetector } from "@plane/hooks";
 // types
 import { useTranslation } from "@plane/i18n";
+import { SearchIcon, CloseIcon } from "@plane/propel/icons";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import type { TModuleFilters } from "@plane/types";
 // ui
@@ -109,7 +110,7 @@ export const ModuleViewHeader = observer(function ModuleViewHeader() {
               setIsSearchOpen(true);
               inputRef.current?.focus();
             }}
-            icon={SearchOutline}
+            icon={SearchIcon}
           />
         )}
         <div
@@ -120,7 +121,7 @@ export const ModuleViewHeader = observer(function ModuleViewHeader() {
             }
           )}
         >
-          <SearchOutline className="h-3.5 w-3.5" />
+          <SearchIcon className="h-3.5 w-3.5" />
           <input
             ref={inputRef}
             className="w-full max-w-[234px] border-none bg-transparent text-13 text-primary placeholder:text-placeholder focus:outline-none"
@@ -138,7 +139,7 @@ export const ModuleViewHeader = observer(function ModuleViewHeader() {
                 setIsSearchOpen(false);
               }}
             >
-              <CloseOutline className="h-3 w-3" />
+              <CloseIcon className="h-3 w-3" />
             </button>
           )}
         </div>
@@ -153,7 +154,7 @@ export const ModuleViewHeader = observer(function ModuleViewHeader() {
         }}
       />
       <FiltersDropdown
-        icon={<FilterOutline className="h-3 w-3" />}
+        icon={<ListFilter className="h-3 w-3" />}
         title="Filters"
         placement="bottom-end"
         isFiltersApplied={isFiltersApplied}

@@ -7,7 +7,7 @@
 import { Combobox } from "@headlessui/react";
 
 import React from "react";
-import { TickOutline } from "@makeplane/propel/icons";
+import { CheckIcon } from "@plane/propel/icons";
 // helpers
 import { cn } from "../../utils";
 // types
@@ -77,7 +77,7 @@ export function DropdownOptions(props: IMultiSelectDropdownOptions | ISingleSele
                         ) : (
                           <>
                             <span className="flex-grow truncate">{option.value}</span>
-                            {selected && <TickOutline className="h-3.5 w-3.5 flex-shrink-0" />}
+                            {selected && <CheckIcon className="h-3.5 w-3.5 flex-shrink-0" />}
                           </>
                         )}
                       </>

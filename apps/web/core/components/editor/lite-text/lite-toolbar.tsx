@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import { AttachOutline, TopArrowOutline } from "@makeplane/propel/icons";
+import { ArrowUp, Paperclip } from "lucide-react";
 // constants
 import type { ToolbarMenuItem } from "@plane/editor";
 import { IMAGE_ITEM } from "@plane/editor";
@@ -25,7 +25,7 @@ export function LiteToolbar({ onSubmit, isSubmitting, isEmpty, executeCommand }:
         type="button"
         className="p-1 text-tertiary transition-colors hover:text-secondary"
       >
-        <AttachOutline className="size-3" />
+        <Paperclip className="size-3" />
       </button>
       <button
         type="button"
@@ -33,7 +33,7 @@ export function LiteToolbar({ onSubmit, isSubmitting, isEmpty, executeCommand }:
         disabled={isEmpty || isSubmitting}
         className="rounded-sm bg-accent-primary p-1 text-primary transition-colors hover:bg-accent-primary/80 disabled:bg-layer-1 disabled:text-secondary"
       >
-        <TopArrowOutline className="size-3" />
+        <ArrowUp className="size-3" />
       </button>
     </div>
   );

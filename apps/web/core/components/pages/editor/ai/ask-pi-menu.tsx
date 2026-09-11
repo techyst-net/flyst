@@ -5,8 +5,7 @@
  */
 
 import { useState } from "react";
-import { CircleArrowUp } from "lucide-react";
-import { AiStar1Outline, CornerRightDownOutline, RefreshOutline } from "@makeplane/propel/icons";
+import { CircleArrowUp, CornerDownRight, RefreshCcw, Sparkles } from "lucide-react";
 // ui
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 // components
@@ -41,7 +40,7 @@ export function AskPiMenu(props: Props) {
         })}
       >
         <span className="grid size-7 flex-shrink-0 place-items-center rounded-full border border-subtle text-secondary">
-          <AiStar1Outline className="size-3" />
+          <Sparkles className="size-3" />
         </span>
         {response ? (
           <div>
@@ -71,7 +70,7 @@ export function AskPiMenu(props: Props) {
                   className="grid size-6 flex-shrink-0 place-items-center rounded-sm outline-none hover:bg-layer-1"
                   onClick={() => handleInsertText(true)}
                 >
-                  <CornerRightDownOutline className="size-4 text-tertiary" />
+                  <CornerDownRight className="size-4 text-tertiary" />
                 </button>
               </Tooltip>
               <Tooltip label="Re-generate response">
@@ -85,7 +84,7 @@ export function AskPiMenu(props: Props) {
                   }}
                   disabled={isRegenerating}
                 >
-                  <RefreshOutline
+                  <RefreshCcw
                     className={cn("size-4 text-tertiary", {
                       "animate-spin": isRegenerating,
                     })}
@@ -101,7 +100,7 @@ export function AskPiMenu(props: Props) {
       <div className="px-4 py-3">
         <div className="flex items-center gap-2 rounded-md border border-subtle p-2">
           <span className="grid size-3 flex-shrink-0 place-items-center">
-            <AiStar1Outline className="size-3 text-secondary" />
+            <Sparkles className="size-3 text-secondary" />
           </span>
           <input
             type="text"

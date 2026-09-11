@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react";
 // plane helpers
 import { useOutsideClickDetector } from "@plane/hooks";
-import { PreferencesOutline } from "@makeplane/propel/icons";
+import { PreferencesIcon } from "@plane/propel/icons";
 import { ScrollArea } from "@plane/propel/scrollarea";
 // components
 import { CustomizeNavigationDialog } from "@/components/navigation/customize-navigation-dialog";
@@ -61,7 +61,7 @@ export const SidebarWrapper = observer(function SidebarWrapper(props: TSidebarWr
                 <IconButton
                   size="base"
                   variant="ghost"
-                  icon={PreferencesOutline}
+                  icon={PreferencesIcon}
                   onClick={() => setIsCustomizeNavDialogOpen(true)}
                 />
               )}

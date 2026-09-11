@@ -5,11 +5,12 @@
  */
 
 import { Menu } from "@headlessui/react";
-import { ChevronDownOutline, ChevronRightOutline, MoreHorizontalOutline } from "@makeplane/propel/icons";
+import { MoreHorizontal } from "lucide-react";
 import * as React from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import { useOutsideClickDetector } from "@plane/hooks";
+import { ChevronDownIcon, ChevronRightIcon } from "@plane/propel/icons";
 // plane helpers
 // helpers
 import { useDropdownKeyDown } from "../hooks/use-dropdown-key-down";
@@ -274,7 +275,7 @@ function CustomMenu(props: ICustomMenuDropdownProps) {
                     tabIndex={customButtonTabIndex}
                     aria-label={ariaLabel}
                   >
-                    <MoreHorizontalOutline className={`h-3.5 w-3.5 ${verticalEllipsis ? "rotate-90" : ""}`} />
+                    <MoreHorizontal className={`h-3.5 w-3.5 ${verticalEllipsis ? "rotate-90" : ""}`} />
                   </button>
                 </Menu.Button>
               ) : (
@@ -293,7 +294,7 @@ function CustomMenu(props: ICustomMenuDropdownProps) {
                     aria-label={ariaLabel}
                   >
                     {label}
-                    {!noChevron && <ChevronDownOutline className="h-3.5 w-3.5" />}
+                    {!noChevron && <ChevronDownIcon className="h-3.5 w-3.5" />}
                   </button>
                 </Menu.Button>
               )}
@@ -419,7 +420,7 @@ function SubMenu(props: ICustomSubMenuProps) {
               disabled={disabled}
             >
               <span className="flex-1">{trigger}</span>
-              <ChevronRightOutline className="h-3.5 w-3.5 flex-shrink-0" />
+              <ChevronRightIcon className="h-3.5 w-3.5 flex-shrink-0" />
             </button>
           )}
         </Menu.Item>
@@ -512,7 +513,7 @@ function SubMenuTrigger(props: ICustomSubMenuTriggerProps) {
           )}
         >
           <span className="flex-1">{children}</span>
-          <ChevronRightOutline className="h-3.5 w-3.5 flex-shrink-0" />
+          <ChevronRightIcon className="h-3.5 w-3.5 flex-shrink-0" />
         </div>
       )}
     </Menu.Item>

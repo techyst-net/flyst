@@ -7,7 +7,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { observer } from "mobx-react";
 import useSWR, { mutate } from "swr";
-import { ArrowNarrowLeftOutline, ArrowNarrowRightOutline, RefreshOutline } from "@makeplane/propel/icons";
+import { MoveLeft, MoveRight, RefreshCw } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
@@ -79,7 +79,7 @@ export const PrevExports = observer(function PrevExports(props: Props) {
         <div className="flex items-center gap-2">
           <h3 className="text-h6-medium text-primary">{t("workspace_settings.settings.exports.previous_exports")}</h3>
           <Button variant="tertiary" className="shrink-0" onClick={handleRefresh}>
-            <RefreshOutline className={`h-3 w-3 ${refreshing ? "animate-spin" : ""}`} />
+            <RefreshCw className={`h-3 w-3 ${refreshing ? "animate-spin" : ""}`} />
             {refreshing ? t("refreshing") : t("refresh_status")}
           </Button>
         </div>
@@ -90,7 +90,7 @@ export const PrevExports = observer(function PrevExports(props: Props) {
               size="sm"
               disabled={!exporterServices?.prev_page_results}
               onClick={() => exporterServices?.prev_page_results && setCursor(exporterServices?.prev_cursor)}
-              prependIcon={<ArrowNarrowLeftOutline />}
+              prependIcon={<MoveLeft />}
             >
               {t("prev")}
             </Button>
@@ -99,7 +99,7 @@ export const PrevExports = observer(function PrevExports(props: Props) {
               size="sm"
               disabled={!exporterServices?.next_page_results}
               onClick={() => exporterServices?.next_page_results && setCursor(exporterServices?.next_cursor)}
-              appendIcon={<ArrowNarrowRightOutline />}
+              appendIcon={<MoveRight />}
             >
               {t("next")}
             </Button>

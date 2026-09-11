@@ -7,7 +7,7 @@
 import { observer } from "mobx-react";
 
 import type { ENotificationFilterType } from "@plane/constants";
-import { TickOutline } from "@makeplane/propel/icons";
+import { CheckIcon } from "@plane/propel/icons";
 // plane imports
 // helpers
 import { cn } from "@plane/utils";
@@ -43,7 +43,7 @@ export const NotificationFilterOptionItem = observer(function NotificationFilter
           "bg-surface-2": !isSelected,
         })}
       >
-        {isSelected && <TickOutline className="h-2.5 w-2.5" />}
+        {isSelected && <CheckIcon className="h-2.5 w-2.5" />}
       </div>
       <div
         className={cn("text-body-xs-medium whitespace-nowrap", {

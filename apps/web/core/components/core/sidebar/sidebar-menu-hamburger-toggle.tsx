@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { RightSidePaneOutline } from "@makeplane/propel/icons";
+import { PanelRight } from "lucide-react";
 import { useAppTheme } from "@/hooks/store/use-app-theme";
 
 export const SidebarHamburgerToggle = observer(function SidebarHamburgerToggle() {
@@ -24,7 +24,7 @@ export const SidebarHamburgerToggle = observer(function SidebarHamburgerToggle()
       className="group grid size-7 flex-shrink-0 place-items-center rounded-sm bg-surface-2 transition-all hover:bg-layer-1"
       onClick={handleClick}
     >
-      <RightSidePaneOutline className="size-3.5 text-secondary transition-all group-hover:text-primary" />
+      <PanelRight className="size-3.5 text-secondary transition-all group-hover:text-primary" />
     </button>
   );
 });

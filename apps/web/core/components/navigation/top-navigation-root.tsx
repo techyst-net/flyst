@@ -15,7 +15,7 @@ import { WorkspaceMenuRoot } from "@/components/workspace/sidebar/workspace-menu
 import { useAppRailPreferences } from "@/hooks/use-navigation-preferences";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import { AppSidebarItem } from "@/components/sidebar/sidebar-item";
-import { InboxOutline } from "@makeplane/propel/icons";
+import { InboxIcon } from "@plane/propel/icons";
 import useSWR from "swr";
 import { useWorkspaceNotifications } from "@/hooks/store/notifications";
 // local imports
@@ -67,7 +67,7 @@ export const TopNavigationRoot = observer(function TopNavigationRoot() {
               href: `/${workspaceSlug?.toString()}/notifications/`,
               icon: (
                 <div className="relative">
-                  <InboxOutline className="size-5" />
+                  <InboxIcon className="size-5" />
                   {totalNotifications > 0 && (
                     <span className="absolute top-0 right-0 size-2 rounded-full bg-danger-primary" />
                   )}

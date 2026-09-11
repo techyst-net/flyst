@@ -7,14 +7,7 @@
 import { useMemo, useCallback } from "react";
 // plane imports
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
-import {
-  CyclesOutline,
-  IntakeOutline,
-  ModuleOutline,
-  PagesOutline,
-  ViewsOutline,
-  WorkItemsOutline,
-} from "@makeplane/propel/icons";
+import { CycleIcon, IntakeIcon, ModuleIcon, PageIcon, ViewsIcon, WorkItemsIcon } from "@plane/propel/icons";
 import type { EUserProjectRoles, IPartialProject } from "@plane/types";
 import type { TNavigationItem } from "@/components/navigation/tab-navigation-root";
 
@@ -45,7 +38,7 @@ export const useNavigationItems = ({
         key: "work_items",
         name: "Work items",
         href: `/${workspaceSlug}/projects/${projectId}/issues`,
-        icon: WorkItemsOutline,
+        icon: WorkItemsIcon,
         access: [EUserPermissions.ADMIN, EUserPermissions.MEMBER, EUserPermissions.GUEST],
         shouldRender: true,
         sortOrder: 1,
@@ -55,7 +48,7 @@ export const useNavigationItems = ({
         key: "cycles",
         name: "Cycles",
         href: `/${workspaceSlug}/projects/${projectId}/cycles`,
-        icon: CyclesOutline,
+        icon: CycleIcon,
         access: [EUserPermissions.ADMIN, EUserPermissions.MEMBER],
         shouldRender: !!project?.cycle_view,
         sortOrder: 2,
@@ -65,7 +58,7 @@ export const useNavigationItems = ({
         key: "modules",
         name: "Modules",
         href: `/${workspaceSlug}/projects/${projectId}/modules`,
-        icon: ModuleOutline,
+        icon: ModuleIcon,
         access: [EUserPermissions.ADMIN, EUserPermissions.MEMBER],
         shouldRender: !!project?.module_view,
         sortOrder: 3,
@@ -75,7 +68,7 @@ export const useNavigationItems = ({
         key: "views",
         name: "Views",
         href: `/${workspaceSlug}/projects/${projectId}/views`,
-        icon: ViewsOutline,
+        icon: ViewsIcon,
         access: [EUserPermissions.ADMIN, EUserPermissions.MEMBER, EUserPermissions.GUEST],
         shouldRender: !!project?.issue_views_view,
         sortOrder: 4,
@@ -85,7 +78,7 @@ export const useNavigationItems = ({
         key: "pages",
         name: "Pages",
         href: `/${workspaceSlug}/projects/${projectId}/pages`,
-        icon: PagesOutline,
+        icon: PageIcon,
         access: [EUserPermissions.ADMIN, EUserPermissions.MEMBER, EUserPermissions.GUEST],
         shouldRender: !!project?.page_view,
         sortOrder: 5,
@@ -95,7 +88,7 @@ export const useNavigationItems = ({
         key: "intake",
         name: "Intake",
         href: `/${workspaceSlug}/projects/${projectId}/intake`,
-        icon: IntakeOutline,
+        icon: IntakeIcon,
         access: [EUserPermissions.ADMIN, EUserPermissions.MEMBER, EUserPermissions.GUEST],
         shouldRender: !!project?.inbox_view,
         sortOrder: 6,

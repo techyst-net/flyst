@@ -10,7 +10,7 @@ import { useParams } from "next/navigation";
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
-import { CyclesOutline } from "@makeplane/propel/icons";
+import { CycleIcon } from "@plane/propel/icons";
 import { Breadcrumbs, Header } from "@plane/ui";
 // components
 import { BreadcrumbLink } from "@/components/common/breadcrumb-link";
@@ -49,7 +49,7 @@ export const CyclesListHeader = observer(function CyclesListHeader() {
               <BreadcrumbLink
                 label="Cycles"
                 href={`/${workspaceSlug}/projects/${currentProjectDetails?.id}/cycles/`}
-                icon={<CyclesOutline className="h-4 w-4 text-tertiary" />}
+                icon={<CycleIcon className="h-4 w-4 text-tertiary" />}
                 isLast
               />
             }

@@ -6,9 +6,10 @@
 
 import React from "react";
 import { Link } from "react-router";
-import { DefaultTabOutline, MoreHorizontalOutline, PinOutline } from "@makeplane/propel/icons";
+import { MoreHorizontal, Pin } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
+import { SetAsDefaultIcon } from "@plane/propel/icons";
 import { Menu } from "@plane/propel/menu";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import { cn } from "@plane/utils";
@@ -39,7 +40,7 @@ export function TabNavigationOverflowMenu({ overflowItems, isActive, tabPreferen
       optionsClassName="min-w-[200px] space-y-1"
       customButton={
         <div className="flex items-center justify-center rounded-md p-1 transition-colors hover:bg-layer-1">
-          <MoreHorizontalOutline className="h-4 w-4 text-secondary" />
+          <MoreHorizontal className="h-4 w-4 text-secondary" />
         </div>
       }
     >
@@ -68,7 +69,7 @@ export function TabNavigationOverflowMenu({ overflowItems, isActive, tabPreferen
                     className="invisible rounded-sm p-1 text-tertiary transition-colors group-hover/menu-item:visible hover:text-primary"
                     title="Show"
                   >
-                    <PinOutline className="size-3" />
+                    <Pin className="size-3" />
                   </button>
                 )}
                 <Tooltip label={isDefault ? "Clear default" : "Set as default"}>
@@ -86,7 +87,7 @@ export function TabNavigationOverflowMenu({ overflowItems, isActive, tabPreferen
                     )}
                     title={isDefault ? "Clear default" : "Set as default"}
                   >
-                    <DefaultTabOutline className="size-3" />
+                    <SetAsDefaultIcon className="size-3" />
                   </button>
                 </Tooltip>
               </div>

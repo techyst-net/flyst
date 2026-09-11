@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { CheckDoneOutline, RefreshOutline } from "@makeplane/propel/icons";
+import { CheckCheck, RefreshCw } from "lucide-react";
 // plane imports
 import { ENotificationLoader, ENotificationQueryParamType } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
@@ -58,7 +58,7 @@ export const NotificationSidebarHeaderOptions = observer(function NotificationSi
         <IconButton
           size="base"
           variant="ghost"
-          icon={loader === ENotificationLoader.MARK_ALL_AS_READY ? Spinner : CheckDoneOutline}
+          icon={loader === ENotificationLoader.MARK_ALL_AS_READY ? Spinner : CheckCheck}
           onClick={() => {
             handleMarkAllNotificationsAsRead();
           }}
@@ -70,7 +70,7 @@ export const NotificationSidebarHeaderOptions = observer(function NotificationSi
         <IconButton
           size="base"
           variant="ghost"
-          icon={RefreshOutline}
+          icon={RefreshCw}
           className={loader === ENotificationLoader.MUTATION_LOADER ? "animate-spin" : ""}
           onClick={refreshNotifications}
         />

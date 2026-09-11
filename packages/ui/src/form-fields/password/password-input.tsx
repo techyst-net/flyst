@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { HideOutline, ShowOutline } from "@makeplane/propel/icons";
+import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
 import { Tooltip } from "@plane/propel/tooltip";
 import { cn } from "@plane/utils";
@@ -57,13 +57,13 @@ export function PasswordInput({
             className="absolute inset-y-0 right-0 flex items-center pr-3 text-secondary transition-colors duration-200 hover:text-primary"
           >
             <div className="relative h-4 w-4">
-              <ShowOutline
+              <Eye
                 className={cn(
                   "absolute inset-0 h-4 w-4 transition-all duration-300 ease-in-out",
                   showPassword ? "scale-75 rotate-12 opacity-0" : "scale-100 rotate-0 opacity-100"
                 )}
               />
-              <HideOutline
+              <EyeClosed
                 className={cn(
                   "absolute inset-0 h-4 w-4 transition-all duration-300 ease-in-out",
                   showPassword ? "scale-100 rotate-0 opacity-100" : "scale-75 -rotate-12 opacity-0"

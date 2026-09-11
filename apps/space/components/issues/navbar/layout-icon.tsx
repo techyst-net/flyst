@@ -5,7 +5,7 @@
  */
 
 import type { TIssueLayout } from "@plane/constants";
-import { BoardOutline, ListOutline } from "@makeplane/propel/icons";
+import { ListLayoutIcon, BoardLayoutIcon } from "@plane/propel/icons";
 import type { ISvgIcons } from "@plane/propel/icons";
 
 export function IssueLayoutIcon({
@@ -20,9 +20,9 @@ export function IssueLayoutIcon({
 
   switch (layout) {
     case "list":
-      return <ListOutline {...iconProps} />;
+      return <ListLayoutIcon {...iconProps} />;
     case "kanban":
-      return <BoardOutline {...iconProps} />;
+      return <BoardLayoutIcon {...iconProps} />;
     default:
       return null;
   }

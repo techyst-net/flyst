@@ -8,8 +8,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { useParams } from "next/navigation";
 // plane imports
-import { PiChatLogo } from "@plane/propel/icons";
-import { DashboardsOutline, DraftsOutline, HomeOutline, YourWorkOutline } from "@makeplane/propel/icons";
+import { DraftIcon, HomeIcon, PiChatLogo, YourWorkIcon, DashboardIcon } from "@plane/propel/icons";
 import { EUserWorkspaceRoles } from "@plane/types";
 // hooks
 import { useUserPermissions, useUser } from "@/hooks/store/user";
@@ -29,28 +28,28 @@ export const SidebarUserMenu = observer(function SidebarUserMenu() {
       labelTranslationKey: "sidebar.home",
       href: `/${workspaceSlug.toString()}/`,
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER, EUserWorkspaceRoles.GUEST],
-      Icon: HomeOutline,
+      Icon: HomeIcon,
     },
     {
       key: "dashboards",
       labelTranslationKey: "workspace_dashboards",
       href: `/${workspaceSlug.toString()}/dashboards/`,
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
-      Icon: DashboardsOutline,
+      Icon: DashboardIcon,
     },
     {
       key: "your-work",
       labelTranslationKey: "sidebar.your_work",
       href: `/${workspaceSlug.toString()}/profile/${currentUser?.id}/`,
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
-      Icon: YourWorkOutline,
+      Icon: YourWorkIcon,
     },
     {
       key: "drafts",
       labelTranslationKey: "sidebar.drafts",
       href: `/${workspaceSlug.toString()}/drafts/`,
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
-      Icon: DraftsOutline,
+      Icon: DraftIcon,
     },
     {
       key: "pi-chat",

@@ -6,8 +6,9 @@
 
 import { useMemo, useState } from "react";
 import { observer } from "mobx-react";
-import { CloseOutline, FilterOutline, SearchOutline } from "@makeplane/propel/icons";
+import { ListFilter } from "lucide-react";
 import { useTranslation } from "@plane/i18n";
+import { SearchIcon, CloseIcon } from "@plane/propel/icons";
 import type { IIssueFilterOptions, IState } from "@plane/types";
 import { cn } from "@plane/utils";
 import {
@@ -52,14 +53,14 @@ export const SubIssueFilters = observer(function SubIssueFilters(props: TSubIssu
             )}
           >
             {isFilterApplied && <span className="absolute -top-1 -right-1 rounded-full bg-accent-primary p-1" />}
-            <FilterOutline className="h-3.5 w-3.5 text-primary" />
+            <ListFilter className="h-3.5 w-3.5 text-primary" />
           </div>
         }
       >
         <div className="flex max-h-[350px] flex-col overflow-hidden">
           <div className="bg-surface-1 p-2.5 pb-0">
             <div className="flex items-center gap-1.5 rounded-sm border-[0.5px] border-subtle bg-surface-2 px-1.5 py-1 text-11">
-              <SearchOutline className="text-placeholder" width={12} height={12} />
+              <SearchIcon className="text-placeholder" width={12} height={12} strokeWidth={2} />
               <input
                 type="text"
                 className="w-full bg-surface-2 outline-none placeholder:text-placeholder"
@@ -69,7 +70,7 @@ export const SubIssueFilters = observer(function SubIssueFilters(props: TSubIssu
               />
               {filtersSearchQuery !== "" && (
                 <button type="button" className="grid place-items-center" onClick={() => setFiltersSearchQuery("")}>
-                  <CloseOutline className="text-tertiary" height={12} width={12} />
+                  <CloseIcon className="text-tertiary" height={12} width={12} strokeWidth={2} />
                 </button>
               )}
             </div>

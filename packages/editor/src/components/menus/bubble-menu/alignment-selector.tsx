@@ -5,8 +5,8 @@
  */
 
 import type { Editor } from "@tiptap/core";
-import type { ComponentType, SVGProps } from "react";
-import { AlignCenterOutline, AlignLeftOutline, AlignRightOutline } from "@makeplane/propel/icons";
+import type { LucideIcon } from "lucide-react";
+import { AlignCenter, AlignLeft, AlignRight } from "lucide-react";
 // plane utils
 import { cn } from "@plane/utils";
 // components
@@ -27,14 +27,14 @@ export function TextAlignmentSelector(props: Props) {
   const textAlignmentOptions: {
     itemKey: TEditorCommands;
     renderKey: string;
-    icon: ComponentType<SVGProps<SVGSVGElement>>;
+    icon: LucideIcon;
     command: () => void;
     isActive: () => boolean;
   }[] = [
     {
       itemKey: "text-align",
       renderKey: "text-align-left",
-      icon: AlignLeftOutline,
+      icon: AlignLeft,
       command: () =>
         menuItem.command({
           alignment: "left",
@@ -44,7 +44,7 @@ export function TextAlignmentSelector(props: Props) {
     {
       itemKey: "text-align",
       renderKey: "text-align-center",
-      icon: AlignCenterOutline,
+      icon: AlignCenter,
       command: () =>
         menuItem.command({
           alignment: "center",
@@ -54,7 +54,7 @@ export function TextAlignmentSelector(props: Props) {
     {
       itemKey: "text-align",
       renderKey: "text-align-right",
-      icon: AlignRightOutline,
+      icon: AlignRight,
       command: () =>
         menuItem.command({
           alignment: "right",

@@ -8,8 +8,8 @@ import React from "react";
 import { observer } from "mobx-react";
 import { useParams } from "next/navigation";
 // lucide icons
-import { Circle } from "lucide-react";
-import { AddOutline, ArrowCollapseOutline, FullScreenOutline } from "@makeplane/propel/icons";
+import { Minimize2, Maximize2, Circle } from "lucide-react";
+import { PlusIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { TIssue, ISearchIssueResponse, TIssueKanbanFilters, TIssueGroupByOptions } from "@plane/types";
 // ui
@@ -140,7 +140,11 @@ export const HeaderGroupByCard = observer(function HeaderGroupByCard(props: IHea
             className="flex h-[20px] w-[20px] flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-sm bg-layer-transparent transition-all hover:bg-layer-transparent-hover"
             onClick={() => handleCollapsedGroups("group_by", column_id)}
           >
-            {verticalAlignPosition ? <FullScreenOutline width={14} /> : <ArrowCollapseOutline width={14} />}
+            {verticalAlignPosition ? (
+              <Maximize2 width={14} strokeWidth={2} />
+            ) : (
+              <Minimize2 width={14} strokeWidth={2} />
+            )}
           </button>
         )}
 
@@ -149,7 +153,7 @@ export const HeaderGroupByCard = observer(function HeaderGroupByCard(props: IHea
             <CustomMenu
               customButton={
                 <span className="flex h-[20px] w-[20px] flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-sm bg-layer-transparent transition-all hover:bg-layer-transparent-hover">
-                  <AddOutline height={14} width={14} />
+                  <PlusIcon height={14} width={14} strokeWidth={2} />
                 </span>
               }
               placement="bottom-end"
@@ -176,7 +180,7 @@ export const HeaderGroupByCard = observer(function HeaderGroupByCard(props: IHea
                 setIsOpen(true);
               }}
             >
-              <AddOutline width={14} />
+              <PlusIcon width={14} strokeWidth={2} />
             </button>
           ))}
       </div>

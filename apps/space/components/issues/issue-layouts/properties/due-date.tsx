@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { DueDateOutline } from "@makeplane/propel/icons";
+import { DueDatePropertyIcon } from "@plane/propel/icons";
 import { Tooltip } from "@plane/propel/tooltip";
 import { cn } from "@plane/utils";
 // helpers
@@ -37,7 +37,7 @@ export const IssueBlockDate = observer(function IssueBlockDate(props: Props) {
           "border-[0.5px] border-strong": shouldShowBorder,
         })}
       >
-        <DueDateOutline className="size-3 flex-shrink-0" />
+        <DueDatePropertyIcon className="size-3 flex-shrink-0" />
         {formattedDate ? formattedDate : "No Date"}
       </div>
     </Tooltip>

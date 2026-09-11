@@ -8,10 +8,11 @@ import { useState, Fragment, useEffect } from "react";
 import { TwitterPicker } from "react-color";
 import { Controller, useForm } from "react-hook-form";
 import { usePopper } from "react-popper";
-import { AddOutline, CloseOutline, LoadingOutline } from "@makeplane/propel/icons";
+import { Loader } from "lucide-react";
 import { Popover } from "@headlessui/react";
 import { Field } from "@makeplane/propel/components/field";
 import { Input, InputGroup } from "@makeplane/propel/components/input";
+import { PlusIcon, CloseIcon } from "@plane/propel/icons";
 import type { IIssueLabel } from "@plane/types";
 // hooks
 
@@ -87,7 +88,7 @@ export function LabelCreate(props: ILabelCreate) {
         onClick={handleIsCreateToggle}
       >
         <div className="flex-shrink-0">
-          {isCreateToggle ? <CloseOutline className="h-2.5 w-2.5" /> : <AddOutline className="h-2.5 w-2.5" />}
+          {isCreateToggle ? <CloseIcon className="h-2.5 w-2.5" /> : <PlusIcon className="h-2.5 w-2.5" />}
         </div>
         <div className="flex-shrink-0">{isCreateToggle ? "Cancel" : "New"}</div>
       </div>
@@ -158,7 +159,7 @@ export function LabelCreate(props: ILabelCreate) {
             onClick={() => setIsCreateToggle(false)}
             disabled={disabled}
           >
-            <CloseOutline className="h-3.5 w-3.5 text-on-color" />
+            <CloseIcon className="h-3.5 w-3.5 text-on-color" />
           </button>
           <button
             type="submit"
@@ -166,9 +167,9 @@ export function LabelCreate(props: ILabelCreate) {
             disabled={isSubmitting}
           >
             {isSubmitting ? (
-              <LoadingOutline className="spin h-3.5 w-3.5 text-on-color" />
+              <Loader className="spin h-3.5 w-3.5 text-on-color" />
             ) : (
-              <AddOutline className="h-3.5 w-3.5 text-on-color" />
+              <PlusIcon className="h-3.5 w-3.5 text-on-color" />
             )}
           </button>
         </form>

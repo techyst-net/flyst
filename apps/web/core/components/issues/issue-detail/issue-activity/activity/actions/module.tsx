@@ -6,7 +6,7 @@
 
 import { observer } from "mobx-react";
 // hooks
-import { ModuleOutline } from "@makeplane/propel/icons";
+import { ModuleIcon } from "@plane/propel/icons";
 import { useIssueDetail } from "@/hooks/store/use-issue-detail";
 // components
 import { IssueActivityBlockComponent } from "./";
@@ -26,7 +26,7 @@ export const IssueModuleActivity = observer(function IssueModuleActivity(props: 
   if (!activity) return <></>;
   return (
     <IssueActivityBlockComponent
-      icon={<ModuleOutline className="h-4 w-4 flex-shrink-0 text-secondary" />}
+      icon={<ModuleIcon className="h-4 w-4 flex-shrink-0 text-secondary" />}
       activityId={activityId}
       ends={ends}
     >

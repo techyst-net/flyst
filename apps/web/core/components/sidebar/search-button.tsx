@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { SearchOutline } from "@makeplane/propel/icons";
+import { SearchIcon } from "@plane/propel/icons";
 import { cn } from "@plane/utils";
 
 type Props = {
@@ -22,7 +22,7 @@ export function SidebarSearchButton(props: Props) {
         }
       )}
     >
-      <SearchOutline
+      <SearchIcon
         className={cn("size-4 text-tertiary", {
           "text-accent-secondary": isActive,
         })}

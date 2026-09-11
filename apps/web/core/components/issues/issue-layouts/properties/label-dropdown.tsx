@@ -8,12 +8,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Placement } from "@popperjs/core";
 import { useParams } from "next/navigation";
 import { usePopper } from "react-popper";
-import { ChevronDownOutline, LoadingOutline, SearchOutline, TickOutline } from "@makeplane/propel/icons";
+import { Loader } from "lucide-react";
 import { Combobox } from "@headlessui/react";
 // plane imports
 import { EUserPermissionsLevel, getRandomLabelColor } from "@plane/constants";
 import { useOutsideClickDetector } from "@plane/hooks";
 import { useTranslation } from "@plane/i18n";
+import { CheckIcon, SearchIcon, ChevronDownIcon } from "@plane/propel/icons";
 // types
 import type { IIssueLabel } from "@plane/types";
 import { EUserProjectRoles } from "@plane/types";
@@ -215,7 +216,7 @@ export function LabelDropdown(props: ILabelDropdownProps) {
         disabled={disabled}
       >
         {label}
-        {!hideDropdownArrow && !disabled && <ChevronDownOutline className="h-3 w-3" aria-hidden="true" />}
+        {!hideDropdownArrow && !disabled && <ChevronDownIcon className="h-3 w-3" aria-hidden="true" />}
       </button>
     ),
     [
@@ -259,7 +260,7 @@ export function LabelDropdown(props: ILabelDropdownProps) {
               {...attributes.popper}
             >
               <div className="flex w-full items-center justify-start rounded-sm border border-subtle bg-surface-2 px-2">
-                <SearchOutline className="h-3.5 w-3.5 text-tertiary" />
+                <SearchIcon className="h-3.5 w-3.5 text-tertiary" />
                 <Combobox.Input
                   ref={inputRef}
                   className="w-full bg-transparent px-2 py-1 text-caption-sm-regular text-secondary placeholder:text-placeholder focus:outline-none"
@@ -297,7 +298,7 @@ export function LabelDropdown(props: ILabelDropdownProps) {
                             {option.content}
                             {selected && (
                               <div className="flex-shrink-0">
-                                <TickOutline className={`h-3.5 w-3.5`} />
+                                <CheckIcon className={`h-3.5 w-3.5`} />
                               </div>
                             )}
                           </>
@@ -306,7 +307,7 @@ export function LabelDropdown(props: ILabelDropdownProps) {
                     ))}
                   </ul>
                 ) : submitting ? (
-                  <LoadingOutline className="h-3.5 w-3.5 animate-spin" />
+                  <Loader className="h-3.5 w-3.5 animate-spin" />
                 ) : canCreateLabel ? (
                   <p
                     onClick={() => {

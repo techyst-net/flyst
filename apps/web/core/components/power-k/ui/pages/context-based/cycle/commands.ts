@@ -6,11 +6,11 @@
 
 import { useCallback } from "react";
 import { useParams } from "next/navigation";
-import { StarOff } from "lucide-react";
-import { LinkOutline, StarOutline } from "@makeplane/propel/icons";
+import { Star, StarOff } from "lucide-react";
 // plane imports
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
+import { LinkIcon } from "@plane/propel/icons";
 import { setToast, TOAST_TYPE } from "@plane/propel/toast";
 import { copyTextToClipboard } from "@plane/utils";
 // components
@@ -74,7 +74,7 @@ export const usePowerKCycleContextBasedActions = (): TPowerKCommandConfig[] => {
       i18n_title: isFavorite
         ? "power_k.contextual_actions.cycle.remove_from_favorites"
         : "power_k.contextual_actions.cycle.add_to_favorites",
-      icon: isFavorite ? StarOff : StarOutline,
+      icon: isFavorite ? StarOff : Star,
       group: "contextual",
       contextType: "cycle",
       type: "action",
@@ -87,7 +87,7 @@ export const usePowerKCycleContextBasedActions = (): TPowerKCommandConfig[] => {
     {
       id: "copy_cycle_url",
       i18n_title: "power_k.contextual_actions.cycle.copy_url",
-      icon: LinkOutline,
+      icon: LinkIcon,
       group: "contextual",
       contextType: "cycle",
       type: "action",

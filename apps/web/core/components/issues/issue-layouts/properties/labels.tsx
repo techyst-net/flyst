@@ -11,7 +11,7 @@ import { observer } from "mobx-react";
 import { useOutsideClickDetector } from "@plane/hooks";
 // i18n
 import { useTranslation } from "@plane/i18n";
-import { LabelsOutline } from "@makeplane/propel/icons";
+import { LabelPropertyIcon } from "@plane/propel/icons";
 // types
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import type { IIssueLabel } from "@plane/types";
@@ -61,7 +61,7 @@ const NoLabel = observer(function NoLabel({ isMobile, noLabelBorder, fullWidth, 
           fullWidth && "w-full"
         )}
       >
-        <LabelsOutline className="h-3.5 w-3.5" />
+        <LabelPropertyIcon className="h-3.5 w-3.5" />
         {placeholderText}
       </div>
     </Tooltip>

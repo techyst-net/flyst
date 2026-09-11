@@ -4,8 +4,9 @@
  * See the LICENSE file for details.
  */
 
-import { CalendarOutline, DueDateOutline, StartDateOutline } from "@makeplane/propel/icons";
+import { CalendarDays } from "lucide-react";
 // plane imports
+import { DueDatePropertyIcon, StartDatePropertyIcon } from "@plane/propel/icons";
 import type { TStateGroups } from "@plane/types";
 import { cn, renderFormattedDate, shouldHighlightIssueDueDate } from "@plane/utils";
 
@@ -31,14 +32,14 @@ export function WorkItemPreviewCardDate(props: Props) {
             "text-danger-primary": shouldHighlightDate,
           })}
         >
-          <CalendarOutline className="size-3 shrink-0" />
+          <CalendarDays className="size-3 shrink-0" />
           <span>
             {renderFormattedDate(startDate)} - {renderFormattedDate(targetDate)}
           </span>
         </div>
       ) : startDate ? (
         <div className="flex h-full items-center gap-1">
-          <StartDateOutline className="size-3 shrink-0" />
+          <StartDatePropertyIcon className="size-3 shrink-0" />
           <span>{renderFormattedDate(startDate)}</span>
         </div>
       ) : (
@@ -47,7 +48,7 @@ export function WorkItemPreviewCardDate(props: Props) {
             "text-danger-primary": shouldHighlightDate,
           })}
         >
-          <DueDateOutline className="size-3 shrink-0" />
+          <DueDatePropertyIcon className="size-3 shrink-0" />
           <span>{renderFormattedDate(targetDate)}</span>
         </div>
       )}

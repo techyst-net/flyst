@@ -6,7 +6,7 @@
 
 import { observer } from "mobx-react";
 
-import { CopyOutline, DeleteOutline, EditOutline } from "@makeplane/propel/icons";
+import { CopyIcon, EditIcon, TrashIcon } from "@plane/propel/icons";
 // plane types
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
@@ -72,7 +72,7 @@ export const ModulesLinksListItem = observer(function ModulesLinksListItem(props
                 handleEditLink();
               }}
             >
-              <EditOutline className="size-3 stroke-[1.5]" />
+              <EditIcon className="size-3 stroke-[1.5]" />
             </button>
           )}
           <button
@@ -80,7 +80,7 @@ export const ModulesLinksListItem = observer(function ModulesLinksListItem(props
             onClick={() => copyToClipboard(link.url)}
             className="grid place-items-center rounded-sm p-1 text-secondary hover:bg-layer-transparent-hover"
           >
-            <CopyOutline className="size-3 stroke-[1.5]" />
+            <CopyIcon className="size-3 stroke-[1.5]" />
           </button>
           {isEditingAllowed && (
             <button
@@ -92,7 +92,7 @@ export const ModulesLinksListItem = observer(function ModulesLinksListItem(props
                 handleDeleteLink();
               }}
             >
-              <DeleteOutline className="size-3 stroke-[1.5]" />
+              <TrashIcon className="size-3 stroke-[1.5]" />
             </button>
           )}
         </div>

@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { AttachOutline } from "@makeplane/propel/icons";
+import { Paperclip } from "lucide-react";
 // hooks
 import { useIssueDetail } from "@/hooks/store/use-issue-detail";
 // components
@@ -25,7 +25,7 @@ export const IssueAttachmentActivity = observer(function IssueAttachmentActivity
   if (!activity) return <></>;
   return (
     <IssueActivityBlockComponent
-      icon={<AttachOutline width={14} height={14} className="text-secondary" aria-hidden="true" />}
+      icon={<Paperclip size={14} className="text-secondary" aria-hidden="true" />}
       activityId={activityId}
       ends={ends}
     >

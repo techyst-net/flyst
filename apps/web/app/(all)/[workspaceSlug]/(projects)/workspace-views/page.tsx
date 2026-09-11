@@ -10,7 +10,7 @@ import { observer } from "mobx-react";
 import { Input, InputGroup } from "@makeplane/propel/components/input";
 import { DEFAULT_GLOBAL_VIEWS_LIST } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
-import { SearchOutline } from "@makeplane/propel/icons";
+import { SearchIcon } from "@plane/propel/icons";
 
 // components
 import { PageHead } from "@/components/core/page-title";
@@ -33,7 +33,7 @@ function WorkspaceViewsPage() {
       <div className="flex h-full w-full flex-col overflow-hidden">
         <div className="flex h-11 w-full items-center overflow-hidden border-b border-subtle px-5 py-3">
           <InputGroup size="2xl">
-            <SearchOutline className="text-secondary" width={14} height={14} />
+            <SearchIcon className="text-secondary" width={14} height={14} strokeWidth={2} />
             <Input
               size="2xl"
               value={query}

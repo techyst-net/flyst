@@ -10,7 +10,7 @@ import { useParams } from "next/navigation";
 // plane imports
 import { ROLE, EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
-import { ChevronDownOutline, DeleteOutline, LinkOutline } from "@makeplane/propel/icons";
+import { LinkIcon, TrashIcon, ChevronDownIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { TContextMenuItem } from "@plane/ui";
 import { CustomSelect, CustomMenu } from "@plane/ui";
@@ -94,7 +94,7 @@ export const WorkspaceInvitationsListItem = observer(function WorkspaceInvitatio
       key: "copy-link",
       action: () => void handleCopyText(),
       title: t("common.actions.copy_link"),
-      icon: LinkOutline,
+      icon: LinkIcon,
       shouldRender: !!invitationDetails.invite_link,
     },
     {
@@ -103,7 +103,7 @@ export const WorkspaceInvitationsListItem = observer(function WorkspaceInvitatio
         setRemoveMemberModal(true);
       },
       title: t("common.remove"),
-      icon: DeleteOutline,
+      icon: TrashIcon,
       shouldRender: isAdmin,
       className: "text-danger-primary",
       iconClassName: "text-danger-primary",
@@ -146,7 +146,7 @@ export const WorkspaceInvitationsListItem = observer(function WorkspaceInvitatio
                 </span>
                 {hasRoleChangeAccess && (
                   <span className="grid place-items-center">
-                    <ChevronDownOutline className="h-3 w-3" />
+                    <ChevronDownIcon className="h-3 w-3" />
                   </span>
                 )}
               </div>

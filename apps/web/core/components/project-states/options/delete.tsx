@@ -6,7 +6,8 @@
 
 import { useState } from "react";
 import { observer } from "mobx-react";
-import { CloseOutline, LoadingOutline } from "@makeplane/propel/icons";
+import { Loader } from "lucide-react";
+import { CloseIcon } from "@plane/propel/icons";
 // plane imports
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
@@ -92,11 +93,7 @@ export const StateDelete = observer(function StateDelete(props: TStateDelete) {
           layout="stacked"
           disabled={!isDeleteDisabled || isMobile}
         >
-          {isDelete ? (
-            <LoadingOutline className="h-3.5 w-3.5 text-secondary" />
-          ) : (
-            <CloseOutline className="h-3.5 w-3.5" />
-          )}
+          {isDelete ? <Loader className="h-3.5 w-3.5 text-secondary" /> : <CloseIcon className="h-3.5 w-3.5" />}
         </Tooltip>
       </button>
     </>

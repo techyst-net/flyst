@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { ChatOutline, DocumentationOutline, Github, RocketOutline } from "@makeplane/propel/icons";
+import { FileText, GithubIcon, MessageSquare, Rocket } from "lucide-react";
 // components
 import type { TPowerKCommandConfig } from "@/components/power-k/core/types";
 // hooks
@@ -23,7 +23,7 @@ export const usePowerKHelpCommands = (): TPowerKCommandConfig[] => {
       type: "action",
       group: "help",
       i18n_title: "power_k.help_actions.open_keyboard_shortcuts",
-      icon: RocketOutline,
+      icon: Rocket,
       modifierShortcut: "cmd+/",
       action: () => toggleShortcutsListModal(true),
       isEnabled: () => true,
@@ -35,7 +35,7 @@ export const usePowerKHelpCommands = (): TPowerKCommandConfig[] => {
       type: "action",
       group: "help",
       i18n_title: "power_k.help_actions.open_plane_documentation",
-      icon: DocumentationOutline,
+      icon: FileText,
       action: () => {
         window.open("https://flyst.techyst.net", "_blank", "noopener,noreferrer");
       },
@@ -48,7 +48,7 @@ export const usePowerKHelpCommands = (): TPowerKCommandConfig[] => {
       type: "action",
       group: "help",
       i18n_title: "power_k.help_actions.join_forum",
-      icon: ChatOutline,
+      icon: MessageSquare,
       action: () => {
         window.open("https://flyst.techyst.net", "_blank", "noopener,noreferrer");
       },
@@ -61,7 +61,7 @@ export const usePowerKHelpCommands = (): TPowerKCommandConfig[] => {
       type: "action",
       group: "help",
       i18n_title: "power_k.help_actions.report_bug",
-      icon: Github,
+      icon: GithubIcon,
       action: () => {
         window.open("https://flyst.techyst.net", "_blank", "noopener,noreferrer");
       },

@@ -4,23 +4,10 @@
  * See the LICENSE file for details.
  */
 
-import {
-  ActivityOutline,
-  ArchiveOutline,
-  BarOutline,
-  CyclesOutline,
-  DocumentationOutline,
-  EditOutline,
-  HomeOutline,
-  InboxOutline,
-  IntakeOutline,
-  ModuleOutline,
-  ProjectsOutline,
-  SettingsOutline,
-  WorkItemsOutline,
-} from "@makeplane/propel/icons";
+import { BarChart2, Briefcase, FileText, Home, Inbox, Layers, PenSquare, Settings } from "lucide-react";
 // plane imports
 import { EUserPermissionsLevel } from "@plane/constants";
+import { ArchiveIcon, UserActivityIcon, LayersIcon, ContrastIcon, DiceIcon, Intake } from "@plane/propel/icons";
 import type { ICycle, IModule, IPartialProject, IProjectView, IWorkspace } from "@plane/types";
 import { EUserProjectRoles, EUserWorkspaceRoles } from "@plane/types";
 // components
@@ -95,7 +82,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_workspace",
-      icon: ProjectsOutline,
+      icon: Briefcase,
       keySequence: "ow",
       page: "open-workspace",
       onSelect: (data, ctx) => {
@@ -111,7 +98,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_home",
-      icon: HomeOutline,
+      icon: Home,
       keySequence: "gh",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString()]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
@@ -123,7 +110,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_inbox",
-      icon: InboxOutline,
+      icon: Inbox,
       keySequence: "gx",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "notifications"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
@@ -135,7 +122,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_your_work",
-      icon: ActivityOutline,
+      icon: UserActivityIcon,
       keySequence: "gy",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "profile", currentUser?.id]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx) && hasWorkspaceMemberLevelPermissions(ctx),
@@ -147,7 +134,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_account_settings",
-      icon: SettingsOutline,
+      icon: Settings,
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "settings", "account"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
       isVisible: (ctx) => baseWorkspaceConditions(ctx),
@@ -158,7 +145,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_project",
-      icon: ProjectsOutline,
+      icon: Briefcase,
       keySequence: "op",
       page: "open-project",
       onSelect: (data, ctx) => {
@@ -174,7 +161,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_projects_list",
-      icon: ProjectsOutline,
+      icon: Briefcase,
       keySequence: "gp",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "projects"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
@@ -186,7 +173,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_all_workspace_work_items",
-      icon: WorkItemsOutline,
+      icon: Layers,
       action: (ctx) =>
         handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "workspace-views", "all-issues"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
@@ -198,7 +185,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_assigned_workspace_work_items",
-      icon: WorkItemsOutline,
+      icon: Layers,
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "workspace-views", "assigned"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
       isVisible: (ctx) => baseWorkspaceConditions(ctx),
@@ -209,7 +196,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_created_workspace_work_items",
-      icon: WorkItemsOutline,
+      icon: Layers,
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "workspace-views", "created"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
       isVisible: (ctx) => baseWorkspaceConditions(ctx),
@@ -220,7 +207,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_subscribed_workspace_work_items",
-      icon: WorkItemsOutline,
+      icon: Layers,
       action: (ctx) =>
         handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "workspace-views", "subscribed"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx),
@@ -232,7 +219,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_workspace_analytics",
-      icon: BarOutline,
+      icon: BarChart2,
       keySequence: "ga",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "analytics", "overview"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx) && hasWorkspaceMemberLevelPermissions(ctx),
@@ -244,7 +231,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_workspace_drafts",
-      icon: EditOutline,
+      icon: PenSquare,
       keySequence: "gj",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "drafts"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx) && hasWorkspaceMemberLevelPermissions(ctx),
@@ -256,7 +243,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_workspace_archives",
-      icon: ArchiveOutline,
+      icon: ArchiveIcon,
       keySequence: "gr",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "projects", "archives"]),
       isEnabled: (ctx) =>
@@ -270,7 +257,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_workspace_setting",
-      icon: SettingsOutline,
+      icon: Settings,
       keySequence: "os",
       page: "open-workspace-setting",
       onSelect: (data, ctx) => {
@@ -286,7 +273,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_workspace_settings",
-      icon: SettingsOutline,
+      icon: Settings,
       keySequence: "gs",
       action: (ctx) => handlePowerKNavigate(ctx, [ctx.params.workspaceSlug?.toString(), "settings"]),
       isEnabled: (ctx) => baseWorkspaceConditions(ctx) && !baseProjectConditions(ctx),
@@ -298,7 +285,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_work_items",
-      icon: WorkItemsOutline,
+      icon: LayersIcon,
       keySequence: "gi",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -316,7 +303,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_project_cycle",
-      icon: CyclesOutline,
+      icon: ContrastIcon,
       keySequence: "oc",
       page: "open-project-cycle",
       onSelect: (data, ctx) => {
@@ -340,7 +327,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_cycles",
-      icon: CyclesOutline,
+      icon: ContrastIcon,
       keySequence: "gc",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -360,7 +347,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_project_module",
-      icon: ModuleOutline,
+      icon: DiceIcon,
       keySequence: "om",
       page: "open-project-module",
       onSelect: (data, ctx) => {
@@ -384,7 +371,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_modules",
-      icon: ModuleOutline,
+      icon: DiceIcon,
       keySequence: "gm",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -404,7 +391,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_project_view",
-      icon: WorkItemsOutline,
+      icon: Layers,
       keySequence: "ov",
       page: "open-project-view",
       onSelect: (data, ctx) => {
@@ -426,7 +413,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_views",
-      icon: WorkItemsOutline,
+      icon: Layers,
       keySequence: "gv",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -444,7 +431,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_pages",
-      icon: DocumentationOutline,
+      icon: FileText,
       keySequence: "gd",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -462,7 +449,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_intake",
-      icon: IntakeOutline,
+      icon: Intake,
       keySequence: "gk",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -480,7 +467,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_archives",
-      icon: ArchiveOutline,
+      icon: ArchiveIcon,
       keySequence: "gr",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [
@@ -499,7 +486,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "change-page",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.open_project_setting",
-      icon: SettingsOutline,
+      icon: Settings,
       keySequence: "os",
       page: "open-project-setting",
       onSelect: (data, ctx) => {
@@ -521,7 +508,7 @@ export const usePowerKNavigationCommandsRecord = (): Record<TPowerKNavigationCom
       type: "action",
       group: "navigation",
       i18n_title: "power_k.navigation_actions.nav_project_settings",
-      icon: SettingsOutline,
+      icon: Settings,
       keySequence: "gs",
       action: (ctx) =>
         handlePowerKNavigate(ctx, [

@@ -16,7 +16,7 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": (
         "The Flyst REST API\n\n"
         "Visit our quick start guide and full API documentation at "
-        "[techyst.net](https://flyst.techyst.net)."
+        "[flyst.techyst.net](https://flyst.techyst.net)."
     ),
     "CONTACT": {
         "name": "Flyst",
@@ -26,7 +26,7 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "0.0.1",
     "LICENSE": {
         "name": "GNU AGPLv3",
-        "url": "https://github.com/makeplane/plane/blob/preview/LICENSE.txt",
+        "url": "https://github.com/makeplane/plane/blob/master/LICENSE.txt",
     },
     # ========================================================================
     # Schema Generation Settings

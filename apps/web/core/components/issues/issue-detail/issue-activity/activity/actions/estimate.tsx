@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { EstimateOutline } from "@makeplane/propel/icons";
+import { EstimatePropertyIcon } from "@plane/propel/icons";
 // hooks
 import { useIssueDetail } from "@/hooks/store/use-issue-detail";
 // components
@@ -26,7 +26,7 @@ export const IssueEstimateActivity = observer(function IssueEstimateActivity(pro
 
   return (
     <IssueActivityBlockComponent
-      icon={<EstimateOutline className="h-3.5 w-3.5 text-secondary" aria-hidden="true" />}
+      icon={<EstimatePropertyIcon className="h-3.5 w-3.5 text-secondary" aria-hidden="true" />}
       activityId={activityId}
       ends={ends}
     >

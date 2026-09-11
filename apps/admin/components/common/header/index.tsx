@@ -9,8 +9,7 @@ import { observer } from "mobx-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // icons
-import { Menu } from "lucide-react";
-import { SettingsOutline } from "@makeplane/propel/icons";
+import { Menu, Settings } from "lucide-react";
 // plane internal packages
 import {
   Breadcrumb,
@@ -75,7 +74,7 @@ export const AdminHeader = observer(function AdminHeader() {
               <BreadcrumbItem>
                 <BreadcrumbLink
                   label="Settings"
-                  icon={<SettingsOutline className="h-4 w-4 text-tertiary" />}
+                  icon={<Settings className="h-4 w-4 text-tertiary" />}
                   render={<Link href="/general/" />}
                 />
               </BreadcrumbItem>

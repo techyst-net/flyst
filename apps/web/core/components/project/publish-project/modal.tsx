@@ -12,7 +12,7 @@ import { Controller, useForm } from "react-hook-form";
 // types
 import { SPACE_BASE_PATH, SPACE_BASE_URL } from "@plane/constants";
 import { Button } from "@plane/propel/button";
-import { GlobeOutline, NewTabOutline, TickOutline } from "@makeplane/propel/icons";
+import { GlobeIcon, NewTabIcon, CheckIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { TProjectPublishLayouts, TProjectPublishSettings } from "@plane/types";
 // ui
@@ -222,7 +222,7 @@ export const PublishProjectModal = observer(function PublishProjectModal(props: 
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <NewTabOutline className="size-4" />
+                      <NewTabIcon className="size-4" />
                     </a>
                     <button
                       type="button"
@@ -271,7 +271,7 @@ export const PublishProjectModal = observer(function PublishProjectModal(props: 
                           className="flex items-center justify-between gap-2"
                         >
                           {option.label}
-                          {selectedLayouts.includes(option.key) && <TickOutline className="size-3.5 flex-shrink-0" />}
+                          {selectedLayouts.includes(option.key) && <CheckIcon className="size-3.5 flex-shrink-0" />}
                         </CustomSelect.Option>
                       ))}
                     </CustomSelect>
@@ -315,7 +315,7 @@ export const PublishProjectModal = observer(function PublishProjectModal(props: 
         {/* modal handlers */}
         <div className="relative mt-4 flex items-center justify-between border-t border-subtle px-5 py-4">
           <div className="flex items-center gap-1 text-13 text-placeholder">
-            <GlobeOutline className="size-3.5" />
+            <GlobeIcon className="size-3.5" />
             <div className="text-13">Anyone with the link can access</div>
           </div>
           {!fetchSettingsLoader && (

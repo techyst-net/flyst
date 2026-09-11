@@ -6,15 +6,10 @@
 
 import React from "react";
 import { observer } from "mobx-react";
-import {
-  ArrowNarrowRightOutline,
-  FullScreenPeekOutline,
-  LinkOutline,
-  ModalPeekOutline,
-  SidePeekOutline,
-} from "@makeplane/propel/icons";
+import { MoveRight } from "lucide-react";
 import { Listbox, Transition } from "@headlessui/react";
 // ui
+import { LinkIcon, CenterPanelIcon, FullScreenPanelIcon, SidePanelIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 // helpers
 import { copyTextToClipboard } from "@/helpers/string.helper";
@@ -34,15 +29,15 @@ const PEEK_MODES: {
   icon: any;
   label: string;
 }[] = [
-  { key: "side", icon: SidePeekOutline, label: "Side Peek" },
+  { key: "side", icon: SidePanelIcon, label: "Side Peek" },
   {
     key: "modal",
-    icon: ModalPeekOutline,
+    icon: CenterPanelIcon,
     label: "Modal",
   },
   {
     key: "full",
-    icon: FullScreenPeekOutline,
+    icon: FullScreenPanelIcon,
     label: "Full Screen",
   },
 ];
@@ -65,7 +60,7 @@ export const PeekOverviewHeader = observer(function PeekOverviewHeader(props: Pr
     });
   };
 
-  const Icon = PEEK_MODES.find((m) => m.key === peekMode)?.icon ?? SidePeekOutline;
+  const Icon = PEEK_MODES.find((m) => m.key === peekMode)?.icon ?? SidePanelIcon;
 
   return (
     <>
@@ -73,7 +68,7 @@ export const PeekOverviewHeader = observer(function PeekOverviewHeader(props: Pr
         <div className="flex items-center gap-4">
           {peekMode === "side" && (
             <button type="button" onClick={handleClose} className="text-tertiary hover:text-secondary">
-              <ArrowNarrowRightOutline className="size-4" />
+              <MoveRight className="size-4" />
             </button>
           )}
           <Listbox
@@ -131,7 +126,7 @@ export const PeekOverviewHeader = observer(function PeekOverviewHeader(props: Pr
             className="shrink-0 text-tertiary hover:text-secondary focus:outline-none"
             tabIndex={1}
           >
-            <LinkOutline className="h-4 w-4 -rotate-45" />
+            <LinkIcon className="h-4 w-4 -rotate-45" />
           </button>
         )}
       </div>

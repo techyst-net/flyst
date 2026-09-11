@@ -10,9 +10,10 @@ import { xor } from "lodash-es";
 import { observer } from "mobx-react";
 import { useParams } from "next/navigation";
 // icons
-import { AttachOutline, DueDateOutline, LinkOutline, StartDateOutline, ViewsOutline } from "@makeplane/propel/icons";
+import { Paperclip } from "lucide-react";
 // i18n
 import { useTranslation } from "@plane/i18n";
+import { LinkIcon, StartDatePropertyIcon, ViewsIcon, DueDatePropertyIcon } from "@plane/propel/icons";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import type { TIssue, IIssueDisplayProperties, TIssuePriorities } from "@plane/types";
 // ui
@@ -277,7 +278,7 @@ export const IssueProperties = observer(function IssueProperties(props: IIssuePr
             onChange={handleStartDate}
             maxDate={maxDate}
             placeholder={t("common.order_by.start_date")}
-            icon={<StartDateOutline className="h-3 w-3 flex-shrink-0" />}
+            icon={<StartDatePropertyIcon className="h-3 w-3 flex-shrink-0" />}
             buttonVariant={issue.start_date ? "border-with-text" : "border-without-text"}
             optionsClassName="z-10"
             disabled={isReadOnly}
@@ -301,7 +302,7 @@ export const IssueProperties = observer(function IssueProperties(props: IIssuePr
             onChange={handleTargetDate}
             minDate={minDate}
             placeholder={t("common.order_by.due_date")}
-            icon={<DueDateOutline className="h-3 w-3 shrink-0" />}
+            icon={<DueDatePropertyIcon className="h-3 w-3 shrink-0" />}
             buttonVariant={issue.target_date ? "border-with-text" : "border-without-text"}
             buttonClassName={
               shouldHighlightIssueDueDate(issue.target_date, stateDetails?.group) ? "text-danger-primary" : ""
@@ -425,7 +426,7 @@ export const IssueProperties = observer(function IssueProperties(props: IIssuePr
                 }
               )}
             >
-              <ViewsOutline className="h-3 w-3 flex-shrink-0" />
+              <ViewsIcon className="h-3 w-3 flex-shrink-0" strokeWidth={2} />
               <div className="text-caption-sm-regular">{subIssueCount}</div>
             </div>
           </Tooltip>
@@ -445,7 +446,7 @@ export const IssueProperties = observer(function IssueProperties(props: IIssuePr
             onFocus={handleEventPropagation}
             onClick={handleEventPropagation}
           >
-            <AttachOutline className="h-3 w-3 flex-shrink-0" />
+            <Paperclip className="h-3 w-3 flex-shrink-0" strokeWidth={2} />
             <div className="text-caption-sm-regular">{issue.attachment_count}</div>
           </div>
         </Tooltip>
@@ -464,7 +465,7 @@ export const IssueProperties = observer(function IssueProperties(props: IIssuePr
             onFocus={handleEventPropagation}
             onClick={handleEventPropagation}
           >
-            <LinkOutline className="h-3 w-3 flex-shrink-0" />
+            <LinkIcon className="h-3 w-3 flex-shrink-0" strokeWidth={2} />
             <div className="text-caption-sm-regular">{issue.link_count}</div>
           </div>
         </Tooltip>

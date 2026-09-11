@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { ChatOutline } from "@makeplane/propel/icons";
+import { MessageSquare } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
@@ -45,7 +45,7 @@ export const NotificationItemReadOption = observer(function NotificationItemRead
       tooltipContent={data.read_at ? t("notification.options.mark_unread") : t("notification.options.mark_read")}
       callBack={handleNotificationUpdate}
     >
-      <ChatOutline className="h-3 w-3 text-tertiary" />
+      <MessageSquare className="h-3 w-3 text-tertiary" />
     </NotificationItemOptionButton>
   );
 });

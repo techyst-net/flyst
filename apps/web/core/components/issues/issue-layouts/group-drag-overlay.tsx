@@ -5,7 +5,7 @@
  */
 
 import { useRef } from "react";
-import { WarningCircleOutline } from "@makeplane/propel/icons";
+import { AlertCircle } from "lucide-react";
 // plane imports
 import { ISSUE_ORDER_BY_OPTIONS } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
@@ -66,7 +66,7 @@ export function GroupDragOverlay(props: Props) {
         >
           {dropErrorMessage ? (
             <div className="flex items-center">
-              <WarningCircleOutline width={13} height={13} /> &nbsp;
+              <AlertCircle width={13} height={13} /> &nbsp;
               <span>{dropErrorMessage}</span>
             </div>
           ) : (

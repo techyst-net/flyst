@@ -11,7 +11,7 @@ import { useParams } from "next/navigation";
 import { EIssueFilterType, ISSUE_DISPLAY_FILTERS_BY_PAGE, DEFAULT_GLOBAL_VIEWS_LIST } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
-import { ViewsOutline } from "@makeplane/propel/icons";
+import { ViewsIcon } from "@plane/propel/icons";
 import type { IIssueDisplayFilterOptions, IIssueDisplayProperties, ICustomSearchSelectOption } from "@plane/types";
 import { EIssuesStoreType, EIssueLayoutTypes } from "@plane/types";
 import { Breadcrumbs, Header, BreadcrumbNavigationSearchDropdown } from "@plane/ui";
@@ -78,7 +78,7 @@ export const GlobalIssuesHeader = observer(function GlobalIssuesHeader() {
   const defaultOptions = DEFAULT_GLOBAL_VIEWS_LIST.map((view) => ({
     value: view.key,
     query: view.key,
-    content: <SwitcherLabel name={t(view.i18n_label)} LabelIcon={ViewsOutline} />,
+    content: <SwitcherLabel name={t(view.i18n_label)} LabelIcon={ViewsIcon} />,
   }));
 
   const workspaceOptions = (currentWorkspaceViews || []).map((view) => {
@@ -87,7 +87,7 @@ export const GlobalIssuesHeader = observer(function GlobalIssuesHeader() {
     return {
       value: _view.id,
       query: _view.name,
-      content: <SwitcherLabel name={_view.name} LabelIcon={ViewsOutline} />,
+      content: <SwitcherLabel name={_view.name} LabelIcon={ViewsIcon} />,
     };
   });
 
@@ -106,9 +106,7 @@ export const GlobalIssuesHeader = observer(function GlobalIssuesHeader() {
         <Header.LeftItem>
           <Breadcrumbs>
             <Breadcrumbs.Item
-              component={
-                <BreadcrumbLink label={t("views")} icon={<ViewsOutline className="h-4 w-4 text-tertiary" />} />
-              }
+              component={<BreadcrumbLink label={t("views")} icon={<ViewsIcon className="h-4 w-4 text-tertiary" />} />}
             />
             <Breadcrumbs.Item
               component={
@@ -121,7 +119,7 @@ export const GlobalIssuesHeader = observer(function GlobalIssuesHeader() {
                   title={viewDetails?.name ?? t(defaultViewDetails?.i18n_label ?? "")}
                   icon={
                     <Breadcrumbs.Icon>
-                      <ViewsOutline className="size-4 flex-shrink-0 text-tertiary" />
+                      <ViewsIcon className="size-4 flex-shrink-0 text-tertiary" />
                     </Breadcrumbs.Icon>
                   }
                   isLast

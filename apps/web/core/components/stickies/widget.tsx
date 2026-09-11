@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 
 // plane imports
 import { useTranslation } from "@plane/i18n";
-import { AddOutline } from "@makeplane/propel/icons";
+import { PlusIcon } from "@plane/propel/icons";
 // hooks
 import { useSticky } from "@/hooks/use-stickies";
 // local imports
@@ -43,7 +43,7 @@ export const StickiesWidget = observer(function StickiesWidget() {
             className="my-auto flex gap-1 text-13 font-medium text-accent-primary"
             disabled={creatingSticky}
           >
-            <AddOutline className="my-auto size-4" />
+            <PlusIcon className="my-auto size-4" />
             <span>{t("stickies.add")}</span>
             {creatingSticky && (
               <div

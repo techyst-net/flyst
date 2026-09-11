@@ -7,11 +7,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 // icons
-import { RocketOutline, SearchOutline } from "@makeplane/propel/icons";
+import { Rocket } from "lucide-react";
 // headless ui
 import { Combobox } from "@headlessui/react";
 // i18n
 import { useTranslation } from "@plane/i18n";
+import { SearchIcon } from "@plane/propel/icons";
 // types
 import type { ISearchIssueResponse } from "@plane/types";
 // ui
@@ -98,7 +99,7 @@ export function ParentIssuesListModal({
         }}
       >
         <div className="relative m-1">
-          <SearchOutline
+          <SearchIcon
             className="text-opacity-40 pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-primary"
             aria-hidden="true"
           />
@@ -189,7 +190,7 @@ export function ParentIssuesListModal({
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <RocketOutline className="h-4 w-4" />
+                        <Rocket className="h-4 w-4" />
                       </a>
                     </Combobox.Option>
                   ))}

@@ -6,7 +6,7 @@
 
 import { useParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
-import { WarningTriangleOutline } from "@makeplane/propel/icons";
+import { AlertTriangle } from "lucide-react";
 // Flyst imports
 import { Field } from "@makeplane/propel/components/field";
 import { Input, InputGroup } from "@makeplane/propel/components/input";
@@ -82,7 +82,7 @@ export function DeleteProjectModal(props: DeleteProjectModal) {
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 p-6">
         <div className="flex w-full items-center justify-start gap-6">
           <span className="place-items-center rounded-full bg-danger-subtle p-4">
-            <WarningTriangleOutline className="h-6 w-6 text-danger-primary" aria-hidden="true" />
+            <AlertTriangle className="h-6 w-6 text-danger-primary" aria-hidden="true" />
           </span>
           <span className="flex items-center justify-start">
             <h3 className="text-18 font-medium 2xl:text-20">Delete project</h3>

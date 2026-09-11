@@ -6,8 +6,9 @@
 
 import React, { useState } from "react";
 import { observer } from "mobx-react";
-import { HelpOutline, PagesOutline, UserOutline } from "@makeplane/propel/icons";
+import { HelpCircle, User } from "lucide-react";
 import { useTranslation } from "@plane/i18n";
+import { PageIcon } from "@plane/propel/icons";
 // ui
 import { CustomMenu } from "@plane/ui";
 // components
@@ -34,7 +35,7 @@ export const HelpMenuRoot = observer(function HelpMenuRoot() {
           <AppSidebarItem
             variant="button"
             item={{
-              icon: <HelpOutline className="size-5" />,
+              icon: <HelpCircle className="size-5" />,
               isActive: isNeedHelpOpen,
             }}
           />
@@ -48,13 +49,13 @@ export const HelpMenuRoot = observer(function HelpMenuRoot() {
       >
         <CustomMenu.MenuItem onClick={() => window.open("https://flyst.techyst.net", "_blank")}>
           <div className="flex items-center gap-x-2 rounded-sm text-11">
-            <PagesOutline className="h-3.5 w-3.5 text-secondary" height={14} width={14} />
+            <PageIcon className="h-3.5 w-3.5 text-secondary" height={14} width={14} />
             <span className="text-11">{t("documentation")}</span>
           </div>
         </CustomMenu.MenuItem>
-        <CustomMenu.MenuItem onClick={() => window.open("mailto:sales@techyst.net", "_blank")}>
+        <CustomMenu.MenuItem onClick={() => window.open("mailto:sales@flyst.techyst.net", "_blank")}>
           <div className="flex items-center gap-x-2 rounded-sm text-11">
-            <UserOutline className="h-3.5 w-3.5 text-secondary" width={14} height={14} />
+            <User className="h-3.5 w-3.5 text-secondary" size={14} />
             <span className="text-11">{t("contact_sales")}</span>
           </div>
         </CustomMenu.MenuItem>

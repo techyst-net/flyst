@@ -5,8 +5,7 @@
  */
 
 import { memo } from "react";
-import { Ban } from "lucide-react";
-import { TextOutline } from "@makeplane/propel/icons";
+import { ALargeSmall, Ban } from "lucide-react";
 import { Popover } from "@headlessui/react";
 // plane editor
 import { COLORS_LIST } from "@plane/editor";
@@ -54,7 +53,7 @@ export const ColorDropdown = memo(function ColorDropdown(props: Props) {
                 backgroundColor: activeBackgroundColor ? activeBackgroundColor.backgroundColor : "transparent",
               }}
             >
-              <TextOutline
+              <ALargeSmall
                 className={cn("size-3.5", {
                   "text-primary": !activeTextColor,
                 })}

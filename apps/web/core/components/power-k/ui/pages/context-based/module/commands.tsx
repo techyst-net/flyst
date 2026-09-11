@@ -6,12 +6,11 @@
 
 import { useCallback } from "react";
 import { useParams } from "next/navigation";
-import { StarOff } from "lucide-react";
-import { LinkOutline, MembersOutline, StarOutline } from "@makeplane/propel/icons";
+import { Star, StarOff, Users } from "lucide-react";
 // plane imports
 import { EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
-import { ModuleStatusIcon } from "@plane/propel/icons";
+import { LinkIcon, ModuleStatusIcon } from "@plane/propel/icons";
 import { setToast, TOAST_TYPE } from "@plane/propel/toast";
 import type { IModule, TModuleStatus } from "@plane/types";
 import { EUserPermissions } from "@plane/types";
@@ -104,7 +103,7 @@ export const usePowerKModuleContextBasedActions = (): TPowerKCommandConfig[] => 
     {
       id: "add_remove_module_members",
       i18n_title: "power_k.contextual_actions.module.add_remove_members",
-      icon: MembersOutline,
+      icon: Users,
       group: "contextual",
       contextType: "module",
       type: "change-page",
@@ -140,7 +139,7 @@ export const usePowerKModuleContextBasedActions = (): TPowerKCommandConfig[] => 
       i18n_title: isFavorite
         ? "power_k.contextual_actions.module.remove_from_favorites"
         : "power_k.contextual_actions.module.add_to_favorites",
-      icon: isFavorite ? StarOff : StarOutline,
+      icon: isFavorite ? StarOff : Star,
       group: "contextual",
       contextType: "module",
       type: "action",
@@ -153,7 +152,7 @@ export const usePowerKModuleContextBasedActions = (): TPowerKCommandConfig[] => 
     {
       id: "copy_module_url",
       i18n_title: "power_k.contextual_actions.module.copy_url",
-      icon: LinkOutline,
+      icon: LinkIcon,
       group: "contextual",
       contextType: "module",
       type: "action",

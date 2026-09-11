@@ -5,8 +5,8 @@
  */
 
 import type { Editor } from "@tiptap/core";
-import { AlignCenterOutline, AlignLeftOutline, AlignRightOutline } from "@makeplane/propel/icons";
-import type { ComponentType, SVGProps } from "react";
+import { AlignCenter, AlignLeft, AlignRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 // local imports
 import { ECustomImageAttributeNames, ECustomImageStatus } from "./types";
 import type { TCustomImageAlignment, Pixel, TCustomImageAttributes } from "./types";
@@ -41,22 +41,22 @@ export const ensurePixelString = <TDefault>(
 export const IMAGE_ALIGNMENT_OPTIONS: {
   label: string;
   value: TCustomImageAlignment;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: LucideIcon;
 }[] = [
   {
     label: "Left",
     value: "left",
-    icon: AlignLeftOutline,
+    icon: AlignLeft,
   },
   {
     label: "Center",
     value: "center",
-    icon: AlignCenterOutline,
+    icon: AlignCenter,
   },
   {
     label: "Right",
     value: "right",
-    icon: AlignRightOutline,
+    icon: AlignRight,
   },
 ];
 export const getImageBlockId = (id: string) => `editor-image-block-${id}`;

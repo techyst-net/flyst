@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { FullScreenOutline } from "@makeplane/propel/icons";
+import { Maximize } from "lucide-react";
 import { useEffect, useState } from "react";
 // plane imports
 import { Tooltip } from "@plane/propel/tooltip";
@@ -56,7 +56,7 @@ export function ImageFullScreenActionRoot(props: Props) {
           className="grid h-full flex-shrink-0 place-items-center text-on-color/60 transition-colors hover:text-on-color"
           aria-label="View image in full screen"
         >
-          <FullScreenOutline className="size-3" />
+          <Maximize className="size-3" />
         </button>
       </Tooltip>
     </>

@@ -6,7 +6,7 @@
 
 import { observer } from "mobx-react";
 import { useTranslation } from "@plane/i18n";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 // types
 import type { TFilters } from "@/types/issue";
 // components
@@ -59,7 +59,7 @@ export const AppliedFiltersList = observer(function AppliedFiltersList(props: Pr
                 className="grid place-items-center text-tertiary hover:text-secondary"
                 onClick={() => handleRemoveFilter(filterKey, null)}
               >
-                <CloseOutline height={12} width={12} />
+                <CloseIcon height={12} width={12} strokeWidth={2} />
               </button>
             </div>
           </div>
@@ -71,7 +71,7 @@ export const AppliedFiltersList = observer(function AppliedFiltersList(props: Pr
         className="flex items-center gap-2 rounded-md border border-subtle px-2 py-1 text-11 text-tertiary hover:text-secondary"
       >
         {t("common.clear_all")}
-        <CloseOutline height={12} width={12} />
+        <CloseIcon height={12} width={12} strokeWidth={2} />
       </button>
     </div>
   );

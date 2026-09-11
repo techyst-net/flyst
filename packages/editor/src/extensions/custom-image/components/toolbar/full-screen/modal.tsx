@@ -4,9 +4,10 @@
  * See the LICENSE file for details.
  */
 
-import { AddOutline, CloseOutline, DownloadOutline, MinusOutline, NewTabOutline } from "@makeplane/propel/icons";
+import { Download, Minus } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom";
+import { NewTabIcon, PlusIcon, CloseIcon } from "@plane/propel/icons";
 // plane imports
 import { cn } from "@plane/utils";
 
@@ -218,7 +219,7 @@ function ImageFullScreenModalWithoutPortal(props: Props) {
           className="absolute top-10 right-10 grid size-8 place-items-center"
           aria-label="Close image viewer"
         >
-          <CloseOutline className="size-8 text-white/60 transition-colors hover:text-white" />
+          <CloseIcon className="size-8 text-white/60 transition-colors hover:text-white" />
         </button>
         <img
           ref={setImageRef}
@@ -251,7 +252,7 @@ function ImageFullScreenModalWithoutPortal(props: Props) {
               disabled={magnification <= MIN_ZOOM}
               aria-label="Zoom out"
             >
-              <MinusOutline className="size-4" />
+              <Minus className="size-4" />
             </button>
             <span className="w-12 text-center text-13 text-white">{Math.round(100 * magnification)}%</span>
             <button
@@ -267,7 +268,7 @@ function ImageFullScreenModalWithoutPortal(props: Props) {
               disabled={magnification >= MAX_ZOOM}
               aria-label="Zoom in"
             >
-              <AddOutline className="size-4" />
+              <PlusIcon className="size-4" />
             </button>
           </div>
           {!isTouchDevice && (
@@ -277,7 +278,7 @@ function ImageFullScreenModalWithoutPortal(props: Props) {
               className="grid size-8 flex-shrink-0 place-items-center text-white/60 transition-colors duration-200 hover:text-white"
               aria-label="Download image"
             >
-              <DownloadOutline className="size-4" />
+              <Download className="size-4" />
             </button>
           )}
           {!isTouchDevice && (
@@ -287,7 +288,7 @@ function ImageFullScreenModalWithoutPortal(props: Props) {
               className="grid size-8 flex-shrink-0 place-items-center text-white/60 transition-colors duration-200 hover:text-white"
               aria-label="Open image in new tab"
             >
-              <NewTabOutline className="size-4" />
+              <NewTabIcon className="size-4" />
             </button>
           )}
         </div>

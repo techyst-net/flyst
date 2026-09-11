@@ -7,7 +7,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import { useParams } from "next/navigation";
-import { CloseOutline, EditOutline } from "@makeplane/propel/icons";
+import { EditIcon, CloseIcon } from "@plane/propel/icons";
 // types
 import type { IIssueLabel } from "@plane/types";
 // hooks
@@ -65,14 +65,14 @@ export function ProjectSettingLabelItem(props: Props) {
 
   const customMenuItems: ICustomMenuItem[] = [
     {
-      CustomIcon: CloseOutline,
+      CustomIcon: CloseIcon,
       onClick: removeFromGroup,
       isVisible: !!label.parent,
       text: "Remove from group",
       key: "remove_from_group",
     },
     {
-      CustomIcon: EditOutline,
+      CustomIcon: EditIcon,
       onClick: () => {
         setEditLabelForm(true);
         setIsUpdating(true);

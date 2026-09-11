@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { CloseCircleOutline } from "@makeplane/propel/icons";
+import { CircleX } from "lucide-react";
 // plane constants
 import { FREE_PLAN_UPGRADE_FEATURES } from "@plane/constants";
 // helpers
@@ -35,7 +35,7 @@ export const FreePlanCard = observer(function FreePlanCard(props: FreePlanCardPr
           {FREE_PLAN_UPGRADE_FEATURES.map((feature) => (
             <li key={feature} className={cn("relative col-span-12 flex rounded-md p-2")}>
               <p className="flex w-full items-center text-caption-md-medium leading-5">
-                <CloseCircleOutline className="mr-2 size-4 flex-shrink-0 text-danger-secondary" />
+                <CircleX className="mr-2 size-4 flex-shrink-0 text-danger-secondary" />
                 <span className="truncate text-secondary">{feature}</span>
               </p>
             </li>

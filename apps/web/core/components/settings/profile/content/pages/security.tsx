@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { observer } from "mobx-react";
 import { Controller, useForm } from "react-hook-form";
-import { HideOutline, ShowOutline } from "@makeplane/propel/icons";
+import { Eye, EyeOff } from "lucide-react";
 // plane imports
 import { Field } from "@makeplane/propel/components/field";
 import { Input, InputGroup } from "@makeplane/propel/components/input";
@@ -165,9 +165,9 @@ export const SecurityProfileSettings = observer(function SecurityProfileSettings
                         aria-label={showPassword?.oldPassword ? "Hide password" : "Show password"}
                       >
                         {showPassword?.oldPassword ? (
-                          <HideOutline className="size-5 text-placeholder" />
+                          <EyeOff className="size-5 stroke-placeholder" />
                         ) : (
-                          <ShowOutline className="size-5 text-placeholder" />
+                          <Eye className="size-5 stroke-placeholder" />
                         )}
                       </button>
                     </InputGroup>
@@ -209,9 +209,9 @@ export const SecurityProfileSettings = observer(function SecurityProfileSettings
                         aria-label={showPassword?.password ? "Hide password" : "Show password"}
                       >
                         {showPassword?.password ? (
-                          <HideOutline className="size-5 text-placeholder" />
+                          <EyeOff className="size-5 stroke-placeholder" />
                         ) : (
-                          <ShowOutline className="size-5 text-placeholder" />
+                          <Eye className="size-5 stroke-placeholder" />
                         )}
                       </button>
                     </InputGroup>
@@ -257,9 +257,9 @@ export const SecurityProfileSettings = observer(function SecurityProfileSettings
                         aria-label={showPassword?.confirmPassword ? "Hide password" : "Show password"}
                       >
                         {showPassword?.confirmPassword ? (
-                          <HideOutline className="size-5 text-placeholder" />
+                          <EyeOff className="size-5 stroke-placeholder" />
                         ) : (
-                          <ShowOutline className="size-5 text-placeholder" />
+                          <Eye className="size-5 stroke-placeholder" />
                         )}
                       </button>
                     </InputGroup>

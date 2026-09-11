@@ -7,7 +7,7 @@
 import { observer } from "mobx-react";
 import { INBOX_STATUS } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 import type { TInboxIssueStatus } from "@plane/types";
 import { useProjectInbox } from "@/hooks/store/use-project-inbox";
 import { InboxStatusIcon } from "../../inbox-status-icon";
@@ -41,7 +41,7 @@ export const InboxIssueAppliedFiltersStatus = observer(function InboxIssueApplie
                 className="relative flex h-3 w-3 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden text-tertiary transition-all hover:text-secondary"
                 onClick={() => handleInboxIssueFilters("status", handleFilterValue(optionDetail?.status))}
               >
-                <CloseOutline className={`h-3 w-3`} />
+                <CloseIcon className={`h-3 w-3`} />
               </div>
             )}
           </div>

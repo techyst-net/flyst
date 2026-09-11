@@ -6,7 +6,7 @@
 
 import React from "react";
 import { observer } from "mobx-react";
-import { WorkItemsOutline } from "@makeplane/propel/icons";
+import { Layers } from "lucide-react";
 // plane imports
 import type { IProjectView } from "@plane/types";
 // local imports
@@ -22,7 +22,7 @@ export const PowerKViewsMenu = observer(function PowerKViewsMenu({ views, onSele
     <PowerKMenuBuilder
       items={views}
       getKey={(view) => view.id}
-      getIcon={() => WorkItemsOutline}
+      getIcon={() => Layers}
       getValue={(view) => view.name}
       getLabel={(view) => view.name}
       onSelect={onSelect}

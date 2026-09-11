@@ -4,11 +4,12 @@
  * See the LICENSE file for details.
  */
 
-import { SortDescendingOutline, TickOutline } from "@makeplane/propel/icons";
+import { ArrowDownWideNarrow } from "lucide-react";
 // plane imports
 import { PROJECT_ORDER_BY_OPTIONS } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
 import { getButtonStyling } from "@plane/propel/button";
+import { CheckIcon } from "@plane/propel/icons";
 import type { TProjectOrderByOptions } from "@plane/types";
 import { CustomMenu } from "@plane/ui";
 
@@ -36,12 +37,12 @@ export function ProjectOrderByDropdown(props: Props) {
         <>
           {isMobile ? (
             <div className={getButtonStyling("secondary", "lg")}>
-              <SortDescendingOutline className="size-3.5 shrink-0" />
+              <ArrowDownWideNarrow className="size-3.5 shrink-0" strokeWidth={2} />
               {orderByDetails && t(orderByDetails?.i18n_label)}
             </div>
           ) : (
             <div className={getButtonStyling("secondary", "lg")}>
-              <SortDescendingOutline className="size-3.5 shrink-0" />
+              <ArrowDownWideNarrow className="size-3.5 shrink-0" strokeWidth={2} />
               {orderByDetails && t(orderByDetails?.i18n_label)}
             </div>
           )}
@@ -61,7 +62,7 @@ export function ProjectOrderByDropdown(props: Props) {
           }}
         >
           {option && t(option?.i18n_label)}
-          {value?.includes(option.key) && <TickOutline className="h-3 w-3" />}
+          {value?.includes(option.key) && <CheckIcon className="h-3 w-3" />}
         </CustomMenu.MenuItem>
       ))}
       <hr className="my-2 border-subtle" />
@@ -73,7 +74,7 @@ export function ProjectOrderByDropdown(props: Props) {
         disabled={isOrderingDisabled}
       >
         Ascending
-        {!isOrderingDisabled && !isDescending && <TickOutline className="h-3 w-3" />}
+        {!isOrderingDisabled && !isDescending && <CheckIcon className="h-3 w-3" />}
       </CustomMenu.MenuItem>
       <CustomMenu.MenuItem
         className="flex items-center justify-between gap-2"
@@ -83,7 +84,7 @@ export function ProjectOrderByDropdown(props: Props) {
         disabled={isOrderingDisabled}
       >
         Descending
-        {!isOrderingDisabled && isDescending && <TickOutline className="h-3 w-3" />}
+        {!isOrderingDisabled && isDescending && <CheckIcon className="h-3 w-3" />}
       </CustomMenu.MenuItem>
     </CustomMenu>
   );

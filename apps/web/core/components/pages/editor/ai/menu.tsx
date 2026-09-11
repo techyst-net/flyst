@@ -5,15 +5,11 @@
  */
 
 import React, { useEffect, useRef, useState } from "react";
-import {
-  AiStar1Outline,
-  ChevronRightOutline,
-  CornerRightDownOutline,
-  RefreshOutline,
-  WarningTriangleOutline,
-} from "@makeplane/propel/icons";
+import type { LucideIcon } from "lucide-react";
+import { CornerDownRight, RefreshCcw, Sparkles, TriangleAlert } from "lucide-react";
 // plane editor
 import type { EditorRefApi } from "@plane/editor";
+import { ChevronRightIcon } from "@plane/propel/icons";
 // plane ui
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 // components
@@ -36,13 +32,13 @@ type Props = {
 };
 
 const MENU_ITEMS: {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: LucideIcon;
   key: AI_EDITOR_TASKS;
   label: string;
 }[] = [
   {
     key: AI_EDITOR_TASKS.ASK_ANYTHING,
-    icon: AiStar1Outline,
+    icon: Sparkles,
     label: "Ask Pi",
   },
 ];
@@ -183,7 +179,7 @@ export function EditorAIMenu(props: Props) {
                   <item.icon className="size-3 flex-shrink-0" />
                   {item.label}
                 </span>
-                <ChevronRightOutline
+                <ChevronRightIcon
                   className={cn("pointer-events-none size-3 flex-shrink-0 opacity-0 transition-opacity", {
                     "pointer-events-auto opacity-100": isActiveTask,
                   })}
@@ -214,7 +210,7 @@ export function EditorAIMenu(props: Props) {
                 })}
               >
                 <span className="grid size-7 flex-shrink-0 place-items-center rounded-full border border-subtle text-secondary">
-                  <AiStar1Outline className="size-3" />
+                  <Sparkles className="size-3" />
                 </span>
                 {response ? (
                   <div>
@@ -244,7 +240,7 @@ export function EditorAIMenu(props: Props) {
                           className="grid size-6 flex-shrink-0 place-items-center rounded-sm outline-none hover:bg-layer-1"
                           onClick={() => handleInsertText(true)}
                         >
-                          <CornerRightDownOutline className="size-4 text-tertiary" />
+                          <CornerDownRight className="size-4 text-tertiary" />
                         </button>
                       </Tooltip>
                       <Tooltip label="Re-generate response">
@@ -258,7 +254,7 @@ export function EditorAIMenu(props: Props) {
                           }}
                           disabled={isRegenerating}
                         >
-                          <RefreshOutline
+                          <RefreshCcw
                             className={cn("size-4 text-tertiary", {
                               "animate-spin": isRegenerating,
                             })}
@@ -301,7 +297,7 @@ export function EditorAIMenu(props: Props) {
       {activeTask && (
         <div className="flex items-center gap-2 rounded-b-md border-t border-subtle bg-surface-2 px-4 py-2 text-tertiary">
           <span className="grid size-4 flex-shrink-0 place-items-center">
-            <WarningTriangleOutline className="size-3" />
+            <TriangleAlert className="size-3" />
           </span>
           <p className="flex-shrink-0 text-11 font-medium">
             By using this feature, you consent to sharing the message with a 3rd party service.

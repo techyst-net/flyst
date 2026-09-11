@@ -6,7 +6,7 @@
 
 import { useTranslation } from "@plane/i18n";
 import { PillButton } from "@makeplane/propel/components/pill";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 // plane imports
 import type { TPageFilterProps } from "@plane/types";
 import { replaceUnderscoreIfSnakeCase } from "@plane/utils";
@@ -68,7 +68,7 @@ export function PageAppliedFiltersList(props: Props) {
                   className="grid place-items-center text-tertiary hover:text-secondary"
                   onClick={() => handleRemoveFilter(filterKey, null)}
                 >
-                  <CloseOutline height={12} width={12} />
+                  <CloseIcon height={12} width={12} strokeWidth={2} />
                 </button>
               )}
             </div>
@@ -81,7 +81,7 @@ export function PageAppliedFiltersList(props: Props) {
           size="md"
           variant="outline"
           label={t("common.clear_all")}
-          endIcon={<CloseOutline height={12} />}
+          endIcon={<CloseIcon height={12} strokeWidth={2} />}
           onClick={handleClearAllFilters}
         />
       )}

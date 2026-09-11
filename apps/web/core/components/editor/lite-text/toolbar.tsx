@@ -14,7 +14,7 @@ import type { EditorRefApi } from "@plane/editor";
 import { useTranslation } from "@plane/i18n";
 // ui
 import { Button } from "@plane/propel/button";
-import { GlobeOutline, LockOutline } from "@makeplane/propel/icons";
+import { GlobeIcon, LockIcon } from "@plane/propel/icons";
 import type { ISvgIcons } from "@plane/propel/icons";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 // constants
@@ -44,12 +44,12 @@ type TCommentAccessType = {
 
 const COMMENT_ACCESS_SPECIFIERS: TCommentAccessType[] = [
   {
-    icon: LockOutline,
+    icon: LockIcon,
     key: EIssueCommentAccessSpecifier.INTERNAL,
     label: "Private",
   },
   {
-    icon: GlobeOutline,
+    icon: GlobeIcon,
     key: EIssueCommentAccessSpecifier.EXTERNAL,
     label: "Public",
   },

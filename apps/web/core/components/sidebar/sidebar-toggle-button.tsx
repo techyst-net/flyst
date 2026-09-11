@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { LeftSidePaneOutline } from "@makeplane/propel/icons";
+import { PanelLeft } from "lucide-react";
 // hooks
 import { useAppTheme } from "@/hooks/store/use-app-theme";
 import { IconButton } from "@plane/propel/icon-button";
@@ -18,7 +18,7 @@ export const AppSidebarToggleButton = observer(function AppSidebarToggleButton()
     <IconButton
       size="base"
       variant="ghost"
-      icon={LeftSidePaneOutline}
+      icon={PanelLeft}
       onClick={() => {
         if (sidebarPeek) toggleSidebarPeek(false);
         toggleSidebar();

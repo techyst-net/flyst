@@ -8,11 +8,12 @@ import { Fragment, useState, useEffect } from "react";
 import { observer } from "mobx-react";
 import Link from "next/link";
 // icons
-import { ChevronDownOutline, LogOutOutline, MailOutline, PlusCircleOutline } from "@makeplane/propel/icons";
+import { CirclePlus, LogOut, Mails } from "lucide-react";
 // ui
 import { Menu, Transition } from "@headlessui/react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
+import { ChevronDownIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { IWorkspace } from "@plane/types";
 import { Loader } from "@plane/ui";
@@ -127,7 +128,7 @@ export const WorkspaceMenuRoot = observer(function WorkspaceMenuRoot(props: Work
                   />
                   <h4 className="truncate text-14 font-medium text-primary">{activeWorkspace?.name ?? t("loading")}</h4>
                 </div>
-                <ChevronDownOutline
+                <ChevronDownIcon
                   className={cn("size-4 flex-shrink-0 text-placeholder duration-300", {
                     "rotate-180": open,
                   })}
@@ -192,7 +193,7 @@ export const WorkspaceMenuRoot = observer(function WorkspaceMenuRoot(props: Work
                           as="div"
                           className="flex items-center gap-2 rounded-sm px-2 py-1 text-13 font-medium text-secondary hover:bg-layer-transparent-hover"
                         >
-                          <PlusCircleOutline className="size-4 flex-shrink-0" />
+                          <CirclePlus className="size-4 flex-shrink-0" />
                           {t("create_workspace")}
                         </Menu.Item>
                       </Link>
@@ -203,7 +204,7 @@ export const WorkspaceMenuRoot = observer(function WorkspaceMenuRoot(props: Work
                         as="div"
                         className="flex items-center gap-2 rounded-sm px-2 py-1 text-13 font-medium text-secondary hover:bg-layer-transparent-hover"
                       >
-                        <MailOutline className="h-4 w-4 flex-shrink-0" />
+                        <Mails className="h-4 w-4 flex-shrink-0" />
                         {t("workspace_invites")}
                       </Menu.Item>
                     </Link>
@@ -215,7 +216,7 @@ export const WorkspaceMenuRoot = observer(function WorkspaceMenuRoot(props: Work
                         className="flex w-full items-center gap-2 rounded-sm px-2 py-1 text-13 font-medium text-danger-primary hover:bg-layer-transparent-hover"
                         onClick={handleSignOut}
                       >
-                        <LogOutOutline className="size-4 flex-shrink-0" />
+                        <LogOut className="size-4 flex-shrink-0" />
                         {t("sign_out")}
                       </Menu.Item>
                     </div>

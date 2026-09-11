@@ -9,8 +9,7 @@ import { useParams } from "next/navigation";
 
 // ui
 import { useTranslation } from "@plane/i18n";
-import { LayerStackIcon } from "@plane/propel/icons";
-import { AddOutline, UserOutline } from "@makeplane/propel/icons";
+import { UserCirclePropertyIcon, CreateIcon, LayerStackIcon } from "@plane/propel/icons";
 import type { IUserProfileData } from "@plane/types";
 import { Loader, Card, ECardSpacing, ECardDirection } from "@plane/ui";
 // types
@@ -26,13 +25,13 @@ export function ProfileStats({ userProfile }: Props) {
 
   const overviewCards = [
     {
-      icon: AddOutline,
+      icon: CreateIcon,
       route: "created",
       i18n_title: "profile.stats.created",
       value: userProfile?.created_issues ?? "...",
     },
     {
-      icon: UserOutline,
+      icon: UserCirclePropertyIcon,
       route: "assigned",
       i18n_title: "profile.stats.assigned",
       value: userProfile?.assigned_issues ?? "...",

@@ -4,15 +4,9 @@
  * See the LICENSE file for details.
  */
 
-import {
-  CyclesOutline,
-  DocumentationOutline,
-  GridOutline,
-  ModuleOutline,
-  ProjectsOutline,
-  WorkItemsOutline,
-} from "@makeplane/propel/icons";
+import { Briefcase, FileText, Layers, LayoutGrid } from "lucide-react";
 // plane imports
+import { ContrastIcon, DiceIcon } from "@plane/propel/icons";
 import type {
   IWorkspaceDefaultSearchResult,
   IWorkspaceIssueSearchResult,
@@ -34,7 +28,7 @@ export type TPowerKSearchResultGroupDetails = {
 
 export const POWER_K_SEARCH_RESULTS_GROUPS_MAP: Record<TPowerKSearchResultsKeys, TPowerKSearchResultGroupDetails> = {
   cycle: {
-    icon: CyclesOutline,
+    icon: ContrastIcon,
     itemName: (cycle: IWorkspaceDefaultSearchResult) => (
       <p>
         <span className="text-11 text-tertiary">{cycle.project__identifier}</span> {cycle.name}
@@ -68,7 +62,7 @@ export const POWER_K_SEARCH_RESULTS_GROUPS_MAP: Record<TPowerKSearchResultsKeys,
     title: "Work items",
   },
   issue_view: {
-    icon: WorkItemsOutline,
+    icon: Layers,
     itemName: (view: IWorkspaceDefaultSearchResult) => (
       <p>
         <span className="text-11 text-tertiary">{view.project__identifier}</span> {view.name}
@@ -79,7 +73,7 @@ export const POWER_K_SEARCH_RESULTS_GROUPS_MAP: Record<TPowerKSearchResultsKeys,
     title: "Views",
   },
   module: {
-    icon: ModuleOutline,
+    icon: DiceIcon,
     itemName: (module: IWorkspaceDefaultSearchResult) => (
       <p>
         <span className="text-11 text-tertiary">{module.project__identifier}</span> {module.name}
@@ -90,7 +84,7 @@ export const POWER_K_SEARCH_RESULTS_GROUPS_MAP: Record<TPowerKSearchResultsKeys,
     title: "Modules",
   },
   page: {
-    icon: DocumentationOutline,
+    icon: FileText,
     itemName: (page: IWorkspacePageSearchResult) => (
       <p>
         <span className="text-11 text-tertiary">{page.project__identifiers?.[0]}</span> {page.name}
@@ -106,13 +100,13 @@ export const POWER_K_SEARCH_RESULTS_GROUPS_MAP: Record<TPowerKSearchResultsKeys,
     title: "Pages",
   },
   project: {
-    icon: ProjectsOutline,
+    icon: Briefcase,
     itemName: (project: IWorkspaceProjectSearchResult) => project?.name,
     path: (project: IWorkspaceProjectSearchResult) => `/${project?.workspace__slug}/projects/${project?.id}/issues/`,
     title: "Projects",
   },
   workspace: {
-    icon: GridOutline,
+    icon: LayoutGrid,
     itemName: (workspace: IWorkspaceSearchResult) => workspace?.name,
     path: (workspace: IWorkspaceSearchResult) => `/${workspace?.slug}/`,
     title: "Workspaces",

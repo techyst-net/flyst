@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import useSWR from "swr";
 // ui
-import { LogOutOutline } from "@makeplane/propel/icons";
+import { LogOut } from "lucide-react";
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { Button, getButtonStyling } from "@plane/propel/button";
 import { PlaneLogo } from "@plane/propel/icons";
@@ -164,7 +164,7 @@ export const WorkspaceAuthWrapper = observer(function WorkspaceAuthWrapper(props
                 onClick={handleSignOut}
               >
                 <Tooltip label={"Sign out"} alignOffset={8} disabled={isMobile}>
-                  <LogOutOutline width={14} height={14} />
+                  <LogOut size={14} />
                 </Tooltip>
               </div>
             </div>

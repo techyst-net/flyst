@@ -8,8 +8,7 @@ import { observer } from "mobx-react";
 // ui
 import { MODULE_STATUS } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
-import { ModuleStatusIcon } from "@plane/propel/icons";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon, ModuleStatusIcon } from "@plane/propel/icons";
 // constants
 
 type Props = {
@@ -38,7 +37,7 @@ export const AppliedStatusFilters = observer(function AppliedStatusFilters(props
                 className="grid place-items-center text-tertiary hover:text-secondary"
                 onClick={() => handleRemove(status)}
               >
-                <CloseOutline height={10} width={10} />
+                <CloseIcon height={10} width={10} strokeWidth={2} />
               </button>
             )}
           </div>

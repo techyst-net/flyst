@@ -8,7 +8,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import Link from "next/link";
 
-import { CloseOutline, EditOutline } from "@makeplane/propel/icons";
+import { EditIcon, CloseIcon } from "@plane/propel/icons";
 // Flyst
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
@@ -146,7 +146,7 @@ export const IssueRelationSelect = observer(function IssueRelationSelect(props: 
                             removeRelation(workspaceSlug, projectId, issueId, relationKey, relationIssueId);
                           }}
                         >
-                          <CloseOutline className="h-2.5 w-2.5 text-tertiary hover:text-danger-primary" />
+                          <CloseIcon className="h-2.5 w-2.5 text-tertiary hover:text-danger-primary" />
                         </span>
                       </Tooltip>
                     )}
@@ -163,7 +163,7 @@ export const IssueRelationSelect = observer(function IssueRelationSelect(props: 
                 "text-placeholder": relationIssueIds.length === 0,
               })}
             >
-              <EditOutline className="h-2.5 w-2.5 flex-shrink-0" />
+              <EditIcon className="h-2.5 w-2.5 flex-shrink-0" />
             </span>
           )}
         </div>

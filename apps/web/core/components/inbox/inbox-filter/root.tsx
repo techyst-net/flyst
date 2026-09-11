@@ -4,9 +4,10 @@
  * See the LICENSE file for details.
  */
 
-import { ChevronDownOutline, FilterOutline } from "@makeplane/propel/icons";
+import { ListFilter } from "lucide-react";
 import { getButtonStyling } from "@plane/propel/button";
 // plane imports
+import { ChevronDownIcon } from "@plane/propel/icons";
 import { cn } from "@plane/utils";
 // components
 import { FiltersDropdown } from "@/components/issues/issue-layouts/filters";
@@ -16,13 +17,13 @@ import useSize from "@/hooks/use-window-size";
 import { InboxIssueFilterSelection } from "./filters/filter-selection";
 import { InboxIssueOrderByDropdown } from "./sorting/order-by";
 
-const smallButton = <FilterOutline className="size-3" />;
+const smallButton = <ListFilter className="size-3" />;
 
 const largeButton = (
   <div className={cn(getButtonStyling("secondary", "base"), "px-2 text-tertiary")}>
-    <FilterOutline className="size-3" />
+    <ListFilter className="size-3" />
     <span>Filters</span>
-    <ChevronDownOutline className="size-3" />
+    <ChevronDownIcon className="size-3" strokeWidth={2} />
   </div>
 );
 export function FiltersRoot() {

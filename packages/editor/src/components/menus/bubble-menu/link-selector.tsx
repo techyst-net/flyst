@@ -7,7 +7,7 @@
 import type { Editor } from "@tiptap/core";
 
 import { useCallback, useRef, useState } from "react";
-import { DeleteOutline, LinkOutline, TickOutline } from "@makeplane/propel/icons";
+import { LinkIcon, TrashIcon, CheckIcon } from "@plane/propel/icons";
 // plane imports
 import { cn } from "@plane/utils";
 // constants
@@ -64,7 +64,7 @@ export function BubbleMenuLinkSelector(props: Props) {
       menuButton={
         <>
           Link
-          <LinkOutline className="size-3 shrink-0" />
+          <LinkIcon className="size-3 shrink-0" />
         </>
       }
       options={options}
@@ -102,7 +102,7 @@ export function BubbleMenuLinkSelector(props: Props) {
                 context.onOpenChange(false);
               }}
             >
-              <DeleteOutline className="size-4" />
+              <TrashIcon className="size-4" />
             </button>
           ) : (
             <button
@@ -113,7 +113,7 @@ export function BubbleMenuLinkSelector(props: Props) {
                 handleLinkSubmit();
               }}
             >
-              <TickOutline className="size-4" />
+              <CheckIcon className="size-4" />
             </button>
           )}
         </div>

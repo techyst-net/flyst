@@ -5,7 +5,7 @@
  */
 
 import React, { useEffect, useState } from "react";
-import { CloseCircleOutline, TickCircleOutline } from "@makeplane/propel/icons";
+import { CircleCheck, XCircle } from "lucide-react";
 // plane imports
 import { API_BASE_URL } from "@plane/constants";
 import { Button } from "@plane/propel/button";
@@ -102,15 +102,10 @@ export function AuthUniqueCodeForm(props: TAuthUniqueCodeForm) {
             disabled
           />
           {uniqueCodeFormData.email.length > 0 && (
-            <button
-              type="button"
-              aria-label="Clear email"
-              className="absolute right-3 hover:cursor-pointer"
+            <XCircle
+              className="absolute right-3 h-5 w-5 stroke-placeholder hover:cursor-pointer"
               onClick={handleEmailClear}
-              tabIndex={-1}
-            >
-              <CloseCircleOutline className="h-5 w-5 text-placeholder" />
-            </button>
+            />
           )}
         </div>
       </div>
@@ -130,7 +125,7 @@ export function AuthUniqueCodeForm(props: TAuthUniqueCodeForm) {
         />
         <div className="flex w-full items-center justify-between px-1 pt-1 text-11">
           <p className="flex items-center gap-1 font-medium text-success-primary">
-            <TickCircleOutline height={12} width={12} />
+            <CircleCheck height={12} width={12} />
             Paste the code sent to your email
           </p>
           <button

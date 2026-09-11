@@ -6,8 +6,7 @@
 
 import { useCallback } from "react";
 import { useTheme } from "next-themes";
-import { Languages } from "lucide-react";
-import { CalendarOutline, GlobeOutline, PaletteOutline } from "@makeplane/propel/icons";
+import { Calendar, Earth, Languages, Palette } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { setToast, TOAST_TYPE } from "@plane/propel/toast";
@@ -110,7 +109,7 @@ export const usePowerKPreferencesCommands = (): TPowerKCommandConfig[] => {
       type: "change-page",
       page: "update-theme",
       i18n_title: "power_k.preferences_actions.update_theme",
-      icon: PaletteOutline,
+      icon: Palette,
       onSelect: (data) => {
         const theme = data as string;
         void handleUpdateTheme(theme);
@@ -125,7 +124,7 @@ export const usePowerKPreferencesCommands = (): TPowerKCommandConfig[] => {
       page: "update-timezone",
       type: "change-page",
       i18n_title: "power_k.preferences_actions.update_timezone",
-      icon: GlobeOutline,
+      icon: Earth,
       onSelect: (data) => {
         const timezone = data as string;
         handleUpdateTimezone(timezone);
@@ -140,7 +139,7 @@ export const usePowerKPreferencesCommands = (): TPowerKCommandConfig[] => {
       page: "update-start-of-week",
       type: "change-page",
       i18n_title: "power_k.preferences_actions.update_start_of_week",
-      icon: CalendarOutline,
+      icon: Calendar,
       onSelect: (data) => {
         const startOfWeek = data as EStartOfTheWeek;
         handleUpdateUserProfile({ start_of_the_week: startOfWeek });

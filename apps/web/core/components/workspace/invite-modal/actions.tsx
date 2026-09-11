@@ -9,7 +9,7 @@ import { observer } from "mobx-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
-import { AddOutline } from "@makeplane/propel/icons";
+import { PlusIcon } from "@plane/propel/icons";
 import { cn } from "@plane/utils";
 
 type TInvitationModalActionsProps = {
@@ -53,7 +53,7 @@ export const InvitationModalActions = observer(function InvitationModalActions(p
         onClick={appendField}
         disabled={isInviteDisabled}
       >
-        <AddOutline className="h-3.5 w-3.5" />
+        <PlusIcon className="h-3.5 w-3.5" />
         {addMoreButtonText || t("common.add_more")}
       </button>
       <div className="flex items-center gap-2">

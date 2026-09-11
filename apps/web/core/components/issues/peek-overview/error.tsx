@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { ArrowNarrowRightOutline } from "@makeplane/propel/icons";
+import { MoveRight } from "lucide-react";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 // assets
 import emptyIssue from "@/app/assets/empty-state/issue.svg?url";
@@ -27,7 +27,7 @@ export function IssuePeekOverviewError(props: TIssuePeekOverviewError) {
       <div className="flex flex-shrink-0 justify-start">
         <Tooltip label="Close the peek view" disabled={isMobile}>
           <button onClick={removeRoutePeekId} className="m-5 h-5 w-5">
-            <ArrowNarrowRightOutline className="h-4 w-4 text-tertiary hover:text-secondary" />
+            <MoveRight className="h-4 w-4 text-tertiary hover:text-secondary" />
           </button>
         </Tooltip>
       </div>

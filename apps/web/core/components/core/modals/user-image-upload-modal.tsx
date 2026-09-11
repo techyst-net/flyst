@@ -10,7 +10,7 @@ import { useDropzone } from "react-dropzone";
 // plane imports
 import { ACCEPTED_AVATAR_IMAGE_MIME_TYPES_FOR_REACT_DROPZONE, MAX_FILE_SIZE } from "@plane/constants";
 import { Button } from "@plane/propel/button";
-import { UserOutline } from "@makeplane/propel/icons";
+import { UserCirclePropertyIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import { EFileAssetType } from "@plane/types";
 import { EModalPosition, EModalWidth, ModalCore } from "@plane/ui";
@@ -123,7 +123,7 @@ export const UserImageUploadModal = observer(function UserImageUploadModal(props
                 </>
               ) : (
                 <div>
-                  <UserOutline className="mx-auto h-16 w-16 text-secondary" />
+                  <UserCirclePropertyIcon className="mx-auto h-16 w-16 text-secondary" />
                   <span className="mt-2 block text-13 font-medium text-secondary">
                     {isDragActive ? "Drop image here to upload" : "Drag & drop image here"}
                   </span>

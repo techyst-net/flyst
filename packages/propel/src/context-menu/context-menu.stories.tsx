@@ -5,16 +5,9 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import {
-  ArchiveOutline,
-  ChevronRightOutline,
-  CopyOutline,
-  DeleteOutline,
-  DownloadOutline,
-  EditOutline,
-  ShareOutline,
-  StarOutline,
-} from "@makeplane/propel/icons";
+import { Download, Edit, Share, Star, Archive } from "lucide-react";
+import { CopyIcon, TrashIcon } from "../icons";
+import { ChevronRightIcon } from "../icons/arrows/chevron-right";
 import { ContextMenu } from "./context-menu";
 
 // cannot use satisfies here because base-ui does not have portable types.
@@ -77,24 +70,24 @@ export const WithIcons: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <EditOutline className="mr-2 h-4 w-4" />
+              <Edit className="mr-2 h-4 w-4" />
               Edit
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <DownloadOutline className="mr-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" />
               Download
             </ContextMenu.Item>
             <ContextMenu.Separator />
             <ContextMenu.Item>
-              <ShareOutline className="mr-2 h-4 w-4" />
+              <Share className="mr-2 h-4 w-4" />
               Share
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <DeleteOutline className="mr-2 h-4 w-4 text-danger-primary" />
+              <TrashIcon className="mr-2 h-4 w-4 text-danger-primary" />
               <span className="text-danger-primary">Delete</span>
             </ContextMenu.Item>
           </ContextMenu.Content>
@@ -116,19 +109,19 @@ export const WithSubmenus: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <EditOutline className="mr-2 h-4 w-4" />
+              <Edit className="mr-2 h-4 w-4" />
               Edit
             </ContextMenu.Item>
             <ContextMenu.Separator />
             <ContextMenu.Submenu>
               <ContextMenu.SubmenuTrigger>
-                <ShareOutline className="mr-2 h-4 w-4" />
+                <Share className="mr-2 h-4 w-4" />
                 Share
-                <ChevronRightOutline className="ml-auto h-4 w-4" />
+                <ChevronRightIcon className="ml-auto h-4 w-4" />
               </ContextMenu.SubmenuTrigger>
               <ContextMenu.Portal>
                 <ContextMenu.Content>
@@ -140,7 +133,7 @@ export const WithSubmenus: Story = {
             </ContextMenu.Submenu>
             <ContextMenu.Separator />
             <ContextMenu.Item>
-              <DeleteOutline className="mr-2 h-4 w-4 text-danger-primary" />
+              <TrashIcon className="mr-2 h-4 w-4 text-danger-primary" />
               <span className="text-danger-primary">Delete</span>
             </ContextMenu.Item>
           </ContextMenu.Content>
@@ -162,24 +155,24 @@ export const DisabledItems: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy
             </ContextMenu.Item>
             <ContextMenu.Item disabled>
-              <EditOutline className="mr-2 h-4 w-4" />
+              <Edit className="mr-2 h-4 w-4" />
               Edit (Disabled)
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <DownloadOutline className="mr-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" />
               Download
             </ContextMenu.Item>
             <ContextMenu.Separator />
             <ContextMenu.Item disabled>
-              <ShareOutline className="mr-2 h-4 w-4" />
+              <Share className="mr-2 h-4 w-4" />
               Share (Disabled)
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <DeleteOutline className="mr-2 h-4 w-4 text-danger-primary" />
+              <TrashIcon className="mr-2 h-4 w-4 text-danger-primary" />
               <span className="text-danger-primary">Delete</span>
             </ContextMenu.Item>
           </ContextMenu.Content>
@@ -209,24 +202,24 @@ export const OnFileCard: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <DownloadOutline className="mr-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" />
               Download
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy Link
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <StarOutline className="mr-2 h-4 w-4" />
+              <Star className="mr-2 h-4 w-4" />
               Add to Favorites
             </ContextMenu.Item>
             <ContextMenu.Separator />
             <ContextMenu.Item>
-              <ArchiveOutline className="mr-2 h-4 w-4" />
+              <Archive className="mr-2 h-4 w-4" />
               Archive
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <DeleteOutline className="mr-2 h-4 w-4 text-danger-primary" />
+              <TrashIcon className="mr-2 h-4 w-4 text-danger-primary" />
               <span className="text-danger-primary">Delete</span>
             </ContextMenu.Item>
           </ContextMenu.Content>
@@ -248,15 +241,15 @@ export const OnImage: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <DownloadOutline className="mr-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" />
               Save Image
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy Image
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy Image URL
             </ContextMenu.Item>
             <ContextMenu.Separator />
@@ -284,11 +277,11 @@ export const OnText: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <EditOutline className="mr-2 h-4 w-4" />
+              <Edit className="mr-2 h-4 w-4" />
               Edit
             </ContextMenu.Item>
             <ContextMenu.Separator />
@@ -317,7 +310,7 @@ export const NestedSubmenus: Story = {
             <ContextMenu.Submenu>
               <ContextMenu.SubmenuTrigger>
                 Import
-                <ChevronRightOutline className="ml-auto h-4 w-4" />
+                <ChevronRightIcon className="ml-auto h-4 w-4" />
               </ContextMenu.SubmenuTrigger>
               <ContextMenu.Portal>
                 <ContextMenu.Content>
@@ -326,7 +319,7 @@ export const NestedSubmenus: Story = {
                   <ContextMenu.Submenu>
                     <ContextMenu.SubmenuTrigger>
                       From Cloud
-                      <ChevronRightOutline className="ml-auto h-4 w-4" />
+                      <ChevronRightIcon className="ml-auto h-4 w-4" />
                     </ContextMenu.SubmenuTrigger>
                     <ContextMenu.Portal>
                       <ContextMenu.Content>
@@ -341,7 +334,7 @@ export const NestedSubmenus: Story = {
             </ContextMenu.Submenu>
             <ContextMenu.Separator />
             <ContextMenu.Item>
-              <DeleteOutline className="mr-2 h-4 w-4 text-danger-primary" />
+              <TrashIcon className="mr-2 h-4 w-4 text-danger-primary" />
               <span className="text-danger-primary">Delete</span>
             </ContextMenu.Item>
           </ContextMenu.Content>
@@ -363,23 +356,23 @@ export const WithKeyboardShortcuts: Story = {
         <ContextMenu.Portal>
           <ContextMenu.Content>
             <ContextMenu.Item>
-              <CopyOutline className="mr-2 h-4 w-4" />
+              <CopyIcon className="mr-2 h-4 w-4" />
               Copy
               <span className="ml-auto text-11 text-placeholder">⌘C</span>
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <EditOutline className="mr-2 h-4 w-4" />
+              <Edit className="mr-2 h-4 w-4" />
               Edit
               <span className="ml-auto text-11 text-placeholder">⌘E</span>
             </ContextMenu.Item>
             <ContextMenu.Item>
-              <DownloadOutline className="mr-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" />
               Download
               <span className="ml-auto text-11 text-placeholder">⌘D</span>
             </ContextMenu.Item>
             <ContextMenu.Separator />
             <ContextMenu.Item>
-              <DeleteOutline className="mr-2 h-4 w-4 text-danger-primary" />
+              <TrashIcon className="mr-2 h-4 w-4 text-danger-primary" />
               <span className="text-danger-primary">Delete</span>
               <span className="ml-auto text-11 text-placeholder">⌘⌫</span>
             </ContextMenu.Item>

@@ -14,8 +14,7 @@ import { Combobox } from "@headlessui/react";
 // i18n
 import { useTranslation } from "@plane/i18n";
 // icon
-import { CycleGroupIcon } from "@plane/propel/icons";
-import { CyclesOutline, SearchOutline, TickOutline } from "@makeplane/propel/icons";
+import { CheckIcon, CycleGroupIcon, CycleIcon, SearchIcon } from "@plane/propel/icons";
 import type { TCycleGroups } from "@plane/types";
 // ui
 // store hooks
@@ -114,7 +113,7 @@ export const CycleOptions = observer(function CycleOptions(props: CycleOptionsPr
       query: t("cycle.no_cycle"),
       content: (
         <div className="flex items-center gap-2">
-          <CyclesOutline className="h-3 w-3 flex-shrink-0" />
+          <CycleIcon className="h-3 w-3 flex-shrink-0" />
           <span className="flex-grow truncate">{t("cycle.no_cycle")}</span>
         </div>
       ),
@@ -133,7 +132,7 @@ export const CycleOptions = observer(function CycleOptions(props: CycleOptionsPr
         {...attributes.popper}
       >
         <div className="flex items-center gap-1.5 rounded-sm border border-subtle bg-surface-2 px-2">
-          <SearchOutline className="h-3.5 w-3.5 text-placeholder" />
+          <SearchIcon className="h-3.5 w-3.5 text-placeholder" strokeWidth={1.5} />
           <Combobox.Input
             as="input"
             ref={inputRef}
@@ -162,7 +161,7 @@ export const CycleOptions = observer(function CycleOptions(props: CycleOptionsPr
                   {({ selected }) => (
                     <>
                       <span className="flex-grow truncate">{option.content}</span>
-                      {selected && <TickOutline className="h-3.5 w-3.5 flex-shrink-0" />}
+                      {selected && <CheckIcon className="h-3.5 w-3.5 flex-shrink-0" />}
                     </>
                   )}
                 </Combobox.Option>

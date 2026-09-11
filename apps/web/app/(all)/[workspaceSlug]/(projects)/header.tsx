@@ -5,10 +5,11 @@
  */
 
 import { observer } from "mobx-react";
-import { HomeOutline, WidgetOutline } from "@makeplane/propel/icons";
+import { Shapes } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
+import { HomeIcon } from "@plane/propel/icons";
 import { Breadcrumbs, Header } from "@plane/ui";
 // components
 import { BreadcrumbLink } from "@/components/common/breadcrumb-link";
@@ -29,7 +30,7 @@ export const WorkspaceDashboardHeader = observer(function WorkspaceDashboardHead
             <Breadcrumbs>
               <Breadcrumbs.Item
                 component={
-                  <BreadcrumbLink label={t("home.title")} icon={<HomeOutline className="h-4 w-4 text-tertiary" />} />
+                  <BreadcrumbLink label={t("home.title")} icon={<HomeIcon className="h-4 w-4 text-tertiary" />} />
                 }
               />
             </Breadcrumbs>
@@ -41,7 +42,7 @@ export const WorkspaceDashboardHeader = observer(function WorkspaceDashboardHead
             size="lg"
             onClick={() => toggleWidgetSettings(true)}
             className="my-auto mb-0"
-            prependIcon={<WidgetOutline />}
+            prependIcon={<Shapes />}
           >
             <div className="hidden sm:hidden md:block">{t("home.manage_widgets")}</div>
           </Button>

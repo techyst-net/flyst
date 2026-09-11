@@ -8,10 +8,11 @@ import { useRef, useState } from "react";
 import { observer } from "mobx-react";
 import { useParams } from "next/navigation";
 import useSWR from "swr";
+import { StickyNote as StickyIcon } from "lucide-react";
 // plane hooks
 import { useOutsideClickDetector } from "@plane/hooks";
 // plane ui
-import { AddOutline, CloseOutline, MultipleStickyOutline, StickyNoteOutline } from "@makeplane/propel/icons";
+import { RecentStickyIcon, StickyNoteIcon, PlusIcon, CloseIcon } from "@plane/propel/icons";
 import { PreviewCard, PreviewCardContent, PreviewCardTrigger } from "@makeplane/propel/components/preview-card";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 // plane utils
@@ -59,7 +60,7 @@ export const StickyActionBar = observer(function StickyActionBar() {
       onClick={() => setShowRecentSticky(true)}
       style={{ color: recentStickyBackgroundColor }}
     >
-      <StickyNoteOutline className={cn("size-5 rotate-90")} color={recentStickyBackgroundColor} />
+      <StickyNoteIcon className={cn("size-5 rotate-90")} color={recentStickyBackgroundColor} />
     </button>
   );
 
@@ -76,7 +77,7 @@ export const StickyActionBar = observer(function StickyActionBar() {
             className="btn btn--icon shadow-sm flex h-10 w-10 items-center justify-center rounded-full bg-surface-1"
             onClick={() => toggleAllStickiesModal(true)}
           >
-            <MultipleStickyOutline className="size-5 rotate-90 text-tertiary" />
+            <RecentStickyIcon className="size-5 rotate-90 text-tertiary" />
           </button>
         </Tooltip>
         {recentStickyId &&
@@ -111,7 +112,7 @@ export const StickyActionBar = observer(function StickyActionBar() {
               setNewSticky(true);
             }}
           >
-            <AddOutline className="size-5 rotate-90 text-tertiary" />
+            <PlusIcon className="size-5 rotate-90 text-tertiary" />
           </button>
         </Tooltip>
       </div>
@@ -121,9 +122,9 @@ export const StickyActionBar = observer(function StickyActionBar() {
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {isExpanded ? (
-          <CloseOutline className="size-5 text-tertiary" />
+          <CloseIcon className="size-5 text-tertiary" />
         ) : (
-          <StickyNoteOutline className="size-5 rotate-90 text-tertiary" />
+          <StickyIcon className="size-5 rotate-90 text-tertiary" />
         )}
       </button>
 

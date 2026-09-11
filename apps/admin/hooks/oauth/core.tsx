@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { KeyOutline, MailOutline } from "@makeplane/propel/icons";
+import { KeyRound, Mails } from "lucide-react";
 // types
 import type {
   TCoreInstanceAuthenticationModeKeys,
@@ -38,7 +38,7 @@ export const getCoreAuthenticationModesMap: (
     name: "Unique codes",
     description:
       "Log in or sign up for Flyst using codes sent via email. You need to have set up SMTP to use this method.",
-    icon: <MailOutline className="h-6 w-6 p-0.5 text-tertiary" />,
+    icon: <Mails className="h-6 w-6 p-0.5 text-tertiary" />,
     config: <EmailCodesConfiguration disabled={disabled} updateConfig={updateConfig} />,
     enabledConfigKey: "ENABLE_MAGIC_LINK_LOGIN",
   },
@@ -46,7 +46,7 @@ export const getCoreAuthenticationModesMap: (
     key: "passwords-login",
     name: "Passwords",
     description: "Allow members to create accounts with passwords and use it with their email addresses to sign in.",
-    icon: <KeyOutline className="h-6 w-6 p-0.5 text-tertiary" />,
+    icon: <KeyRound className="h-6 w-6 p-0.5 text-tertiary" />,
     config: <PasswordLoginConfiguration disabled={disabled} updateConfig={updateConfig} />,
     enabledConfigKey: "ENABLE_EMAIL_PASSWORD",
   },

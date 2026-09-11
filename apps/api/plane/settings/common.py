@@ -82,7 +82,7 @@ WEBHOOK_ALLOWED_HOSTS = [
 # Webhook disallowed domains — comma-separated hostnames. Webhooks targeting
 # these domains or any of their subdomains are rejected (the request host is
 # always appended at validation time as a loop-back guard). Empty by default
-# for self-hosted deployments; set to e.g. "techyst.net" to block specific domains.
+# for self-hosted deployments; set to e.g. "flyst.techyst.net" to block specific domains.
 _webhook_disallowed_domains_raw = os.environ.get("WEBHOOK_DISALLOWED_DOMAINS", "")
 WEBHOOK_DISALLOWED_DOMAINS = [
     _d.strip().rstrip(".").lower()
@@ -126,7 +126,6 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "plane.authentication.techyst_entitlements.CentralSubscriptionMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "crum.CurrentRequestUserMiddleware",
     "django.middleware.gzip.GZipMiddleware",

@@ -5,7 +5,7 @@
  */
 
 import { useState } from "react";
-import { CloseCircleOutline } from "@makeplane/propel/icons";
+import { XCircle } from "lucide-react";
 // plane imports
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import type { IApiToken } from "@plane/types";
@@ -35,7 +35,7 @@ export function ApiTokenListItem(props: Props) {
             onClick={() => setDeleteModalOpen(true)}
             className="absolute right-4 hidden place-items-center group-hover:grid"
           >
-            <CloseCircleOutline className="h-4 w-4 text-danger-primary" />
+            <XCircle className="h-4 w-4 text-danger-primary" />
           </button>
         </Tooltip>
         <div className="flex w-4/5 items-center">

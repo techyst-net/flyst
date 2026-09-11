@@ -12,7 +12,7 @@ import { useParams } from "next/navigation";
 import { useOutsideClickDetector } from "@plane/hooks";
 // helpers
 import { useTranslation } from "@plane/i18n";
-import { CloseOutline, SearchOutline } from "@makeplane/propel/icons";
+import { SearchIcon, CloseIcon } from "@plane/propel/icons";
 import { cn } from "@plane/utils";
 import { useSticky } from "@/hooks/use-stickies";
 import { IconButton } from "@plane/propel/icon-button";
@@ -59,7 +59,7 @@ export const StickySearch = observer(function StickySearch() {
           variant="ghost"
           size="lg"
           className="-mr-2"
-          icon={SearchOutline}
+          icon={SearchIcon}
           onClick={() => {
             setIsSearchOpen(true);
             inputRef.current?.focus();
@@ -74,7 +74,7 @@ export const StickySearch = observer(function StickySearch() {
           }
         )}
       >
-        <SearchOutline className="size-3.5 shrink-0" />
+        <SearchIcon className="size-3.5 shrink-0" />
         <input
           ref={inputRef}
           className="w-full max-w-[234px] border-none bg-transparent text-13 text-primary placeholder:text-placeholder focus:outline-none"
@@ -96,7 +96,7 @@ export const StickySearch = observer(function StickySearch() {
               fetchStickies();
             }}
           >
-            <CloseOutline className="h-3 w-3" />
+            <CloseIcon className="h-3 w-3" />
           </button>
         )}
       </div>

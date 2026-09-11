@@ -11,7 +11,7 @@ import { attachInstruction, extractInstruction } from "@atlaskit/pragmatic-drag-
 import { observer } from "mobx-react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import { PinOutline, UnpinOutline } from "@makeplane/propel/icons";
+import { Pin, PinOff } from "lucide-react";
 // plane imports
 import type { IWorkspaceSidebarNavigationItem } from "@plane/constants";
 import { EUserPermissionsLevel } from "@plane/constants";
@@ -203,14 +203,14 @@ export const ExtendedSidebarItem = observer(function ExtendedSidebarItem(props: 
             )}
             {isPinned ? (
               <Tooltip label="Unpin">
-                <UnpinOutline
+                <PinOff
                   className="size-3.5 flex-shrink-0 text-placeholder outline-none hover:text-tertiary"
                   onClick={() => unPinNavigationItem(item.key)}
                 />
               </Tooltip>
             ) : (
               <Tooltip label="Pin">
-                <PinOutline
+                <Pin
                   className="size-3.5 flex-shrink-0 text-placeholder outline-none hover:text-tertiary"
                   onClick={() => pinNavigationItem(item.key)}
                 />

@@ -7,7 +7,7 @@
 import { useRouter } from "next/navigation";
 import { Avatar } from "@makeplane/propel/components/avatar";
 import { Logo } from "@plane/propel/emoji-icon-picker";
-import { PagesOutline } from "@makeplane/propel/icons";
+import { PageIcon } from "@plane/propel/icons";
 // plane import
 import type { TActivityEntityData, TPageEntityData } from "@plane/types";
 import { calculateTimeAgo, getFileURL, getPageName } from "@plane/utils";
@@ -48,7 +48,7 @@ export function RecentPage(props: BlockProps) {
             {pageDetails?.logo_props?.in_use ? (
               <Logo logo={pageDetails?.logo_props} size={16} type="lucide" />
             ) : (
-              <PagesOutline className="size-4 text-tertiary" />
+              <PageIcon className="size-4 text-tertiary" />
             )}
           </div>
           {pageDetails?.project_identifier && (

@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { CloseOutline } from "@makeplane/propel/icons";
+import { X } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 // local imports
@@ -44,7 +44,7 @@ export function PowerKModalContextIndicator(props: Props) {
           aria-label="Clear context (Backspace)"
           tabIndex={-1}
         >
-          <CloseOutline className="size-2.5" />
+          <X className="size-2.5" />
         </button>
       </div>
     </div>

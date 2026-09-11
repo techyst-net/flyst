@@ -6,8 +6,7 @@
 
 import { observer } from "mobx-react";
 import { EIconSize } from "@plane/constants";
-import { StateGroupIcon } from "@plane/propel/icons";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { StateGroupIcon, CloseIcon } from "@plane/propel/icons";
 // hooks
 import { useProjectInbox } from "@/hooks/store/use-project-inbox";
 import { useProjectState } from "@/hooks/store/use-project-state";
@@ -42,7 +41,7 @@ export const InboxIssueAppliedFiltersState = observer(function InboxIssueApplied
               className="relative flex h-3 w-3 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden text-tertiary transition-all hover:text-secondary"
               onClick={() => handleInboxIssueFilters("state", handleFilterValue(optionDetail?.id))}
             >
-              <CloseOutline className={`h-3 w-3`} />
+              <CloseIcon className={`h-3 w-3`} />
             </div>
           </div>
         );
@@ -52,7 +51,7 @@ export const InboxIssueAppliedFiltersState = observer(function InboxIssueApplied
         className="relative flex h-3 w-3 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden text-tertiary transition-all hover:text-secondary"
         onClick={clearFilter}
       >
-        <CloseOutline className={`h-3 w-3`} />
+        <CloseIcon className={`h-3 w-3`} />
       </div>
     </div>
   );

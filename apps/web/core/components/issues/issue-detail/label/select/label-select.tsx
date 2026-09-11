@@ -7,12 +7,13 @@
 import { Fragment, useState } from "react";
 import { observer } from "mobx-react";
 import { usePopper } from "react-popper";
-import { AddOutline, LoadingOutline, SearchOutline, TickOutline } from "@makeplane/propel/icons";
+import { Loader } from "lucide-react";
 import { Combobox } from "@headlessui/react";
 // plane imports
 import { EUserPermissionsLevel, getRandomLabelColor } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
+import { CheckIcon, SearchIcon, PlusIcon } from "@plane/propel/icons";
 import type { IIssueLabel } from "@plane/types";
 import { EUserProjectRoles } from "@plane/types";
 // helpers
@@ -131,7 +132,7 @@ export const IssueLabelSelect = observer(function IssueLabelSelect(props: IIssue
             type="button"
             variant="tertiary"
             size="sm"
-            prependIcon={<AddOutline />}
+            prependIcon={<PlusIcon />}
             onClick={() => !projectLabels && fetchLabels()}
           >
             {label}
@@ -147,7 +148,7 @@ export const IssueLabelSelect = observer(function IssueLabelSelect(props: IIssue
           >
             <div className="px-2">
               <div className="flex w-full items-center justify-start rounded-sm border border-subtle bg-surface-2 px-2">
-                <SearchOutline className="h-3.5 w-3.5 text-tertiary" />
+                <SearchIcon className="h-3.5 w-3.5 text-tertiary" />
                 <Combobox.Input
                   className="w-full bg-transparent px-2 py-1 text-11 text-secondary placeholder:text-placeholder focus:outline-none"
                   value={query}
@@ -180,7 +181,7 @@ export const IssueLabelSelect = observer(function IssueLabelSelect(props: IIssue
                           {option.content}
                           {selected && (
                             <div className="flex-shrink-0">
-                              <TickOutline className={`h-3.5 w-3.5`} />
+                              <CheckIcon className={`h-3.5 w-3.5`} />
                             </div>
                           )}
                         </>
@@ -189,7 +190,7 @@ export const IssueLabelSelect = observer(function IssueLabelSelect(props: IIssue
                   ))}
                 </ul>
               ) : submitting ? (
-                <LoadingOutline className="spin h-3.5 w-3.5" />
+                <Loader className="spin h-3.5 w-3.5" />
               ) : canCreateLabel ? (
                 <ul className="space-y-1">
                   <Combobox.Option

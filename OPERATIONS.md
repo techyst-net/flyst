@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Flyst Projects — Operations
+=======
+# Flyst Projects — Operations
+>>>>>>> origin/core
 
 > Shared infrastructure (Postgres, Redis, S3, SMTP, LLM …) is wired in
 > already — see [../INFRA.md](../INFRA.md). This app runs at http://localhost:8030.

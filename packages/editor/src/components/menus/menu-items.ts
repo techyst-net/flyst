@@ -6,30 +6,30 @@
 
 import type { Editor } from "@tiptap/react";
 import {
-  AlignCenterOutline,
-  BoldOutline,
-  CheckSquareOutline,
-  CodeOutline,
-  H1Outline,
-  H2Outline,
-  H3Outline,
-  H4Outline,
-  H5Outline,
-  H6Outline,
-  ImageOutline,
-  ItalicOutline,
-  LinkOutline,
-  ListOutline,
-  MinusSquareOutline,
-  NumberedListOutline,
-  PaletteOutline,
-  QuoteOutline,
-  StrikethroughOutline,
-  TableOutline,
-  TextOutline,
-  UnderlineOutline,
-} from "@makeplane/propel/icons";
-import type { ComponentType, SVGProps } from "react";
+  BoldIcon,
+  Heading1,
+  CheckSquare,
+  Heading2,
+  Heading3,
+  TextQuote,
+  ImageIcon,
+  TableIcon,
+  ListIcon,
+  ListOrderedIcon,
+  ItalicIcon,
+  UnderlineIcon,
+  StrikethroughIcon,
+  CodeIcon,
+  Heading4,
+  Heading5,
+  Heading6,
+  CaseSensitive,
+  MinusSquare,
+  Palette,
+  AlignCenter,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { LinkIcon } from "@plane/propel/icons";
 // constants
 import { CORE_EXTENSIONS } from "@/constants/extension";
 // helpers
@@ -56,6 +56,7 @@ import {
 } from "@/helpers/editor-commands";
 // types
 import type { TCommandWithProps, TEditorCommands } from "@/types";
+import type { ISvgIcons } from "@plane/propel/icons";
 type isActiveFunction<T extends TEditorCommands> = (params?: TCommandWithProps<T>) => boolean;
 type commandFunction<T extends TEditorCommands> = (params?: TCommandWithProps<T>) => void;
 
@@ -63,7 +64,7 @@ export type EditorMenuItem<T extends TEditorCommands> = {
   key: T;
   name: string;
   command: commandFunction<T>;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: LucideIcon | React.FC<ISvgIcons>;
   isActive: isActiveFunction<T>;
 };
 
@@ -72,7 +73,7 @@ export const TextItem = (editor: Editor): EditorMenuItem<"text"> => ({
   name: "Text",
   isActive: () => editor.isActive(CORE_EXTENSIONS.PARAGRAPH),
   command: () => setText(editor),
-  icon: TextOutline,
+  icon: CaseSensitive,
 });
 
 type SupportedHeadingLevels = Extract<TEditorCommands, "h1" | "h2" | "h3" | "h4" | "h5" | "h6">;
@@ -82,7 +83,7 @@ const HeadingItem = <T extends SupportedHeadingLevels>(
   level: 1 | 2 | 3 | 4 | 5 | 6,
   key: T,
   name: string,
-  icon: ComponentType<SVGProps<SVGSVGElement>>
+  icon: LucideIcon
 ): EditorMenuItem<T> => ({
   key,
   name,
@@ -92,29 +93,29 @@ const HeadingItem = <T extends SupportedHeadingLevels>(
 });
 
 export const HeadingOneItem = (editor: Editor): EditorMenuItem<"h1"> =>
-  HeadingItem(editor, 1, "h1", "Heading 1", H1Outline);
+  HeadingItem(editor, 1, "h1", "Heading 1", Heading1);
 
 export const HeadingTwoItem = (editor: Editor): EditorMenuItem<"h2"> =>
-  HeadingItem(editor, 2, "h2", "Heading 2", H2Outline);
+  HeadingItem(editor, 2, "h2", "Heading 2", Heading2);
 
 export const HeadingThreeItem = (editor: Editor): EditorMenuItem<"h3"> =>
-  HeadingItem(editor, 3, "h3", "Heading 3", H3Outline);
+  HeadingItem(editor, 3, "h3", "Heading 3", Heading3);
 
 export const HeadingFourItem = (editor: Editor): EditorMenuItem<"h4"> =>
-  HeadingItem(editor, 4, "h4", "Heading 4", H4Outline);
+  HeadingItem(editor, 4, "h4", "Heading 4", Heading4);
 
 export const HeadingFiveItem = (editor: Editor): EditorMenuItem<"h5"> =>
-  HeadingItem(editor, 5, "h5", "Heading 5", H5Outline);
+  HeadingItem(editor, 5, "h5", "Heading 5", Heading5);
 
 export const HeadingSixItem = (editor: Editor): EditorMenuItem<"h6"> =>
-  HeadingItem(editor, 6, "h6", "Heading 6", H6Outline);
+  HeadingItem(editor, 6, "h6", "Heading 6", Heading6);
 
 export const BoldItem = (editor: Editor): EditorMenuItem<"bold"> => ({
   key: "bold",
   name: "Bold",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.BOLD),
   command: () => toggleBold(editor),
-  icon: BoldOutline,
+  icon: BoldIcon,
 });
 
 export const ItalicItem = (editor: Editor): EditorMenuItem<"italic"> => ({
@@ -122,7 +123,7 @@ export const ItalicItem = (editor: Editor): EditorMenuItem<"italic"> => ({
   name: "Italic",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.ITALIC),
   command: () => toggleItalic(editor),
-  icon: ItalicOutline,
+  icon: ItalicIcon,
 });
 
 export const UnderLineItem = (editor: Editor): EditorMenuItem<"underline"> => ({
@@ -130,7 +131,7 @@ export const UnderLineItem = (editor: Editor): EditorMenuItem<"underline"> => ({
   name: "Underline",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.UNDERLINE),
   command: () => toggleUnderline(editor),
-  icon: UnderlineOutline,
+  icon: UnderlineIcon,
 });
 
 export const StrikeThroughItem = (editor: Editor): EditorMenuItem<"strikethrough"> => ({
@@ -138,7 +139,7 @@ export const StrikeThroughItem = (editor: Editor): EditorMenuItem<"strikethrough
   name: "Strikethrough",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.STRIKETHROUGH),
   command: () => toggleStrike(editor),
-  icon: StrikethroughOutline,
+  icon: StrikethroughIcon,
 });
 
 export const BulletListItem = (editor: Editor): EditorMenuItem<"bulleted-list"> => ({
@@ -146,7 +147,7 @@ export const BulletListItem = (editor: Editor): EditorMenuItem<"bulleted-list"> 
   name: "Bulleted list",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.BULLET_LIST),
   command: () => toggleBulletList(editor),
-  icon: ListOutline,
+  icon: ListIcon,
 });
 
 export const NumberedListItem = (editor: Editor): EditorMenuItem<"numbered-list"> => ({
@@ -154,7 +155,7 @@ export const NumberedListItem = (editor: Editor): EditorMenuItem<"numbered-list"
   name: "Numbered list",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.ORDERED_LIST),
   command: () => toggleOrderedList(editor),
-  icon: NumberedListOutline,
+  icon: ListOrderedIcon,
 });
 
 export const TodoListItem = (editor: Editor): EditorMenuItem<"to-do-list"> => ({
@@ -162,7 +163,7 @@ export const TodoListItem = (editor: Editor): EditorMenuItem<"to-do-list"> => ({
   name: "To-do list",
   isActive: () => editor.isActive(CORE_EXTENSIONS.TASK_ITEM),
   command: () => toggleTaskList(editor),
-  icon: CheckSquareOutline,
+  icon: CheckSquare,
 });
 
 export const QuoteItem = (editor: Editor): EditorMenuItem<"quote"> => ({
@@ -170,7 +171,7 @@ export const QuoteItem = (editor: Editor): EditorMenuItem<"quote"> => ({
   name: "Quote",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.BLOCKQUOTE),
   command: () => toggleBlockquote(editor),
-  icon: QuoteOutline,
+  icon: TextQuote,
 });
 
 export const CodeItem = (editor: Editor): EditorMenuItem<"code"> => ({
@@ -178,7 +179,7 @@ export const CodeItem = (editor: Editor): EditorMenuItem<"code"> => ({
   name: "Code",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.CODE_INLINE) || editor?.isActive(CORE_EXTENSIONS.CODE_BLOCK),
   command: () => toggleCodeBlock(editor),
-  icon: CodeOutline,
+  icon: CodeIcon,
 });
 
 export const TableItem = (editor: Editor): EditorMenuItem<"table"> => ({
@@ -186,7 +187,7 @@ export const TableItem = (editor: Editor): EditorMenuItem<"table"> => ({
   name: "Table",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.TABLE),
   command: () => insertTableCommand(editor),
-  icon: TableOutline,
+  icon: TableIcon,
 });
 
 export const ImageItem = (editor: Editor): EditorMenuItem<"image"> => ({
@@ -194,7 +195,7 @@ export const ImageItem = (editor: Editor): EditorMenuItem<"image"> => ({
   name: "Image",
   isActive: () => editor?.isActive(CORE_EXTENSIONS.IMAGE) || editor?.isActive(CORE_EXTENSIONS.CUSTOM_IMAGE),
   command: () => insertImage({ editor, event: "insert", pos: editor.state.selection.from }),
-  icon: ImageOutline,
+  icon: ImageIcon,
 });
 
 export const HorizontalRuleItem = (editor: Editor): EditorMenuItem<"divider"> =>
@@ -203,7 +204,7 @@ export const HorizontalRuleItem = (editor: Editor): EditorMenuItem<"divider"> =>
     name: "Divider",
     isActive: () => editor?.isActive(CORE_EXTENSIONS.HORIZONTAL_RULE),
     command: () => insertHorizontalRule(editor),
-    icon: MinusSquareOutline,
+    icon: MinusSquare,
   }) as const;
 
 export const LinkItem = (editor: Editor): EditorMenuItem<"link"> =>
@@ -218,7 +219,7 @@ export const LinkItem = (editor: Editor): EditorMenuItem<"link"> =>
       else unsetLinkEditor(editor);
     },
 
-    icon: LinkOutline,
+    icon: LinkIcon,
   }) as const;
 
 export const TextColorItem = (editor: Editor): EditorMenuItem<"text-color"> => ({
@@ -229,7 +230,7 @@ export const TextColorItem = (editor: Editor): EditorMenuItem<"text-color"> => (
     if (!props) return;
     toggleTextColor(props.color, editor);
   },
-  icon: PaletteOutline,
+  icon: Palette,
 });
 
 export const BackgroundColorItem = (editor: Editor): EditorMenuItem<"background-color"> => ({
@@ -240,7 +241,7 @@ export const BackgroundColorItem = (editor: Editor): EditorMenuItem<"background-
     if (!props) return;
     toggleBackgroundColor(props.color, editor);
   },
-  icon: PaletteOutline,
+  icon: Palette,
 });
 
 export const TextAlignItem = (editor: Editor): EditorMenuItem<"text-align"> => ({
@@ -251,7 +252,7 @@ export const TextAlignItem = (editor: Editor): EditorMenuItem<"text-align"> => (
     if (!props) return;
     setTextAlign(props.alignment, editor);
   },
-  icon: AlignCenterOutline,
+  icon: AlignCenter,
 });
 
 export const getEditorMenuItems = (editor: Editor | null): EditorMenuItem<TEditorCommands>[] => {

@@ -7,7 +7,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 // plane imports
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 import type { IFilterInstance } from "@plane/shared-state";
 import type { TExternalFilter, TFilterProperty } from "@plane/types";
 
@@ -33,7 +33,7 @@ export const FilterItemCloseButton = observer(function FilterItemCloseButton<
       type="button"
       aria-label="Remove filter"
     >
-      <CloseOutline className="size-3.5" />
+      <CloseIcon className="size-3.5" />
     </button>
   );
 });

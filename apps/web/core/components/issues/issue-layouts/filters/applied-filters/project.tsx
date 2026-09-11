@@ -6,7 +6,7 @@
 
 import { observer } from "mobx-react";
 import { Logo } from "@plane/propel/emoji-icon-picker";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 // hooks
 import { useProject } from "@/hooks/store/use-project";
 
@@ -40,7 +40,7 @@ export const AppliedProjectFilters = observer(function AppliedProjectFilters(pro
                 className="grid place-items-center text-tertiary hover:text-secondary"
                 onClick={() => handleRemove(projectId)}
               >
-                <CloseOutline height={10} width={10} />
+                <CloseIcon height={10} width={10} strokeWidth={2} />
               </button>
             )}
           </div>

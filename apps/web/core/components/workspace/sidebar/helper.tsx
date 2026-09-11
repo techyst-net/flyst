@@ -5,40 +5,40 @@
  */
 
 import {
-  AnalyticsOutline,
-  ArchiveOutline,
-  CyclesOutline,
-  DraftsOutline,
-  HomeOutline,
-  InboxOutline,
-  MultipleStickyOutline,
-  ProjectsOutline,
-  ViewsOutline,
-  YourWorkOutline,
-} from "@makeplane/propel/icons";
+  AnalyticsIcon,
+  ArchiveIcon,
+  CycleIcon,
+  DraftIcon,
+  HomeIcon,
+  InboxIcon,
+  MultipleStickyIcon,
+  ProjectIcon,
+  ViewsIcon,
+  YourWorkIcon,
+} from "@plane/propel/icons";
 import { cn } from "@plane/utils";
 
 export const getSidebarNavigationItemIcon = (key: string, className: string = "") => {
   switch (key) {
     case "home":
-      return <HomeOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <HomeIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "inbox":
-      return <InboxOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <InboxIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "projects":
-      return <ProjectsOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <ProjectIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "views":
-      return <ViewsOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <ViewsIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "active_cycles":
-      return <CyclesOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <CycleIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "analytics":
-      return <AnalyticsOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <AnalyticsIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "your_work":
-      return <YourWorkOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <YourWorkIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "drafts":
-      return <DraftsOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <DraftIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "archives":
-      return <ArchiveOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <ArchiveIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "stickies":
-      return <MultipleStickyOutline className={cn("size-4 flex-shrink-0", className)} />;
+      return <MultipleStickyIcon className={cn("size-4 flex-shrink-0", className)} />;
   }
 };

@@ -8,7 +8,7 @@ import { observer } from "mobx-react";
 // constants
 import { NETWORK_CHOICES } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 
 type Props = {
   handleRemove: (val: string) => void;
@@ -33,7 +33,7 @@ export const AppliedAccessFilters = observer(function AppliedAccessFilters(props
                 className="grid place-items-center text-tertiary hover:text-secondary"
                 onClick={() => handleRemove(status)}
               >
-                <CloseOutline height={10} width={10} />
+                <CloseIcon height={10} width={10} strokeWidth={2} />
               </button>
             )}
           </div>

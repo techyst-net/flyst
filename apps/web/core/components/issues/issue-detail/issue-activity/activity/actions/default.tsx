@@ -6,7 +6,7 @@
 
 import { observer } from "mobx-react";
 // plane imports
-import { WorkItemsOutline } from "@makeplane/propel/icons";
+import { WorkItemsIcon } from "@plane/propel/icons";
 import { EInboxIssueSource } from "@plane/types";
 // hooks
 import { capitalizeFirstLetter } from "@plane/utils";
@@ -31,7 +31,7 @@ export const IssueDefaultActivity = observer(function IssueDefaultActivity(props
   return (
     <IssueActivityBlockComponent
       activityId={activityId}
-      icon={<WorkItemsOutline width={14} height={14} className="text-secondary" aria-hidden="true" />}
+      icon={<WorkItemsIcon width={14} height={14} className="text-secondary" aria-hidden="true" />}
       ends={ends}
     >
       <>

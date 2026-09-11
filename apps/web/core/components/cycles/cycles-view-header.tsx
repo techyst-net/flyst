@@ -6,11 +6,12 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react";
-import { CloseOutline, FilterOutline, SearchOutline } from "@makeplane/propel/icons";
+import { ListFilter } from "lucide-react";
 // plane imports
 import { useOutsideClickDetector } from "@plane/hooks";
 import { IconButton } from "@plane/propel/icon-button";
 import { useTranslation } from "@plane/i18n";
+import { SearchIcon, CloseIcon } from "@plane/propel/icons";
 import type { TCycleFilters } from "@plane/types";
 import { cn, calculateTotalFilters } from "@plane/utils";
 // components
@@ -84,7 +85,7 @@ export const CyclesViewHeader = observer(function CyclesViewHeader(props: Props)
             setIsSearchOpen(true);
             inputRef.current?.focus();
           }}
-          icon={SearchOutline}
+          icon={SearchIcon}
         />
       ) : (
         <div
@@ -95,7 +96,7 @@ export const CyclesViewHeader = observer(function CyclesViewHeader(props: Props)
             }
           )}
         >
-          <SearchOutline className="h-3.5 w-3.5" />
+          <SearchIcon className="h-3.5 w-3.5" />
           <input
             ref={inputRef}
             className="w-full max-w-[234px] border-none bg-transparent text-13 text-primary placeholder:text-placeholder focus:outline-none"
@@ -113,14 +114,14 @@ export const CyclesViewHeader = observer(function CyclesViewHeader(props: Props)
                 setIsSearchOpen(false);
               }}
             >
-              <CloseOutline className="h-3 w-3" />
+              <CloseIcon className="h-3 w-3" />
             </button>
           )}
         </div>
       )}
 
       <FiltersDropdown
-        icon={<FilterOutline className="h-3 w-3" />}
+        icon={<ListFilter className="h-3 w-3" />}
         title={t("common.filters")}
         placement="bottom-end"
         isFiltersApplied={isFiltersApplied}

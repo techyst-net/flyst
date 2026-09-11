@@ -6,7 +6,7 @@
 
 import { useState } from "react";
 import { observer } from "mobx-react";
-import { ReactionOutline } from "@makeplane/propel/icons";
+import { SmilePlus } from "lucide-react";
 // plane imports
 import { EmojiPicker, EmojiIconPickerTypes } from "@plane/propel/emoji-icon-picker";
 import { cn } from "@plane/utils";
@@ -53,7 +53,7 @@ export const PageEditorHeaderRoot = observer(function PageEditorHeaderRoot(props
                     }
                   )}
                 >
-                  <ReactionOutline className="size-4 flex-shrink-0" />
+                  <SmilePlus className="size-4 flex-shrink-0" />
                   Icon
                 </button>
               }

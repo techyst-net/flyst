@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import type { Control, FieldPath, FieldValues } from "react-hook-form";
 import { Controller } from "react-hook-form";
 // icons
-import { HideOutline, ShowOutline } from "@makeplane/propel/icons";
+import { Eye, EyeOff } from "lucide-react";
 // plane internal packages
 import { Input, InputGroup } from "@makeplane/propel/components/input";
 
@@ -71,7 +71,7 @@ export function ControllerInput<TFieldValues extends FieldValues = FieldValues>(
               className="flex items-center justify-center text-placeholder"
               onClick={() => setShowPassword(false)}
             >
-              <HideOutline className="h-4 w-4" />
+              <EyeOff className="h-4 w-4" />
             </button>
           ) : (
             <button
@@ -80,7 +80,7 @@ export function ControllerInput<TFieldValues extends FieldValues = FieldValues>(
               className="flex items-center justify-center text-placeholder"
               onClick={() => setShowPassword(true)}
             >
-              <ShowOutline className="h-4 w-4" />
+              <Eye className="h-4 w-4" />
             </button>
           ))}
       </InputGroup>

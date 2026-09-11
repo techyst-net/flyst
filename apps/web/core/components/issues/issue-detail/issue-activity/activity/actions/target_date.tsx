@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { CalendarOutline } from "@makeplane/propel/icons";
+import { CalendarDays } from "lucide-react";
 // hooks
 import { renderFormattedDate } from "@plane/utils";
 import { useIssueDetail } from "@/hooks/store/use-issue-detail";
@@ -27,7 +27,7 @@ export const IssueTargetDateActivity = observer(function IssueTargetDateActivity
   if (!activity) return <></>;
   return (
     <IssueActivityBlockComponent
-      icon={<CalendarOutline width={14} height={14} className="text-secondary" aria-hidden="true" />}
+      icon={<CalendarDays size={14} className="text-secondary" aria-hidden="true" />}
       activityId={activityId}
       ends={ends}
     >

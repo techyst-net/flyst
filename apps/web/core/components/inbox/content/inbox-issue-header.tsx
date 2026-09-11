@@ -6,25 +6,22 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { observer } from "mobx-react";
-import {
-  ArrowNarrowRightOutline,
-  ChevronDownOutline,
-  ChevronUpOutline,
-  ClockOutline,
-  CloseCircleFilled,
-  CopyOutline,
-  DeleteOutline,
-  DuplicateOfOutline,
-  LinkOutline,
-  MoreHorizontalOutline,
-  NewTabOutline,
-  TickCircleFilled,
-} from "@makeplane/propel/icons";
+import { Clock, FileStack, MoreHorizontal, MoveRight } from "lucide-react";
 // plane imports
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
 import { Button } from "@plane/propel/button";
 import { IconButton, getIconButtonStyling } from "@plane/propel/icon-button";
+import {
+  LinkIcon,
+  CopyIcon,
+  NewTabIcon,
+  TrashIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CheckCircleFilledIcon,
+  CloseCircleFilledIcon,
+} from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { TNameDescriptionLoader } from "@plane/types";
 import { EInboxIssueStatus } from "@plane/types";
@@ -293,7 +290,7 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
         <div className="flex items-center gap-4">
           {isNotificationEmbed && (
             <button onClick={embedRemoveCurrentNotification}>
-              <ArrowNarrowRightOutline className="h-4 w-4 text-tertiary hover:text-secondary" />
+              <MoveRight className="h-4 w-4 text-tertiary hover:text-secondary" />
             </button>
           )}
           {issue?.project_id && issue.sequence_id && (
@@ -313,14 +310,14 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
               <IconButton
                 variant="secondary"
                 size="lg"
-                icon={ChevronUpOutline}
+                icon={ChevronUpIcon}
                 aria-label="Previous work item"
                 onClick={() => handleInboxIssueNavigation("prev")}
               />
               <IconButton
                 variant="secondary"
                 size="lg"
-                icon={ChevronDownOutline}
+                icon={ChevronDownIcon}
                 aria-label="Next work item"
                 onClick={() => handleInboxIssueNavigation("next")}
               />
@@ -340,7 +337,7 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
                   )
                 }
               >
-                <TickCircleFilled className="size-4 shrink-0 text-success-secondary" />
+                <CheckCircleFilledIcon className="size-4 shrink-0 text-success-secondary" />
                 {t("inbox_issue.actions.accept")}
               </Button>
             )}
@@ -357,7 +354,7 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
                   )
                 }
               >
-                <CloseCircleFilled className="size-4 shrink-0 text-danger-secondary" />
+                <CloseCircleFilledIcon className="size-4 shrink-0 text-danger-secondary" />
                 {t("inbox_issue.actions.decline")}
               </Button>
             )}
@@ -367,13 +364,13 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
                 <Button
                   variant="secondary"
                   size="lg"
-                  prependIcon={<LinkOutline className="h-2.5 w-2.5" />}
+                  prependIcon={<LinkIcon className="h-2.5 w-2.5" />}
                   onClick={() => handleCopyIssueLink(workItemLink)}
                 >
                   {t("inbox_issue.actions.copy")}
                 </Button>
                 <ControlLink href={workItemLink} onClick={() => router.push(workItemLink)} target="_self">
-                  <Button variant="secondary" size="lg" prependIcon={<NewTabOutline className="h-2.5 w-2.5" />}>
+                  <Button variant="secondary" size="lg" prependIcon={<NewTabIcon className="h-2.5 w-2.5" />}>
                     {t("inbox_issue.actions.open")}
                   </Button>
                 </ControlLink>
@@ -382,7 +379,7 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
               <>
                 {isAllowed && (
                   <CustomMenu
-                    customButton={<MoreHorizontalOutline className="size-4" />}
+                    customButton={<MoreHorizontal className="size-4" />}
                     customButtonClassName={getIconButtonStyling("secondary", "lg")}
                     placement="bottom-start"
                   >
@@ -397,7 +394,7 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
                         }
                       >
                         <div className="flex items-center gap-2">
-                          <ClockOutline width={14} height={14} />
+                          <Clock size={14} strokeWidth={2} />
                           {inboxIssue?.snoozed_till && numberOfDaysLeft && numberOfDaysLeft > 0
                             ? t("inbox_issue.actions.unsnooze")
                             : t("inbox_issue.actions.snooze")}
@@ -415,21 +412,21 @@ export const InboxIssueActionsHeader = observer(function InboxIssueActionsHeader
                         }
                       >
                         <div className="flex items-center gap-2">
-                          <DuplicateOfOutline width={14} height={14} />
+                          <FileStack size={14} strokeWidth={2} />
                           {t("inbox_issue.actions.mark_as_duplicate")}
                         </div>
                       </CustomMenu.MenuItem>
                     )}
                     <CustomMenu.MenuItem onClick={() => handleCopyIssueLink(workItemLink)}>
                       <div className="flex items-center gap-2">
-                        <CopyOutline width={14} height={14} />
+                        <CopyIcon width={14} height={14} strokeWidth={2} />
                         {t("inbox_issue.actions.copy")}
                       </div>
                     </CustomMenu.MenuItem>
                     {canDelete && (
                       <CustomMenu.MenuItem onClick={() => setDeleteIssueModal(true)}>
                         <div className="flex items-center gap-2">
-                          <DeleteOutline width={14} height={14} />
+                          <TrashIcon width={14} height={14} strokeWidth={2} />
                           {t("inbox_issue.actions.delete")}
                         </div>
                       </CustomMenu.MenuItem>

@@ -17,7 +17,7 @@ import type {
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 // icons
 import { usePopper } from "react-popper";
-import { AddOutline, ChevronDownOutline, CloseCircleOutline, TickOutline } from "@makeplane/propel/icons";
+import { XCircle } from "lucide-react";
 import { Listbox } from "@headlessui/react";
 // plane imports
 import { Field } from "@makeplane/propel/components/field";
@@ -27,6 +27,7 @@ import { ROLE, ROLE_DETAILS } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
 // types
 import { Button } from "@plane/propel/button";
+import { PlusIcon, CheckIcon, ChevronDownIcon } from "@plane/propel/icons";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { IUser, IWorkspace } from "@plane/types";
 // ui
@@ -203,9 +204,9 @@ const InviteMemberInput = observer(function InviteMemberInput(props: InviteMembe
                     {ROLE[value]}
                   </span>
 
-                  <ChevronDownOutline
+                  <ChevronDownIcon
                     className={`size-3 ${
-                      !getValues(`emails.${index}.role_active`) ? "text-placeholder" : "text-primary"
+                      !getValues(`emails.${index}.role_active`) ? "stroke-placeholder" : "stroke-primary"
                     }`}
                   />
                 </Listbox.Button>
@@ -234,7 +235,7 @@ const InviteMemberInput = observer(function InviteMemberInput(props: InviteMembe
                               <div className="text-13 font-medium">{t(value.i18n_title)}</div>
                               <div className="flex text-11 text-tertiary">{t(value.i18n_description)}</div>
                             </div>
-                            {selected && <TickOutline className="h-4 w-4 shrink-0" />}
+                            {selected && <CheckIcon className="h-4 w-4 shrink-0" />}
                           </div>
                         )}
                       </Listbox.Option>
@@ -251,7 +252,7 @@ const InviteMemberInput = observer(function InviteMemberInput(props: InviteMembe
             className="absolute right-0 hidden place-items-center self-center rounded-sm group-hover:grid"
             onClick={() => remove(index)}
           >
-            <CloseCircleOutline className="h-5 w-5 pl-0.5 text-placeholder" />
+            <XCircle className="h-5 w-5 pl-0.5 text-placeholder" />
           </button>
         )}
       </div>
@@ -382,7 +383,7 @@ export function InviteMembers(props: Props) {
                 className="mx-8 flex items-center gap-1.5 bg-transparent text-13 font-medium text-accent-primary outline-accent-strong"
                 onClick={appendField}
               >
-                <AddOutline className="h-4 w-4" />
+                <PlusIcon className="h-4 w-4" strokeWidth={2} />
                 Add another
               </button>
             </div>

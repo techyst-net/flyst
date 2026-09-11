@@ -7,7 +7,7 @@
 import { observer } from "mobx-react";
 import Link from "next/link";
 // icons
-import { SettingsOutline } from "@makeplane/propel/icons";
+import { Settings2 } from "lucide-react";
 // plane internal packages
 import { AnchorButton } from "@makeplane/propel/components/anchor-button";
 import { Button } from "@makeplane/propel/components/button";
@@ -57,7 +57,7 @@ export const GoogleConfiguration = observer(function GoogleConfiguration(props: 
           stretch="auto"
           nativeButton={false}
           render={<Link href="/authentication/google" />}
-          icon={<SettingsOutline className="h-4 w-4 p-0.5 text-tertiary" />}
+          icon={<Settings2 className="h-4 w-4 p-0.5 text-tertiary" />}
           label="Configure"
         />
       )}

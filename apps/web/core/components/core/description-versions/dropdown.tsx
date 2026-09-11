@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { HistoryOutline } from "@makeplane/propel/icons";
+import { History } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import type { TDescriptionVersion } from "@plane/types";
@@ -42,7 +42,7 @@ export const DescriptionVersionsDropdown = observer(function DescriptionVersions
       label={
         <div className="flex items-center gap-1 text-tertiary">
           <span className="grid size-4 flex-shrink-0 place-items-center">
-            <HistoryOutline className="size-3.5" />
+            <History className="size-3.5" />
           </span>
           <p className="text-11">
             {t("description_versions.last_edited_by")}{" "}

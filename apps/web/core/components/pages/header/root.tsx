@@ -6,7 +6,7 @@
 
 import { useCallback } from "react";
 import { observer } from "mobx-react";
-import { FilterOutline } from "@makeplane/propel/icons";
+import { ListFilter } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import type { TPageFilterProps, TPageNavigationTabs } from "@plane/types";
@@ -78,7 +78,7 @@ export const PagesListHeaderRoot = observer(function PagesListHeaderRoot(props: 
             }}
           />
           <FiltersDropdown
-            icon={<FilterOutline className="h-3 w-3" />}
+            icon={<ListFilter className="h-3 w-3" />}
             title={t("common.filters")}
             placement="bottom-end"
             isFiltersApplied={isFiltersApplied}

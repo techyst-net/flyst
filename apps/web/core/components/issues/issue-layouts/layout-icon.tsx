@@ -4,7 +4,13 @@
  * See the LICENSE file for details.
  */
 
-import { BoardOutline, CalendarOutline, ListOutline, TableOutline, TimelineOutline } from "@makeplane/propel/icons";
+import {
+  ListLayoutIcon,
+  BoardLayoutIcon,
+  CalendarLayoutIcon,
+  SheetLayoutIcon,
+  TimelineLayoutIcon,
+} from "@plane/propel/icons";
 import type { ISvgIcons } from "@plane/propel/icons";
 import { EIssueLayoutTypes } from "@plane/types";
 
@@ -20,15 +26,15 @@ export function IssueLayoutIcon({
 
   switch (layout) {
     case EIssueLayoutTypes.LIST:
-      return <ListOutline {...iconProps} />;
+      return <ListLayoutIcon {...iconProps} />;
     case EIssueLayoutTypes.KANBAN:
-      return <BoardOutline {...iconProps} />;
+      return <BoardLayoutIcon {...iconProps} />;
     case EIssueLayoutTypes.CALENDAR:
-      return <CalendarOutline {...iconProps} />;
+      return <CalendarLayoutIcon {...iconProps} />;
     case EIssueLayoutTypes.SPREADSHEET:
-      return <TableOutline {...iconProps} />;
+      return <SheetLayoutIcon {...iconProps} />;
     case EIssueLayoutTypes.GANTT:
-      return <TimelineOutline {...iconProps} />;
+      return <TimelineLayoutIcon {...iconProps} />;
     default:
       return null;
   }

@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 import { observer } from "mobx-react";
 import { useForm } from "react-hook-form";
 import type { EditorRefApi } from "@plane/editor";
-import { CloseOutline, TickOutline } from "@makeplane/propel/icons";
+import { CheckIcon, CloseIcon } from "@plane/propel/icons";
 // plane imports
 import type { TCommentsOperations, TIssueComment } from "@plane/types";
 import { cn, isCommentEmpty } from "@plane/utils";
@@ -121,7 +121,7 @@ export const CommentCardEditForm = observer(function CommentCardEditForm(props: 
               isDisabled ? "" : "hover:bg-success-subtle-1"
             )}
           >
-            <TickOutline className="size-4 text-success-primary" />
+            <CheckIcon className="size-4 text-success-primary" />
           </button>
         )}
         <button
@@ -136,7 +136,7 @@ export const CommentCardEditForm = observer(function CommentCardEditForm(props: 
             editorRef.current?.setEditorValue(comment.comment_html ?? "<p></p>");
           }}
         >
-          <CloseOutline className="size-4 text-danger-primary" />
+          <CloseIcon className="size-4 text-danger-primary" />
         </button>
       </div>
     </form>

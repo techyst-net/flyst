@@ -7,7 +7,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 // icons
-import { HideOutline, ShowOutline } from "@makeplane/propel/icons";
+import { Eye, EyeOff } from "lucide-react";
 // plane internal packages
 import { API_BASE_URL, E_PASSWORD_STRENGTH } from "@plane/constants";
 import { Button } from "@makeplane/propel/components/button";
@@ -282,7 +282,7 @@ export function InstanceSetupForm() {
                     className="flex items-center justify-center text-placeholder"
                     onClick={() => handleShowPassword("password")}
                   >
-                    <HideOutline className="h-4 w-4" />
+                    <EyeOff className="h-4 w-4" />
                   </button>
                 ) : (
                   <button
@@ -291,7 +291,7 @@ export function InstanceSetupForm() {
                     className="flex items-center justify-center text-placeholder"
                     onClick={() => handleShowPassword("password")}
                   >
-                    <ShowOutline className="h-4 w-4" />
+                    <Eye className="h-4 w-4" />
                   </button>
                 )}
               </InputGroup>
@@ -325,7 +325,7 @@ export function InstanceSetupForm() {
                     className="flex items-center justify-center text-placeholder"
                     onClick={() => handleShowPassword("retypePassword")}
                   >
-                    <HideOutline className="h-4 w-4" />
+                    <EyeOff className="h-4 w-4" />
                   </button>
                 ) : (
                   <button
@@ -334,7 +334,7 @@ export function InstanceSetupForm() {
                     className="flex items-center justify-center text-placeholder"
                     onClick={() => handleShowPassword("retypePassword")}
                   >
-                    <ShowOutline className="h-4 w-4" />
+                    <Eye className="h-4 w-4" />
                   </button>
                 )}
               </InputGroup>

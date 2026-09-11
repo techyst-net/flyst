@@ -7,7 +7,7 @@
 import React from "react";
 import { Command } from "cmdk";
 
-import { TickOutline } from "@makeplane/propel/icons";
+import { CheckIcon } from "@plane/propel/icons";
 // plane imports
 import { cn } from "@plane/utils";
 // local imports
@@ -40,7 +40,7 @@ export function PowerKModalCommandItem(props: Props) {
         {label}
       </div>
       <div className="flex shrink-0 items-center gap-2">
-        {isSelected && <TickOutline className="size-3 shrink-0 text-secondary" />}
+        {isSelected && <CheckIcon className="size-3 shrink-0 text-secondary" />}
         {keySequence && <KeySequenceBadge sequence={keySequence} />}
         {shortcut && <ShortcutBadge shortcut={shortcut} />}
       </div>

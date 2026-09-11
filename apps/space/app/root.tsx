@@ -25,7 +25,7 @@ import "@fontsource/material-symbols-rounded";
 import "@fontsource/ibm-plex-mono";
 
 const APP_TITLE = "Flyst Publish | Make your Flyst boards public with one-click";
-const APP_DESCRIPTION = "Flyst Publish is a customer feedback management tool built on top of techyst.net";
+const APP_DESCRIPTION = "Flyst Publish is a customer feedback management tool built on top of flyst.techyst.net";
 
 export const links: Route.LinksFunction = () => [
   { rel: "apple-touch-icon", sizes: "180x180", href: appleTouchIcon },

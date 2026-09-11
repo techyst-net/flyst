@@ -6,7 +6,7 @@
 
 import React from "react";
 import { observer } from "mobx-react";
-import { WarningCircleOutline } from "@makeplane/propel/icons";
+import { CircleAlert } from "lucide-react";
 // plane imports
 import type { TExternalFilter, TFilterProperty } from "@plane/types";
 // local imports
@@ -31,7 +31,7 @@ export const InvalidFilterItem = observer(function InvalidFilterItem<
       {/* Property section */}
       <FilterItemProperty
         conditionId={condition.id}
-        icon={WarningCircleOutline}
+        icon={CircleAlert}
         label="Invalid filter"
         filter={filter}
         isDisabled={isDisabled}

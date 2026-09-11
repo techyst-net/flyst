@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { ChatOutline } from "@makeplane/propel/icons";
+import { MessageSquare } from "lucide-react";
 // hooks
 import { useIssueDetail } from "@/hooks/store/use-issue-detail";
 // components
@@ -25,7 +25,7 @@ export const IssueLinkActivity = observer(function IssueLinkActivity(props: TIss
   if (!activity) return <></>;
   return (
     <IssueActivityBlockComponent
-      icon={<ChatOutline width={14} height={14} className="text-secondary" aria-hidden="true" />}
+      icon={<MessageSquare size={14} className="text-secondary" aria-hidden="true" />}
       activityId={activityId}
       ends={ends}
     >

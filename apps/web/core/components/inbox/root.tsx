@@ -6,10 +6,11 @@
 
 import { useEffect, useState } from "react";
 import { observer } from "mobx-react";
-import { IntakeOutline, LeftSidePaneOutline } from "@makeplane/propel/icons";
+import { PanelLeft } from "lucide-react";
 // plane imports
 import { useTranslation } from "@plane/i18n";
 import { EmptyStateCompact } from "@plane/propel/empty-state";
+import { IntakeIcon } from "@plane/propel/icons";
 import { EInboxIssueCurrentTab } from "@plane/types";
 import { cn } from "@plane/utils";
 // components
@@ -68,7 +69,7 @@ export const InboxIssueRoot = observer(function InboxIssueRoot(props: TInboxIssu
   if (error && error?.status === "init-error")
     return (
       <div className="relative flex h-full w-full flex-col items-center justify-center gap-3">
-        <IntakeOutline className="size-[60px]" />
+        <IntakeIcon className="size-[60px]" strokeWidth={1.5} />
         <div className="text-secondary">{error?.message}</div>
       </div>
     );
@@ -77,7 +78,7 @@ export const InboxIssueRoot = observer(function InboxIssueRoot(props: TInboxIssu
     <>
       {!inboxIssueId && (
         <div className="flex h-12 w-full items-center border-b border-subtle px-4 lg:hidden">
-          <LeftSidePaneOutline
+          <PanelLeft
             onClick={() => setIsMobileSidebar(!isMobileSidebar)}
             className={cn("h-4 w-4", isMobileSidebar ? "text-accent-primary" : "text-secondary")}
           />

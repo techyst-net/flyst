@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { ArrowNarrowRightOutline } from "@makeplane/propel/icons";
+import { MoveRight } from "lucide-react";
 import { Tooltip } from "@makeplane/propel/components/tooltip";
 import { Loader } from "@plane/ui";
 // hooks
@@ -25,7 +25,7 @@ export function IssuePeekOverviewLoader(props: TIssuePeekOverviewLoader) {
         <div className="flex items-center gap-2">
           <Tooltip label="Close the peek view" disabled={isMobile}>
             <button onClick={removeRoutePeekId}>
-              <ArrowNarrowRightOutline className="h-4 w-4 text-tertiary hover:text-secondary" />
+              <MoveRight className="h-4 w-4 text-tertiary hover:text-secondary" />
             </button>
           </Tooltip>
           <Loader.Item width="30px" height="30px" />

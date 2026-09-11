@@ -5,8 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { CycleGroupIcon } from "@plane/propel/icons";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon, CycleGroupIcon } from "@plane/propel/icons";
 import type { TCycleGroups } from "@plane/types";
 // hooks
 import { useCycle } from "@/hooks/store/use-cycle";
@@ -43,7 +42,7 @@ export const AppliedCycleFilters = observer(function AppliedCycleFilters(props: 
                 className="grid place-items-center text-tertiary hover:text-secondary"
                 onClick={() => handleRemove(cycleId)}
               >
-                <CloseOutline height={10} width={10} />
+                <CloseIcon height={10} width={10} strokeWidth={2} />
               </button>
             )}
           </div>

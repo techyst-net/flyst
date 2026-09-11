@@ -7,9 +7,10 @@
 // ui
 import { observer } from "mobx-react";
 import { useParams, useRouter } from "next/navigation";
-import { ChevronDownOutline, RightSidePaneOutline, YourWorkOutline } from "@makeplane/propel/icons";
+import { PanelRight } from "lucide-react";
 import { PROFILE_VIEWER_TAB, PROFILE_ADMINS_TAB, EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
+import { YourWorkIcon, ChevronDownIcon } from "@plane/propel/icons";
 import type { IUserProfileProjectSegregation } from "@plane/types";
 import { Breadcrumbs, Header, CustomMenu } from "@plane/ui";
 // components
@@ -61,7 +62,7 @@ export const UserProfileHeader = observer(function UserProfileHeader(props: TUse
               <BreadcrumbLink
                 label={breadcrumbLabel}
                 disableTooltip
-                icon={<YourWorkOutline className="h-4 w-4 text-tertiary" />}
+                icon={<YourWorkIcon className="h-4 w-4 text-tertiary" />}
               />
             }
           />
@@ -77,7 +78,7 @@ export const UserProfileHeader = observer(function UserProfileHeader(props: TUse
             customButton={
               <div className="flex items-center gap-2 rounded-md border border-subtle px-2 py-1.5">
                 <span className="flex flex-grow justify-center text-13 text-secondary">{type}</span>
-                <ChevronDownOutline className="h-4 w-4 text-placeholder" />
+                <ChevronDownIcon className="h-4 w-4 text-placeholder" />
               </div>
             }
             customButtonClassName="flex flex-grow justify-center text-secondary text-13"
@@ -102,7 +103,7 @@ export const UserProfileHeader = observer(function UserProfileHeader(props: TUse
                 toggleProfileSidebar();
               }}
               appendIcon={
-                <RightSidePaneOutline className={!profileSidebarCollapsed ? "text-accent-primary" : "text-secondary"} />
+                <PanelRight className={!profileSidebarCollapsed ? "text-accent-primary" : "text-secondary"} />
               }
             ></Button>
           </div>

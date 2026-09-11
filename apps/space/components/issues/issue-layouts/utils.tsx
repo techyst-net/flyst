@@ -7,8 +7,7 @@
 import { isNil } from "lodash-es";
 // types
 import { EIconSize, ISSUE_PRIORITIES } from "@plane/constants";
-import { CycleGroupIcon, PriorityIcon, StateGroupIcon } from "@plane/propel/icons";
-import { CyclesOutline, ModuleOutline } from "@makeplane/propel/icons";
+import { CycleGroupIcon, CycleIcon, ModuleIcon, PriorityIcon, StateGroupIcon } from "@plane/propel/icons";
 import type {
   GroupByColumnTypes,
   IGroupByColumn,
@@ -80,7 +79,7 @@ const getCycleColumns = (cycleStore: ICycleStore): IGroupByColumn[] | undefined 
   cycleGroups.push({
     id: "None",
     name: "None",
-    icon: <CyclesOutline className="h-3.5 w-3.5" />,
+    icon: <CycleIcon className="h-3.5 w-3.5" />,
     payload: { cycle_id: null },
   });
 
@@ -99,14 +98,14 @@ const getModuleColumns = (moduleStore: IIssueModuleStore): IGroupByColumn[] | un
       moduleGroups.push({
         id: moduleInfo.id,
         name: moduleInfo.name,
-        icon: <ModuleOutline className="h-3.5 w-3.5" />,
+        icon: <ModuleIcon className="h-3.5 w-3.5" />,
         payload: { module_ids: [moduleInfo.id] },
       });
   }) as any;
   moduleGroups.push({
     id: "None",
     name: "None",
-    icon: <ModuleOutline className="h-3.5 w-3.5" />,
+    icon: <ModuleIcon className="h-3.5 w-3.5" />,
     payload: { module_ids: [] },
   });
 

@@ -5,8 +5,9 @@
  */
 
 import React from "react";
-import { AttachOutline, LinkOutline, RelationsOutline, ViewsOutline } from "@makeplane/propel/icons";
+import { Paperclip } from "lucide-react";
 import { useTranslation } from "@plane/i18n";
+import { LinkIcon, ViewsIcon, RelationPropertyIcon } from "@plane/propel/icons";
 // plane imports
 import type { TIssueServiceType, TWorkItemWidgets } from "@plane/types";
 // local imports
@@ -38,7 +39,7 @@ export function IssueDetailWidgetActionButtons(props: Props) {
           customButton={
             <IssueDetailWidgetButton
               title={t("issue.add.sub_issue")}
-              icon={<ViewsOutline className="h-3.5 w-3.5 flex-shrink-0" />}
+              icon={<ViewsIcon className="h-3.5 w-3.5 flex-shrink-0" strokeWidth={2} />}
               disabled={disabled}
             />
           }
@@ -52,7 +53,7 @@ export function IssueDetailWidgetActionButtons(props: Props) {
           customButton={
             <IssueDetailWidgetButton
               title={t("issue.add.relation")}
-              icon={<RelationsOutline className="h-3.5 w-3.5 flex-shrink-0" />}
+              icon={<RelationPropertyIcon className="h-3.5 w-3.5 flex-shrink-0" />}
               disabled={disabled}
             />
           }
@@ -65,7 +66,7 @@ export function IssueDetailWidgetActionButtons(props: Props) {
           customButton={
             <IssueDetailWidgetButton
               title={t("issue.add.link")}
-              icon={<LinkOutline className="h-3.5 w-3.5 flex-shrink-0" />}
+              icon={<LinkIcon className="h-3.5 w-3.5 flex-shrink-0" strokeWidth={2} />}
               disabled={disabled}
             />
           }
@@ -81,7 +82,7 @@ export function IssueDetailWidgetActionButtons(props: Props) {
           customButton={
             <IssueDetailWidgetButton
               title={t("common.attach")}
-              icon={<AttachOutline className="h-3.5 w-3.5 flex-shrink-0" />}
+              icon={<Paperclip className="h-3.5 w-3.5 flex-shrink-0" strokeWidth={2} />}
               disabled={disabled}
             />
           }

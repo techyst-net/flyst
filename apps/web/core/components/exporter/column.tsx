@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { DownloadOutline } from "@makeplane/propel/icons";
+import { Download } from "lucide-react";
 import type { IExportData } from "@plane/types";
 import { getDate, getFileURL, renderFormattedDate } from "@plane/utils";
 
@@ -101,7 +101,7 @@ export const useExportColumns = () => {
             {rowData.status == "completed" ? (
               <a target="_blank" href={rowData?.url} rel="noopener noreferrer">
                 <button className="flex w-full items-center gap-1 font-medium text-accent-primary">
-                  <DownloadOutline className="h-4 w-4" />
+                  <Download className="h-4 w-4" />
                   <div>Download</div>
                 </button>
               </a>

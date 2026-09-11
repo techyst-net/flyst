@@ -4,15 +4,9 @@
  * See the LICENSE file for details.
  */
 
-import {
-  ArchiveOutline,
-  DeleteOutline,
-  EditOutline,
-  LinkOutline,
-  NewTabOutline,
-  RestoreOutline,
-} from "@makeplane/propel/icons";
+import { Pencil, ExternalLink, Link, Trash2, ArchiveRestoreIcon } from "lucide-react";
 import { useTranslation } from "@plane/i18n";
+import { ArchiveIcon } from "@plane/propel/icons";
 import type { TContextMenuItem } from "@plane/ui";
 
 /**
@@ -26,7 +20,7 @@ export const useQuickActionsFactory = () => {
     createEditMenuItem: (handler: () => void, shouldRender: boolean = true): TContextMenuItem => ({
       key: "edit",
       title: t("edit"),
-      icon: EditOutline,
+      icon: Pencil,
       action: handler,
       shouldRender,
     }),
@@ -34,14 +28,14 @@ export const useQuickActionsFactory = () => {
     createOpenInNewTabMenuItem: (handler: () => void): TContextMenuItem => ({
       key: "open-new-tab",
       title: t("open_in_new_tab"),
-      icon: NewTabOutline,
+      icon: ExternalLink,
       action: handler,
     }),
 
     createCopyLinkMenuItem: (handler: () => void): TContextMenuItem => ({
       key: "copy-link",
       title: t("copy_link"),
-      icon: LinkOutline,
+      icon: Link,
       action: handler,
     }),
 
@@ -51,7 +45,7 @@ export const useQuickActionsFactory = () => {
     ): TContextMenuItem => ({
       key: "archive",
       title: t("archive"),
-      icon: ArchiveOutline,
+      icon: ArchiveIcon,
       action: handler,
       className: "items-start",
       iconClassName: "mt-1",
@@ -63,7 +57,7 @@ export const useQuickActionsFactory = () => {
     createRestoreMenuItem: (handler: () => void, shouldRender: boolean = true): TContextMenuItem => ({
       key: "restore",
       title: t("restore"),
-      icon: RestoreOutline,
+      icon: ArchiveRestoreIcon,
       action: handler,
       shouldRender,
     }),
@@ -71,7 +65,7 @@ export const useQuickActionsFactory = () => {
     createDeleteMenuItem: (handler: () => void, shouldRender: boolean = true): TContextMenuItem => ({
       key: "delete",
       title: t("delete"),
-      icon: DeleteOutline,
+      icon: Trash2,
       action: handler,
       shouldRender,
     }),
@@ -80,14 +74,14 @@ export const useQuickActionsFactory = () => {
     createOpenInNewTab: (handler: () => void): TContextMenuItem => ({
       key: "open-in-new-tab",
       title: "Open in new tab",
-      icon: NewTabOutline,
+      icon: ExternalLink,
       action: handler,
     }),
 
     createCopyLayoutLinkMenuItem: (handler: () => void): TContextMenuItem => ({
       key: "copy-link",
       title: "Copy link",
-      icon: LinkOutline,
+      icon: Link,
       action: handler,
     }),
   };

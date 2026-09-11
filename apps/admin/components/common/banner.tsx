@@ -4,7 +4,7 @@
  * See the LICENSE file for details.
  */
 
-import { TickCircleOutline, WarningCircleOutline } from "@makeplane/propel/icons";
+import { AlertCircle, CheckCircle2 } from "lucide-react";
 
 type TBanner = {
   type: "success" | "error";
@@ -22,10 +22,10 @@ export function Banner(props: TBanner) {
         <div className="flex-shrink-0">
           {type === "error" ? (
             <span className="flex h-6 w-6 items-center justify-center rounded-full">
-              <WarningCircleOutline className="h-5 w-5 text-danger-primary" aria-hidden="true" />
+              <AlertCircle className="h-5 w-5 text-danger-primary" aria-hidden="true" />
             </span>
           ) : (
-            <TickCircleOutline className="h-5 w-5 text-success-primary" aria-hidden="true" />
+            <CheckCircle2 className="h-5 w-5 text-success-primary" aria-hidden="true" />
           )}
         </div>
         <div className="ml-1">

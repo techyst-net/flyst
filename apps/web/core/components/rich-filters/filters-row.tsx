@@ -6,7 +6,7 @@
 
 import React, { useCallback, useState } from "react";
 import { observer } from "mobx-react";
-import { AddFilterOutline } from "@makeplane/propel/icons";
+import { ListFilterPlus } from "lucide-react";
 import { Transition } from "@headlessui/react";
 // plane imports
 import { Button } from "@plane/propel/button";
@@ -67,7 +67,7 @@ export const FiltersRow = observer(function FiltersRow<K extends TFilterProperty
           size: "lg",
           iconConfig: {
             shouldShowIcon: true,
-            iconComponent: AddFilterOutline,
+            iconComponent: ListFilterPlus,
           },
           ...buttonConfig,
           isDisabled: disabledAllOperations,

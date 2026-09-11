@@ -8,7 +8,7 @@ import { observer } from "mobx-react";
 
 // plane types
 import { Avatar } from "@makeplane/propel/components/avatar";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 import type { TInboxIssueFilterMemberKeys } from "@plane/types";
 // helpers
 import { getFileURL } from "@plane/utils";
@@ -59,7 +59,7 @@ export const InboxIssueAppliedFiltersMember = observer(function InboxIssueApplie
               className="relative flex h-3 w-3 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden text-tertiary transition-all hover:text-secondary"
               onClick={() => handleInboxIssueFilters(filterKey, handleFilterValue(value))}
             >
-              <CloseOutline className={`h-3 w-3`} />
+              <CloseIcon className={`h-3 w-3`} />
             </div>
           </div>
         );
@@ -69,7 +69,7 @@ export const InboxIssueAppliedFiltersMember = observer(function InboxIssueApplie
         className="relative flex h-3 w-3 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden text-tertiary transition-all hover:text-secondary"
         onClick={clearFilter}
       >
-        <CloseOutline className={`h-3 w-3`} />
+        <CloseIcon className={`h-3 w-3`} />
       </div>
     </div>
   );

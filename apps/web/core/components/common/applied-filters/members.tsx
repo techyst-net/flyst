@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { CloseOutline } from "@makeplane/propel/icons";
+import { CloseIcon } from "@plane/propel/icons";
 // plane ui
 import { Avatar } from "@makeplane/propel/components/avatar";
 // helpers
@@ -48,7 +48,7 @@ export const AppliedMembersFilters = observer(function AppliedMembersFilters(pro
                 className="grid place-items-center text-tertiary hover:text-secondary"
                 onClick={() => handleRemove(memberId)}
               >
-                <CloseOutline height={10} width={10} />
+                <CloseIcon height={10} width={10} strokeWidth={2} />
               </button>
             )}
           </div>

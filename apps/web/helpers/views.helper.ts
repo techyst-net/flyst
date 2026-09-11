@@ -6,14 +6,14 @@
 
 import type { LucideIcon } from "lucide-react";
 import { VIEW_ACCESS_SPECIFIERS as VIEW_ACCESS_SPECIFIERS_CONSTANTS } from "@plane/constants";
-import { GlobeOutline, LockOutline } from "@makeplane/propel/icons";
+import { GlobeIcon, LockIcon } from "@plane/propel/icons";
 
 import type { ISvgIcons } from "@plane/propel/icons";
 import { EViewAccess } from "@plane/types";
 
 const VIEW_ACCESS_ICONS = {
-  [EViewAccess.PUBLIC]: GlobeOutline,
-  [EViewAccess.PRIVATE]: LockOutline,
+  [EViewAccess.PUBLIC]: GlobeIcon,
+  [EViewAccess.PRIVATE]: LockIcon,
 };
 
 export const VIEW_ACCESS_SPECIFIERS: {
