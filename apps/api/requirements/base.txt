@@ -63,6 +63,7 @@ zxcvbn==4.4.28
 pytz==2024.1
 # jwt
 PyJWT==2.13.0
+Authlib==1.7.2
 # OpenTelemetry
 opentelemetry-api==1.28.1
 opentelemetry-sdk==1.28.1

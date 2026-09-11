@@ -1,4 +1,4 @@
-# Zeshan Projects
+# Flyst Projects
 
 Project and work management: projects, work items, cycles, modules, views,
 pages, analytics, workflows, and public roadmap publishing.

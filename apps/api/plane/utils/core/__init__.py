@@ -3,9 +3,9 @@
 # See the LICENSE file for details.
 
 """
-Core utilities for Zeshan database routing and request scoping.
+Core utilities for Flyst database routing and request scoping.
 This package contains essential components for managing read replica routing
-and request-scoped context in the Zeshan application.
+and request-scoped context in the Flyst application.
 """
 
 from .dbrouters import ReadReplicaRouter

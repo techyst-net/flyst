@@ -49,4 +49,7 @@ class APIKeyAuthentication(authentication.BaseAuthentication):
 
         # Validate the API token
         user, token = self.validate_api_token(token)
+        from plane.authentication.techyst_entitlements import enforce_api_entitlement
+
+        enforce_api_entitlement(user)
         return user, token

@@ -44,7 +44,7 @@ After installation, you can verify the installation by opening a terminal (Comma
 
 ---
 
-## Installing Zeshan
+## Installing Flyst
 
 Installing plane is a very easy and minimal step process.
 
@@ -66,7 +66,7 @@ cd plane-selfhost
 #### For *Docker Compose* based setup
 
 ```
-curl -fsSL -o setup.sh https://zeshan.local
+curl -fsSL -o setup.sh https://flyst.techyst.net
 
 chmod +x setup.sh
 ```
@@ -74,7 +74,7 @@ chmod +x setup.sh
 #### For *Docker Swarm* based setup
 
 ```
-curl -fsSL -o setup.sh https://zeshan.local
+curl -fsSL -o setup.sh https://flyst.techyst.net
 
 chmod +x setup.sh
 ```
@@ -181,7 +181,7 @@ Be patient as it might take sometime based on download speed and system configur
 
 This is the confirmation that all images were downloaded and the services are up & running.
 
-You have successfully self hosted `Zeshan` instance. Access the application by going to IP or domain you have configured it (e.g `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
+You have successfully self hosted `Flyst` instance. Access the application by going to IP or domain you have configured it (e.g `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
 
 ---
 
@@ -275,9 +275,9 @@ If all goes well, you will see the confirmation from docker cli
 
 ---
 
-### Upgrading Zeshan Version 
+### Upgrading Flyst Version 
 
-It is always advised to keep Zeshan up to date with the latest release.
+It is always advised to keep Flyst up to date with the latest release.
 
 Lets again run the `./setup.sh` command. You will again be prompted with the below options. This time select `5` to upgrade the release.
 
@@ -481,12 +481,12 @@ Backup completed successfully. Backup files are stored in /....../plane-app/back
 
 When you want to restore the previously backed-up data, follow the instructions below.
 
-1. Make sure that Zeshan-CE is installed, started, and then stopped. This ensures that the Docker volumes are created.
+1. Make sure that Flyst-CE is installed, started, and then stopped. This ensures that the Docker volumes are created.
 
 1. Download the restore script using the command below. We suggest downloading it in the same folder as `setup.sh`.
 
    ```bash
-   curl -fsSL -o restore.sh https://zeshan.local
+   curl -fsSL -o restore.sh https://flyst.techyst.net
    chmod +x restore.sh
    ```
 
@@ -525,24 +525,24 @@ When you want to restore the previously backed-up data, follow the instructions 
    Restore completed successfully.
    ```
 
-1. Start the Zeshan instance using `./setup.sh start`.
+1. Start the Flyst instance using `./setup.sh start`.
 
 ---
 
 ### Restore for Commercial Air-Gapped (Docker Compose)
 
-When you want to restore the previously backed-up data on Zeshan Commercial Air-Gapped version, follow the instructions below.
+When you want to restore the previously backed-up data on Flyst Commercial Air-Gapped version, follow the instructions below.
 
 1. Download the restore script using the command below
 
    ```bash
-   curl -fsSL -o restore-airgapped.sh https://zeshan.local
+   curl -fsSL -o restore-airgapped.sh https://flyst.techyst.net
    chmod +x restore-airgapped.sh
    ```
 
 1. Copy the backup folder and the `restore-airgapped.sh` to `Commercial Airgapped Edition` server
 
-1. Make sure that Zeshan Commercial (Airgapped) is extracted and ready to get started. In case it is running, you would need to stop that.
+1. Make sure that Flyst Commercial (Airgapped) is extracted and ready to get started. In case it is running, you would need to stop that.
 
 1. Execute the command below to restore your data.
 
@@ -550,7 +550,7 @@ When you want to restore the previously backed-up data on Zeshan Commercial Air-
    ./restore-airgapped.sh <path to backup folder containing *.tar.gz files>
    ```
 
-1. After restoration, you are ready to start Zeshan Commercial (Airgapped) will all your previously saved data. 
+1. After restoration, you are ready to start Flyst Commercial (Airgapped) will all your previously saved data. 
 
 ---
 

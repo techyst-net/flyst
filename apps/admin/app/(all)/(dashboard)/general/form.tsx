@@ -105,12 +105,12 @@ export const GeneralConfigurationForm = observer(function GeneralConfigurationFo
               </div>
             </div>
             <div className="grow">
-              <div className="text-13 leading-5 font-medium text-primary">Let Zeshan collect anonymous usage data</div>
+              <div className="text-13 leading-5 font-medium text-primary">Let Flyst collect anonymous usage data</div>
               <div className="text-11 leading-5 font-regular text-tertiary">
-                No PII is collected.This anonymized data is used to understand how you use Zeshan and build new features
+                No PII is collected.This anonymized data is used to understand how you use Flyst and build new features
                 in line with{" "}
                 <a
-                  href="https://zeshan.local"
+                  href="https://flyst.techyst.net"
                   target="_blank"
                   className="text-accent-primary hover:underline"
                   rel="noreferrer"

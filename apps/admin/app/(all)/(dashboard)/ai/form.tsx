@@ -136,7 +136,7 @@ export function InstanceAIForm(props: IInstanceAIForm) {
           <ThoughtsOutline className="size-4" />
           <div>
             If you have a preferred AI models vendor, please get in{" "}
-            <a className="font-medium underline" href="https://zeshan.local">
+            <a className="font-medium underline" href="https://flyst.techyst.net">
               touch with us.
             </a>
           </div>

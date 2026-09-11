@@ -1,0 +1,29 @@
+# Keep the upload small: Vercel's free tier rate-limits on file count, and
+# deploying from the repo root would otherwise send the whole monorepo.
+.git
+node_modules
+**/node_modules
+.venv
+**/__pycache__
+*.pyc
+dist
+build
+.next
+.turbo
+.vercel
+docs
+**/docs
+*.md
+!README.md
+tests
+**/tests
+__tests__
+**/__tests__
+*.test.*
+*.spec.*
+.github
+deployment
+docker
+*.log
+.env
+.env.*

@@ -9,8 +9,8 @@ import { create } from "storybook/theming";
 
 const planeTheme = create({
   base: "dark",
-  brandTitle: "Zeshan UI",
-  brandUrl: "https://zeshan.local",
+  brandTitle: "Flyst UI",
+  brandUrl: "https://flyst.techyst.net",
   brandImage: "plane-lockup-light.svg",
   brandTarget: "_self",
 });

@@ -12,21 +12,21 @@ SPECTACULAR_SETTINGS = {
     # ========================================================================
     # Basic API Information
     # ========================================================================
-    "TITLE": "The Zeshan REST API",
+    "TITLE": "The Flyst REST API",
     "DESCRIPTION": (
-        "The Zeshan REST API\n\n"
+        "The Flyst REST API\n\n"
         "Visit our quick start guide and full API documentation at "
-        "[zeshan.local](https://zeshan.local)."
+        "[techyst.net](https://flyst.techyst.net)."
     ),
     "CONTACT": {
-        "name": "Zeshan",
-        "url": "https://zeshan.local",
-        "email": "zeshanshakil0@gmail.com",
+        "name": "Flyst",
+        "url": "https://flyst.techyst.net",
+        "email": "support@techyst.net",
     },
     "VERSION": "0.0.1",
     "LICENSE": {
         "name": "GNU AGPLv3",
-        "url": "https://zeshan.localLICENSE.txt",
+        "url": "https://github.com/makeplane/plane/blob/preview/LICENSE.txt",
     },
     # ========================================================================
     # Schema Generation Settings
@@ -45,7 +45,7 @@ SPECTACULAR_SETTINGS = {
     # ========================================================================
     "SERVERS": [
         {"url": "http://localhost:8000", "description": "Local"},
-        {"url": "https://zeshan.local", "description": "Production"},
+        {"url": "https://flyst.techyst.net", "description": "Production"},
     ],
     # ========================================================================
     # API Tag Definitions

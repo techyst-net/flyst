@@ -1,6 +1,6 @@
-# Testing Guide for Zeshan
+# Testing Guide for Flyst
 
-This guide explains how to write tests for Zeshan using our pytest-based testing strategy.
+This guide explains how to write tests for Flyst using our pytest-based testing strategy.
 
 ## Test Categories
 

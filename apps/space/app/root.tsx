@@ -24,8 +24,8 @@ import interVariableWoff2 from "@fontsource-variable/inter/files/inter-latin-wgh
 import "@fontsource/material-symbols-rounded";
 import "@fontsource/ibm-plex-mono";
 
-const APP_TITLE = "Zeshan Publish | Make your Zeshan boards public with one-click";
-const APP_DESCRIPTION = "Zeshan Publish is a customer feedback management tool built on top of zeshan.local";
+const APP_TITLE = "Flyst Publish | Make your Flyst boards public with one-click";
+const APP_DESCRIPTION = "Flyst Publish is a customer feedback management tool built on top of techyst.net";
 
 export const links: Route.LinksFunction = () => [
   { rel: "apple-touch-icon", sizes: "180x180", href: appleTouchIcon },
@@ -74,13 +74,13 @@ export const meta: Route.MetaFunction = () => [
   { name: "description", content: APP_DESCRIPTION },
   { property: "og:title", content: APP_TITLE },
   { property: "og:description", content: APP_DESCRIPTION },
-  { property: "og:url", content: "https://zeshan.local" },
+  { property: "og:url", content: "https://flyst.techyst.net" },
   {
     name: "keywords",
     content:
       "software development, customer feedback, software, accelerate, code management, release management, project management, work item tracking, agile, scrum, kanban, collaboration",
   },
-  { name: "twitter:site", content: "@zeshan" },
+  { name: "twitter:site", content: "@techyst" },
 ];
 
 export default function Root() {

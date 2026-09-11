@@ -1,4 +1,4 @@
-# Helm Chart: Zeshan Community
+# Helm Chart: Flyst Community
 
 Click on the below link to access the helm chart instructions.
 

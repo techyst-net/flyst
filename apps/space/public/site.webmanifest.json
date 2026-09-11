@@ -1,11 +1,11 @@
 {
-  "name": "Zeshan Space",
-  "short_name": "Zeshan Space",
-  "description": "Zeshan helps you plan your work items, cycles, and product modules.",
+  "name": "Flyst Space",
+  "short_name": "Flyst Space",
+  "description": "Flyst helps you plan your work items, cycles, and product modules.",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f9fafb",
-  "theme_color": "#6366F1",
+  "theme_color": "#20769F",
   "icons": [
     { "src": "/favicon/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/favicon/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }

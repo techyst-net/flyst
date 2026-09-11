@@ -172,6 +172,6 @@ const InstanceAuthenticationPage = observer(function InstanceAuthenticationPage(
   );
 });
 
-export const meta: Route.MetaFunction = () => [{ title: "Authentication Settings - Zeshan Web" }];
+export const meta: Route.MetaFunction = () => [{ title: "Authentication Settings - Flyst Web" }];
 
 export default InstanceAuthenticationPage;

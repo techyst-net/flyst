@@ -53,7 +53,7 @@ def get_email_configuration():
             {"key": "EMAIL_USE_SSL", "default": os.environ.get("EMAIL_USE_SSL", "0")},
             {
                 "key": "EMAIL_FROM",
-                "default": os.environ.get("EMAIL_FROM", "Team Zeshan <team@zeshan.local>"),
+                "default": os.environ.get("EMAIL_FROM", "Team Flyst <team@techyst.net>"),
             },
         ]
     )

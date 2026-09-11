@@ -1,6 +1,6 @@
-# Zeshan Tests
+# Flyst Tests
 
-This directory contains tests for the Zeshan application. The tests are organized using pytest.
+This directory contains tests for the Flyst application. The tests are organized using pytest.
 
 ## Test Structure
 
@@ -14,7 +14,7 @@ Tests are organized into the following categories:
 
 ## API vs App Endpoints
 
-Zeshan has two types of API endpoints:
+Flyst has two types of API endpoints:
 
 1. **External API** (`plane.api`):
    - Available at `/api/v1/` endpoint

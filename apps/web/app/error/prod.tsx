@@ -17,17 +17,17 @@ const linkMap = [
   {
     key: "mail_to",
     label: "Contact Support",
-    value: "mailto:zeshanshakil0@gmail.com",
+    value: "mailto:support@techyst.net",
   },
   {
     key: "status",
     label: "Status Page",
-    value: "https://zeshan.local",
+    value: "https://flyst.techyst.net",
   },
   {
     key: "twitter_handle",
-    label: "@zeshan",
-    value: "https://zeshan.local",
+    label: "@techyst",
+    value: "https://flyst.techyst.net",
   },
 ];
 

@@ -114,8 +114,8 @@ class EmailCredentialCheckEndpoint(BaseAPIView):
             use_ssl=EMAIL_USE_SSL == "1",
         )
         # Prepare email details
-        subject = "Email Notification from Zeshan"
-        message = "This is a sample email notification sent from Zeshan application."
+        subject = "Email Notification from Flyst"
+        message = "This is a sample email notification sent from Flyst application."
         # Send the email
         try:
             msg = EmailMultiAlternatives(

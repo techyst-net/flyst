@@ -1,11 +1,11 @@
 {
-  "name": "Zeshan God Mode",
-  "short_name": "Zeshan God Mode",
-  "description": "Zeshan helps you plan your issues, cycles, and product modules.",
+  "name": "Flyst God Mode",
+  "short_name": "Flyst God Mode",
+  "description": "Flyst helps you plan your issues, cycles, and product modules.",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f9fafb",
-  "theme_color": "#6366F1",
+  "theme_color": "#20769F",
   "icons": [
     { "src": "/favicon/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/favicon/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }

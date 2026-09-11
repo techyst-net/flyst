@@ -176,7 +176,7 @@
         "title": "インテグレーション",
         "heading": "インテグレーション",
         "description": "人気のツールやサービスと接続して、ワークフローエコシステム全体で作業を同期します。",
-        "page_title": "Zeshan のデータを利用可能なアプリや自分のアプリで利用できます。",
+        "page_title": "Flyst のデータを利用可能なアプリや自分のアプリで利用できます。",
         "page_description": "このワークスペースまたはあなたが使用しているすべての連携を表示します。"
       },
       "imports": {
@@ -310,7 +310,7 @@
         },
         "app_created": {
           "title": "アプリが正常に作成されました",
-          "description": "認証情報を使用して、Zeshan ワークスペースにアプリをインストールしてください"
+          "description": "認証情報を使用して、Flyst ワークスペースにアプリをインストールしてください"
         },
         "installed_apps": "インストール済みアプリ",
         "all_apps": "すべてのアプリ",
@@ -351,7 +351,7 @@
         },
         "redirect_uris": {
           "label": "リダイレクトURI（スペース区切り）",
-          "description": "ユーザーは Zeshan で認証した後、このパスにリダイレクトされます。",
+          "description": "ユーザーは Flyst で認証した後、このパスにリダイレクトされます。",
           "placeholder": "https://example.com https://example.com/"
         },
         "app_available_description": "使用を開始するにはPlaneワークスペースに接続してください",
@@ -475,12 +475,12 @@
         }
       },
       "plane-intelligence": {
-        "title": "Zeshan AI",
-        "heading": "Zeshan AI",
+        "title": "Flyst AI",
+        "heading": "Flyst AI",
         "description": "あなたの作業がより知能的で速くなるように、ネイティブに接続されたAIを使用してください。"
       },
       "runners": {
-        "title": "Zeshan Runner",
+        "title": "Flyst Runner",
         "heading": "スクリプト",
         "new_script": "新しいスクリプト",
         "description": "カスタムスクリプトと自動化ルールでワークフローを自動化します。"

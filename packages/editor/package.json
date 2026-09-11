@@ -2,7 +2,7 @@
   "name": "@plane/editor",
   "version": "1.4.2",
   "private": true,
-  "description": "Core Editor that powers Zeshan",
+  "description": "Core Editor that powers Flyst",
   "keywords": [
     "editor",
     "markdown",

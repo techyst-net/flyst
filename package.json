@@ -4,7 +4,7 @@
   "private": true,
   "description": "Open-source project management that unlocks customer value",
   "license": "AGPL-3.0",
-  "repository": "https://zeshan.local",
+  "repository": "https://flyst.techyst.net",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --concurrency=18",

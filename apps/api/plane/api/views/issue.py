@@ -319,9 +319,9 @@ class IssueListCreateAPIEndpoint(BaseAPIView):
             return Response(
                 {
                     "pql": (
-                        "PQL and structured filters are not supported on this Zeshan edition. "
+                        "PQL and structured filters are not supported on this Flyst edition. "
                         "Remove the pql/filters parameter and filter results client-side, or use "
-                        "a Zeshan edition that supports work item query filtering."
+                        "a Flyst edition that supports work item query filtering."
                     ),
                     "unsupported_parameters": unsupported_filters,
                 },

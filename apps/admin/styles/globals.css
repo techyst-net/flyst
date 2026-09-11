@@ -5,7 +5,7 @@
    tokens (animate-spinner-reveal, animate-progress-indeterminate) its components rely on. */
 @import "@makeplane/propel/styles";
 
-/* ─── Zeshan accent override ───────────────────────────────────────────────
+/* ─── Flyst accent override ───────────────────────────────────────────────
  * The design tokens are published in the external `@makeplane/propel`
  * package, so the accent hue cannot be changed by editing this repository's
  * sources. These declarations come after the token imports above and
@@ -20,39 +20,39 @@
  * ───────────────────────────────────────────────────────────────────────── */
 :root,
 [data-theme] {
-  --background-color-accent-primary: #6366f1;
-  --background-color-accent-primary-hover: #4f46e5;
-  --background-color-accent-subtle: #eef2ff;
-  --text-color-accent-primary: #6366f1;
-  --text-color-link-primary: #6366f1;
-  --border-color-accent-strong: #6366f1;
-  --border-color-accent-subtle: #c7d2fe;
+  --background-color-accent-primary: #20769f;
+  --background-color-accent-primary-hover: #1a6284;
+  --background-color-accent-subtle: #f0f8fc;
+  --text-color-accent-primary: #20769f;
+  --text-color-link-primary: #20769f;
+  --border-color-accent-strong: #20769f;
+  --border-color-accent-subtle: #bbe0f1;
 
-  --bg-accent-primary: #6366f1;
-  --bg-accent-subtle: #eef2ff;
-  --txt-accent-primary: #6366f1;
-  --txt-link-primary: #6366f1;
-  --border-accent-strong: #6366f1;
+  --bg-accent-primary: #20769f;
+  --bg-accent-subtle: #f0f8fc;
+  --txt-accent-primary: #20769f;
+  --txt-link-primary: #20769f;
+  --border-accent-strong: #20769f;
 
-  --color-accent-primary: #6366f1;
+  --color-accent-primary: #20769f;
 }
 
 [data-theme*="dark"] {
-  --background-color-accent-primary: #6366f1;
-  --background-color-accent-primary-hover: #818cf8;
+  --background-color-accent-primary: #20769f;
+  --background-color-accent-primary-hover: #40a8d9;
   --background-color-accent-subtle: #1e1b4b;
-  --text-color-accent-primary: #818cf8;
-  --text-color-link-primary: #818cf8;
-  --border-color-accent-strong: #6366f1;
-  --border-color-accent-subtle: #312e81;
+  --text-color-accent-primary: #40a8d9;
+  --text-color-link-primary: #40a8d9;
+  --border-color-accent-strong: #20769f;
+  --border-color-accent-subtle: #0e3648;
 
-  --bg-accent-primary: #6366f1;
+  --bg-accent-primary: #20769f;
   --bg-accent-subtle: #1e1b4b;
-  --txt-accent-primary: #818cf8;
-  --txt-link-primary: #818cf8;
-  --border-accent-strong: #6366f1;
+  --txt-accent-primary: #40a8d9;
+  --txt-link-primary: #40a8d9;
+  --border-accent-strong: #20769f;
 
-  --color-accent-primary: #6366f1;
+  --color-accent-primary: #20769f;
 }
 
 .shadow-custom {

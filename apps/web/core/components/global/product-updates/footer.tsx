@@ -17,7 +17,7 @@ export function ProductUpdatesFooter() {
     <div className="m-6 mb-4 flex flex-shrink-0 items-center justify-between gap-4">
       <div className="flex items-center gap-2">
         <a
-          href="https://zeshan.local"
+          href="https://flyst.techyst.net"
           target="_blank"
           className="text-13 text-secondary underline-offset-1 outline-none hover:text-primary hover:underline"
           rel="noreferrer"
@@ -28,7 +28,7 @@ export function ProductUpdatesFooter() {
           <circle cx={1} cy={1} r={1} />
         </svg>
         <a
-          href="https://zeshan.local"
+          href="https://flyst.techyst.net"
           target="_blank"
           className="text-13 text-secondary underline-offset-1 outline-none hover:text-primary hover:underline"
           rel="noreferrer"
@@ -39,7 +39,7 @@ export function ProductUpdatesFooter() {
           <circle cx={1} cy={1} r={1} />
         </svg>
         <a
-          href="mailto:zeshanshakil0@gmail.com"
+          href="mailto:support@techyst.net"
           target="_blank"
           className="text-13 text-secondary underline-offset-1 outline-none hover:text-primary hover:underline"
           rel="noreferrer"
@@ -50,7 +50,7 @@ export function ProductUpdatesFooter() {
           <circle cx={1} cy={1} r={1} />
         </svg>
         <a
-          href="https://zeshan.local"
+          href="https://flyst.techyst.net"
           target="_blank"
           className="text-13 text-secondary underline-offset-1 outline-none hover:text-primary hover:underline"
           rel="noreferrer"
@@ -59,7 +59,7 @@ export function ProductUpdatesFooter() {
         </a>
       </div>
       <a
-        href="https://zeshan.local"
+        href="https://flyst.techyst.net"
         target="_blank"
         className={cn(
           getButtonStyling("secondary", "base"),

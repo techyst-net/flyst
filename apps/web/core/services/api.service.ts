@@ -26,6 +26,9 @@ export abstract class APIService {
     this.axiosInstance.interceptors.response.use(
       (response) => response,
       (error) => {
+        if (error.response?.status === 402 && error.response?.data?.error === "subscription_required") {
+          window.location.assign("https://billing.techyst.net/account/");
+        }
         if (error.response && error.response.status === 401) {
           const currentPath = window.location.pathname;
           window.location.replace(`/${currentPath ? `?next_path=${currentPath}` : ``}`);

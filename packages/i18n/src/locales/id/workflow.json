@@ -32,7 +32,7 @@
     "empty_state": {
       "upgrade": {
         "title": "Kendalikan kekacauan perubahan dan tinjauan dengan Workflows.",
-        "description": "Tetapkan aturan untuk ke mana pekerjaan Anda bergerak, oleh siapa, dan kapan dengan Workflows di Zeshan."
+        "description": "Tetapkan aturan untuk ke mana pekerjaan Anda bergerak, oleh siapa, dan kapan dengan Workflows di Flyst."
       }
     },
     "quick_actions": {

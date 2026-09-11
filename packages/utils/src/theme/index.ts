@@ -6,7 +6,7 @@
 
 /**
  * Theme System Public API
- * Exports all theme-related utilities for use across Zeshan apps
+ * Exports all theme-related utilities for use across Flyst apps
  */
 
 // Palette generation

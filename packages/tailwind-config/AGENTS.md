@@ -522,7 +522,7 @@ function Page() {
 }
 ```
 
-### ❌ Mistake 2: Nested Surfaces (Same Zeshan)
+### ❌ Mistake 2: Nested Surfaces (Same Flyst)
 
 ```tsx
 // ❌ Wrong: Nested surfaces in same plane

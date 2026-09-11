@@ -5,7 +5,7 @@
       "not_right_now": "Pas maintenant",
       "create_project": {
         "title": "Créer un projet",
-        "description": "La plupart des choses commencent par un projet dans Zeshan.",
+        "description": "La plupart des choses commencent par un projet dans Flyst.",
         "cta": "Commencer"
       },
       "invite_team": {
@@ -19,7 +19,7 @@
         "cta": "Configurer cet espace de travail"
       },
       "personalize_account": {
-        "title": "Faites de Zeshan le vôtre.",
+        "title": "Faites de Flyst le vôtre.",
         "description": "Choisissez votre photo, vos couleurs et plus encore.",
         "cta": "Personnaliser maintenant"
       },
@@ -53,7 +53,7 @@
       }
     },
     "new_at_plane": {
-      "title": "Nouveau sur Zeshan"
+      "title": "Nouveau sur Flyst"
     },
     "quick_tutorial": {
       "title": "Tutoriel rapide"

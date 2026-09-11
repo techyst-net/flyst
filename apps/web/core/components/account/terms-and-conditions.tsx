@@ -14,8 +14,8 @@ interface TermsAndConditionsProps {
 
 // Constants for better maintainability
 const LEGAL_LINKS = {
-  termsOfService: "https://zeshan.local",
-  privacyPolicy: "https://zeshan.local",
+  termsOfService: "https://flyst.techyst.net",
+  privacyPolicy: "https://flyst.techyst.net",
 } as const;
 
 const MESSAGES = {

@@ -18,7 +18,7 @@ export const CYCLE_GROUP_COLORS: {
   [key in TCycleGroups]: string;
 } = {
   current: "#F59E0B",
-  upcoming: "#6366F1",
+  upcoming: "#20769F",
   completed: "#16A34A",
   draft: "#525252",
 };

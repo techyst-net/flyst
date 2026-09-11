@@ -378,7 +378,7 @@ class WorkspaceHomePreference(BaseModel):
         QUICK_LINKS = "quick_links", "Quick Links"
         RECENTS = "recents", "Recents"
         MY_STICKIES = "my_stickies", "My Stickies"
-        NEW_AT_PLANE = "new_at_plane", "New at Zeshan"
+        NEW_AT_PLANE = "new_at_plane", "New at Flyst"
         QUICK_TUTORIAL = "quick_tutorial", "Quick Tutorial"
 
     workspace = models.ForeignKey(

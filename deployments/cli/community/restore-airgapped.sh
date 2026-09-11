@@ -84,7 +84,7 @@ function restoreData() {
     fi
 
     if [[ $dockerServiceStatus == "running" ]]; then
-        echo "Zeshan Airgapped is running. Please STOP the Zeshan Airgapped before restoring data."
+        echo "Flyst Airgapped is running. Please STOP the Flyst Airgapped before restoring data."
         exit 1
     fi
 

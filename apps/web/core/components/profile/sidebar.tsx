@@ -211,7 +211,7 @@ export const ProfileSidebar = observer(function ProfileSidebar(props: TProfileSi
                                 <div
                                   className="h-1 rounded-sm"
                                   style={{
-                                    backgroundColor: "#6366F1",
+                                    backgroundColor: "#20769F",
                                     width: `${(project.assigned_issues / totalIssues) * 100}%`,
                                   }}
                                 />
@@ -243,7 +243,7 @@ export const ProfileSidebar = observer(function ProfileSidebar(props: TProfileSi
                               </div>
                               <div className="flex items-center justify-between gap-2">
                                 <div className="flex items-center gap-2">
-                                  <div className="h-2.5 w-2.5 rounded-xs bg-[#6366F1]" />
+                                  <div className="h-2.5 w-2.5 rounded-xs bg-[#20769F]" />
                                   Assigned
                                 </div>
                                 <div className="font-medium">

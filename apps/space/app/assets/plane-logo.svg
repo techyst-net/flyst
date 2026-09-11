@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Zeshan">
-  <path d="M18 18 H46 V26 L31 38 H46 V46 H18 V38 L33 26 H18 Z" fill="#6366F1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="F">
+  <path d="M8.00,52.00 L8.00,12.00 L38.00,12.00" fill="none" stroke="#20769F" stroke-width="11.00" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.00,32.00 L32.00,32.00" fill="none" stroke="#20769F" stroke-width="11.00" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52.00" cy="18.00" r="7.00" fill="#E77129"/>
 </svg>

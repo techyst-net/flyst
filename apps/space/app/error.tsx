@@ -18,13 +18,13 @@ function ErrorPage() {
         <div className="space-y-2">
           <h3 className="text-16 font-semibold">Yikes! That doesn{"'"}t look good.</h3>
           <p className="mx-auto text-13 text-secondary md:w-1/2">
-            That crashed Zeshan, pun intended. No worries, though. Our engineers have been notified. If you have more
+            That crashed Flyst, pun intended. No worries, though. Our engineers have been notified. If you have more
             details, please write to{" "}
-            <a href="mailto:zeshanshakil0@gmail.com" className="text-accent-primary">
-              zeshanshakil0@gmail.com
+            <a href="mailto:support@techyst.net" className="text-accent-primary">
+              support@techyst.net
             </a>{" "}
             or on our{" "}
-            <a href="https://zeshan.local" target="_blank" className="text-accent-primary" rel="noopener noreferrer">
+            <a href="https://flyst.techyst.net" target="_blank" className="text-accent-primary" rel="noopener noreferrer">
               Forum
             </a>
             .

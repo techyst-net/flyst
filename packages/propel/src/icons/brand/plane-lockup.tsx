@@ -31,7 +31,7 @@ export function PlaneLockup({ width = "253", height = "53", className, color = "
         letterSpacing="-1"
         fill={color}
       >
-        Zeshan
+        Flyst
       </text>
     </svg>
   );

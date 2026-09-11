@@ -42,7 +42,7 @@ export const Default: Story = {
   render() {
     const [activeNavTab, setActiveNavTab] = useState("work_items");
 
-    // Example navigation items (matching actual Zeshan project navigation)
+    // Example navigation items (matching actual Flyst project navigation)
     const navItems = [
       { key: "overview", name: "Overview", href: "#overview", icon: OverviewOutline },
       { key: "work_items", name: "Work items", href: "#work_items", icon: WorkItemsOutline },

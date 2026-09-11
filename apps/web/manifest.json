@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Zeshan | Accelerate software development with peace.",
-  "short_name": "Zeshan",
-  "description": "Zeshan accelerated the software development by order of magnitude for agencies and product companies.",
+  "name": "Flyst | Accelerate software development with peace.",
+  "short_name": "Flyst",
+  "description": "Flyst accelerated the software development by order of magnitude for agencies and product companies.",
   "icons": [
     {
       "src": "/icon-192x192.png",

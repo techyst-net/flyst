@@ -31,7 +31,7 @@ function ProjectSettingsPage() {
         need to get things done.
       </div>
       <div className="flex gap-2">
-        <Link href="https://zeshan.local" target="_blank" className={cn(getButtonStyling("secondary", "base"))}>
+        <Link href="https://flyst.techyst.net" target="_blank" className={cn(getButtonStyling("secondary", "base"))}>
           Learn more about projects
         </Link>
         <Button onClick={() => toggleCreateProjectModal(true)}>Start your first project</Button>

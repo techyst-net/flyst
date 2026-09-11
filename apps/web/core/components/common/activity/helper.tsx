@@ -102,7 +102,7 @@ export const messages = (activity: TProjectActivity): { message: string | ReactN
     case "archived_at":
       return {
         message: newValue === "restore" ? "restored the project" : "archived the project",
-        customUserName: newValue === "archive" ? "Zeshan" : undefined,
+        customUserName: newValue === "archive" ? "Flyst" : undefined,
       };
     case "name":
       return {

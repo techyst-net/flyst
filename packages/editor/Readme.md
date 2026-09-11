@@ -17,7 +17,7 @@ This allows for extensive customization and flexibility in the Editors created u
 
 ### Here's a detailed overview of what's exported
 
-1. useEditor - A hook that you can use to extend the Zeshan editor.
+1. useEditor - A hook that you can use to extend the Flyst editor.
 
    | Prop                      | Type                                                             | Description                                                                                                                                                             |
    | ------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

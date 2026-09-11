@@ -123,6 +123,11 @@ class InstanceEndpoint(BaseAPIView):
         data["is_github_enabled"] = IS_GITHUB_ENABLED == "1"
         data["is_gitlab_enabled"] = IS_GITLAB_ENABLED == "1"
         data["is_gitea_enabled"] = IS_GITEA_ENABLED == "1"
+        data["is_techyst_oidc_enabled"] = bool(
+            os.environ.get("TECHYST_OIDC_ISSUER")
+            and os.environ.get("TECHYST_OIDC_CLIENT_SECRET")
+            and os.environ.get("TECHYST_OIDC_ENABLED", "1") == "1"
+        )
         data["is_magic_login_enabled"] = ENABLE_MAGIC_LINK_LOGIN == "1"
         data["is_email_password_enabled"] = ENABLE_EMAIL_PASSWORD == "1"
 

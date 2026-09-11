@@ -28,7 +28,7 @@ export function PlaneWordmark({ width = "146", height = "44", className, color =
         letterSpacing="-1"
         fill={color}
       >
-        Zeshan
+        Flyst
       </text>
     </svg>
   );

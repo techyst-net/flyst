@@ -195,8 +195,8 @@
         "primary_button": {
           "text": "İlk iş öğenizi oluşturun",
           "comic": {
-            "title": "İş öğeleri Zeshan'de yapı taşlarıdır.",
-            "description": "Zeshan UI'yi yeniden tasarlamak, şirketi yeniden markalaştırmak veya yeni yakıt enjeksiyon sistemini başlatmak, muhtemelen alt iş öğeleri olan iş öğesi örnekleridir."
+            "title": "İş öğeleri Flyst'de yapı taşlarıdır.",
+            "description": "Flyst UI'yi yeniden tasarlamak, şirketi yeniden markalaştırmak veya yeni yakıt enjeksiyon sistemini başlatmak, muhtemelen alt iş öğeleri olan iş öğesi örnekleridir."
           }
         }
       },
@@ -271,8 +271,8 @@
   "project_page": {
     "empty_state": {
       "general": {
-        "title": "Bir not, belge veya tam bir bilgi bankası yazın. Zeshan'in AI asistanı Galileo'nun başlamanıza yardımcı olmasını sağlayın",
-        "description": "Sayfalar Zeshan'de düşüncelerinizi döktüğünüz alanlardır. Toplantı notları alın, kolayca biçimlendirin, iş öğelerini yerleştirin, bir bileşen kitaplığı kullanarak düzenleyin ve hepsini proje bağlamınızda tutun. Herhangi bir belgeyi hızlıca tamamlamak için bir kısayol veya düğme ile Zeshan'in AI'sı Galileo'yu çağırın.",
+        "title": "Bir not, belge veya tam bir bilgi bankası yazın. Flyst'in AI asistanı Galileo'nun başlamanıza yardımcı olmasını sağlayın",
+        "description": "Sayfalar Flyst'de düşüncelerinizi döktüğünüz alanlardır. Toplantı notları alın, kolayca biçimlendirin, iş öğelerini yerleştirin, bir bileşen kitaplığı kullanarak düzenleyin ve hepsini proje bağlamınızda tutun. Herhangi bir belgeyi hızlıca tamamlamak için bir kısayol veya düğme ile Flyst'in AI'sı Galileo'yu çağırın.",
         "primary_button": {
           "text": "İlk sayfanızı oluşturun"
         }

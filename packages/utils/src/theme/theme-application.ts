@@ -6,7 +6,7 @@
 
 /**
  * Theme Application Utilities
- * Applies generated palettes to CSS variables for Zeshan's theme system
+ * Applies generated palettes to CSS variables for Flyst's theme system
  */
 
 import { hexToOKLCH, oklchToCSS, getRelativeLuminance, getPerceptualBrightness } from "./color-conversion";

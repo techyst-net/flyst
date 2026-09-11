@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-// Zeshan
+// Flyst
 import { Row } from "@plane/ui";
 // components
 import { cn } from "@plane/utils";

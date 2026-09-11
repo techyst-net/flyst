@@ -148,17 +148,17 @@ export const NEUTRAL_COLORS = {
 
 // Brand colors (light theme accent)
 export const BRAND_COLORS = {
-  default: "#6366F1", // oklch(0.4799 0.1158 242.91) - primary accent blue
-  100: "#EEF2FF",
-  200: "#E0E7FF",
-  300: "#C7D2FE",
-  400: "#A5B4FC",
-  500: "#818CF8",
-  600: "#6366F1",
-  700: "#6366F1",
-  900: "#4338CA",
-  1000: "#3730A3",
-  1100: "#312E81",
+  default: "#20769F", // oklch(0.4799 0.1158 242.91) - primary accent blue
+  100: "#F0F8FC",
+  200: "#DDF0F8",
+  300: "#BBE0F1",
+  400: "#88C9E7",
+  500: "#40A8D9",
+  600: "#20769F",
+  700: "#20769F",
+  900: "#16536F",
+  1000: "#124359",
+  1100: "#0E3648",
   1200: "#1E1B4B",
 } as const;
 
@@ -181,7 +181,7 @@ export const BACKGROUND_COLORS = {
   layer1: NEUTRAL_COLORS[200], // --bg-layer-1
   layer2: NEUTRAL_COLORS.white, // --bg-layer-2
   layer3: NEUTRAL_COLORS[300], // --bg-layer-3
-  accentSubtle: "#EEF2FF", // --bg-accent-subtle (brand-100)
+  accentSubtle: "#F0F8FC", // --bg-accent-subtle (brand-100)
 } as const;
 
 // Semantic border colors
@@ -208,7 +208,7 @@ export const LINK_COLORS = {
 
 // Mention colors (from pi-chat-editor mention styles: bg-accent-primary/20 text-accent-primary)
 export const MENTION_COLORS = {
-  background: "#E0E7FF", // accent-primary with ~20% opacity on white
+  background: "#DDF0F8", // accent-primary with ~20% opacity on white
   text: BRAND_COLORS.default,
 } as const;
 

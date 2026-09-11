@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Report suspected vulnerabilities privately to **zeshanshakil0@gmail.com**.
+Report suspected vulnerabilities privately to **security@techyst.net**.
 Please do not open a public issue for security reports.
 
 Include where possible: affected version or commit, the impact, and steps to

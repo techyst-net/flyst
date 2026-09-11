@@ -6,7 +6,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-// Zeshan imports
+// Flyst imports
 import type { IWebhook } from "@plane/types";
 import { Switch } from "@makeplane/propel/components/switch";
 // hooks

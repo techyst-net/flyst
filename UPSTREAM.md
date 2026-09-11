@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Upstream project | Plane |
-| Source | https://zeshan.local |
+| Source | https://flyst.techyst.net |
 | Edition | Community (CE) |
 | Licence | GNU AGPL v3.0-only |
 | Retained notices | `LICENSE.txt`, `COPYRIGHT.txt`, SPDX + copyright headers on 3,757 files |
@@ -52,7 +52,7 @@ it, an empty `OTLP_ENDPOINT` still resolved to the vendor's collector.
 ## Pulling upstream fixes
 
 ```sh
-git remote add upstream https://zeshan.local
+git remote add upstream https://flyst.techyst.net
 git fetch upstream --depth=50
 ```
 

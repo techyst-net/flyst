@@ -113,8 +113,8 @@ const EDITOR_PDF_LIST_STYLES: Styles = {
     borderColor: "#171717",
   },
   "div.input-checkbox.checked": {
-    backgroundColor: "#6366F1",
-    borderColor: "#6366F1",
+    backgroundColor: "#20769F",
+    borderColor: "#20769F",
   },
   "ul li[data-checked='true'] p": {
     color: "#a3a3a3",
@@ -170,8 +170,8 @@ const EDITOR_PDF_DOCUMENT_STYLESHEET = StyleSheet.create({
   // mention block
   "[data-node-type='mention-block']": {
     margin: 0,
-    color: "#6366F1",
-    backgroundColor: "#6366F133",
+    color: "#20769F",
+    backgroundColor: "#20769F33",
     paddingHorizontal: convertRemToPixel(0.375),
   },
   // table

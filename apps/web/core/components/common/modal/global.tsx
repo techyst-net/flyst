@@ -18,7 +18,7 @@ type TGlobalModalsProps = {
 };
 
 /**
- * GlobalModals component manages all workspace-level modals across Zeshan applications.
+ * GlobalModals component manages all workspace-level modals across Flyst applications.
  *
  * This includes:
  * - Profile settings modal
